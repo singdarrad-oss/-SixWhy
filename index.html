@@ -129,6 +129,28 @@ button{font-family:var(--sans)}
 .hrow p{font-size:13.5px;line-height:1.5;margin-top:2px;color:#3A3045}
 .hempty{text-align:center;color:#b8aec2;padding:70px 20px;font-size:14px;line-height:1.6}
 .clear-link{display:block;margin:8px auto 0;border:none;background:none;color:#9B5A7A;font-size:12.5px;font-weight:700;cursor:pointer}
+
+/* Профиль */
+#scr-prof{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
+.prof-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.prof-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
+.prof-user{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.prof-ava{width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,var(--lilac),#C4A8E0);display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:24px;color:#fff;flex-shrink:0}
+.prof-user .pn{font-size:17px;font-weight:700}
+.prof-user .ps{font-size:12.5px;color:var(--mut);margin-top:2px}
+.mode-card{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:18px 20px;margin-bottom:14px}
+.mode-card h3{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:14px}
+.mode-opt{display:flex;align-items:flex-start;gap:13px;padding:13px 14px;border:1.5px solid var(--line);border-radius:14px;margin-bottom:10px;cursor:pointer;transition:.22s}
+.mode-opt:last-child{margin-bottom:0}
+.mode-opt:hover{border-color:var(--lilac-line)}
+.mode-opt.sel{border-color:var(--lilac);background:var(--lilac-soft)}
+.mode-radio{width:20px;height:20px;border-radius:50%;border:2px solid #C8BED0;flex-shrink:0;margin-top:1px;display:grid;place-items:center;transition:.22s}
+.mode-opt.sel .mode-radio{border-color:var(--lilac)}
+.mode-opt.sel .mode-radio::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--lilac)}
+.mode-opt .mt{font-size:14.5px;font-weight:700}
+.mode-opt .md{font-size:12.5px;color:var(--mut);line-height:1.5;margin-top:3px}
+.prof-ver{text-align:center;color:#b8aec2;font-size:11px;margin-top:24px;letter-spacing:.1em}
+
 .toast{position:absolute;bottom:26px;left:50%;transform:translate(-50%,16px);background:#3A2A4A;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;opacity:0;transition:.35s;z-index:70;white-space:nowrap;box-shadow:0 14px 34px #2a243544}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 </style>
@@ -191,6 +213,7 @@ button{font-family:var(--sans)}
       <div class="wm">Six<em>Why</em></div>
       <div class="acts">
         <button class="ibtn" id="histBtn" title="История"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></button>
+        <button class="ibtn" id="profBtn" title="Профиль"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg></button>
         <button class="ibtn" id="outBtn" title="Выйти"><svg viewBox="0 0 24 24"><path d="M9 4H6a2 2 0 00-2 2v12a2 2 0 002 2h3M15 8l4 4-4 4M19 12H9"/></svg></button>
       </div>
     </div>
@@ -236,20 +259,43 @@ button{font-family:var(--sans)}
     <div id="histList"></div>
   </section>
 
+  <section class="scr" id="scr-prof">
+    <div class="prof-head">
+      <h2>Профиль</h2>
+      <button class="ibtn" id="profBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    </div>
+    <div class="prof-user">
+      <div class="prof-ava" id="profAva">?</div>
+      <div><div class="pn" id="profName">—</div><div class="ps">режим можно менять в любой момент</div></div>
+    </div>
+    <div class="mode-card">
+      <h3>Режим вопросов</h3>
+      <div class="mode-opt sel" data-mode="empathy">
+        <div class="mode-radio"></div>
+        <div><div class="mt">💜 Эмпатия</div><div class="md">Третий вопрос подбирается под твою проблему — мягко и по смыслу.</div></div>
+      </div>
+      <div class="mode-opt" data-mode="classic">
+        <div class="mode-radio"></div>
+        <div><div class="mt">🌀 Классика</div><div class="md">Шесть одинаковых «Почему?» подряд — чистая методика, медитативный ритм.</div></div>
+      </div>
+    </div>
+    <div class="prof-ver">SIXWHY · ДЕМО-ВЕРСИЯ</div>
+  </section>
+
   <div class="toast" id="toast"></div>
 </main>
 
 <script>
 const $=s=>document.querySelector(s);
 let phase='start', session={start:null,whys:[],action:null};
-let name='', history=[], onboarded=false;
+let name='', history=[], onboarded=false, mode='empathy';
 try{
   name=localStorage.getItem('sixwhy_name')||'';
   history=JSON.parse(localStorage.getItem('sixwhy_hist')||'[]');
   onboarded=localStorage.getItem('sixwhy_onb')==='1';
+  mode=localStorage.getItem('sixwhy_mode')||'empathy';
 }catch(e){history=[];}
 
-/* Категории для умного вопроса */
 const CATEGORIES=[
   {keywords:['плохо','грустно','тяжело','больно','тоскливо','паршиво','хреново','ужасно','кошмар'],q:'Что ты чувствуешь прямо сейчас?'},
   {keywords:['боюсь','страх','тревога','паника','нервничаю','волнуюсь','опасаюсь'],q:'Чего ты боишься в этой ситуации?'},
@@ -310,6 +356,23 @@ if(name){
 }
 $('#outBtn').onclick=()=>{try{localStorage.removeItem('sixwhy_name');}catch(e){}location.reload();};
 
+/* профиль */
+function renderProf(){
+  $('#profName').textContent=name||'друг';
+  $('#profAva').textContent=(name||'?').trim().charAt(0).toUpperCase();
+  document.querySelectorAll('.mode-opt').forEach(o=>o.classList.toggle('sel',o.dataset.mode===mode));
+}
+$('#profBtn').onclick=()=>{renderProf();go('scr-prof');};
+$('#profBackBtn').onclick=()=>go('scr-main');
+document.querySelectorAll('.mode-opt').forEach(o=>{
+  o.onclick=()=>{
+    mode=o.dataset.mode;
+    try{localStorage.setItem('sixwhy_mode',mode);}catch(e){}
+    renderProf();
+    toast(mode==='empathy'?'Режим: Эмпатия 💜':'Режим: Классика 🌀');
+  };
+});
+
 function addUser(text,first){
   $('#thread').style.display='block';$('#hintEmpty').style.display='none';
   const e=document.createElement('div');
@@ -355,7 +418,7 @@ function submit(){
   if(phase==='start'){session={start:v,whys:[],action:null};addUser(v,true);phase='whys';thinking(()=>askWhy(1));}
   else if(phase==='whys'){
     session.whys.push(v);addUser(v,false);
-    if(session.whys.length===2){thinking(()=>askSmart(v));}
+    if(session.whys.length===2 && mode==='empathy'){thinking(()=>askSmart(v));}
     else if(session.whys.length<6){thinking(()=>askWhy(session.whys.length+1));}
     else{phase='action';thinking(()=>askAction());}
   }
