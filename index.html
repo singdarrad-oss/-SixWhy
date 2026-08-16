@@ -27,8 +27,6 @@ body{font-family:var(--sans);color:var(--ink);background:#F2EADB;-webkit-tap-hig
 .scr{position:absolute;inset:0;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .4s,transform .4s;display:flex;flex-direction:column}
 .scr.active{opacity:1;transform:none;pointer-events:auto}
 button{font-family:var(--sans)}
-
-/* слайды */
 #scr-onb{padding:max(20px,env(safe-area-inset-top)) 30px max(26px,env(safe-area-inset-bottom))}
 .onb-top{text-align:center;font-family:var(--serif);font-size:22px;font-weight:600}
 .onb-top em{font-style:italic;color:var(--lilac)}
@@ -42,8 +40,6 @@ button{font-family:var(--sans)}
 .onb-dots{display:flex;gap:7px}
 .odot{width:7px;height:7px;border-radius:50%;background:#E0D8E8;transition:.35s}
 .odot.on{background:var(--butter);width:20px;border-radius:100px}
-
-/* регистрация */
 #scr-auth{padding:28px 30px max(26px,env(safe-area-inset-bottom));justify-content:center;overflow-y:auto}
 .logo-dots{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
 .logo-dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--lilac);opacity:0;animation:dotIn .5s forwards}
@@ -67,15 +63,11 @@ button{font-family:var(--sans)}
 .go-btn.outline:hover{border-color:var(--lilac)}
 .priv-note{margin-top:22px;background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:14px;padding:13px 15px;font-size:12.5px;line-height:1.55;color:var(--butter-ink);display:flex;gap:10px}
 .disclaimer{margin-top:14px;font-size:11px;line-height:1.5;color:#b0a5b8;text-align:center}
-
-/* PIN-экран */
 #scr-pin{padding:30px;justify-content:center;align-items:center;text-align:center}
 .pin-lock{font-size:44px;margin-bottom:14px}
 #scr-pin h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px;margin-bottom:8px}
 #scr-pin .ps{font-size:13px;color:var(--mut);margin-bottom:24px}
 #pinInput{max-width:200px;text-align:center;letter-spacing:12px;font-size:20px;font-weight:800}
-
-/* главная */
 #scr-home{padding:max(18px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom));overflow-y:auto}
 .home-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
 .home-top .wm{font-family:var(--serif);font-size:24px;font-weight:600}
@@ -119,8 +111,6 @@ button{font-family:var(--sans)}
 .start-btn:hover{background:#8A6DAA;transform:translateY(-2px)}
 .start-btn:active{transform:scale(.98)}
 .home-foot{text-align:center;font-size:11px;color:#b8aec2;margin-top:20px;line-height:1.5}
-
-/* диалог */
 #scr-main{display:flex;flex-direction:column}
 .topbar{display:flex;justify-content:space-between;align-items:center;padding:max(10px,env(safe-area-inset-top)) 16px 6px}
 .topbar .wm{font-family:var(--serif);font-size:21px;font-weight:600}
@@ -160,8 +150,6 @@ button{font-family:var(--sans)}
 .thinking i{width:7px;height:7px;border-radius:50%;background:var(--butter);animation:bl 1s ease-in-out infinite}
 .thinking i:nth-child(2){animation-delay:.15s}.thinking i:nth-child(3){animation-delay:.3s}
 @keyframes bl{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-5px);opacity:1}}
-
-/* финал */
 #scr-done{padding:34px 28px max(28px,env(safe-area-inset-bottom));overflow-y:auto;align-items:center;text-align:center}
 .done-check svg circle{stroke-dasharray:183;stroke-dashoffset:183;animation:draw .9s .2s ease forwards}
 .done-check svg path{stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s 1s ease forwards}
@@ -185,8 +173,6 @@ button{font-family:var(--sans)}
 .done-btns{width:100%;display:flex;flex-direction:column;gap:10px;animation:rise .6s 1.5s both}
 .done-btns .go-btn{margin-top:0}
 .done-disc{font-size:10.5px;color:#b8aec2;margin-top:18px;line-height:1.5;animation:rise .6s 1.7s both}
-
-/* история */
 #scr-hist{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .hist-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .hist-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
@@ -199,8 +185,6 @@ button{font-family:var(--sans)}
 .hrow p{font-size:13.5px;line-height:1.5;margin-top:2px;color:#3A3045}
 .hempty{text-align:center;color:#b8aec2;padding:70px 20px;font-size:14px;line-height:1.6}
 .clear-link{display:block;margin:8px auto 0;border:none;background:none;color:#9B5A7A;font-size:12.5px;font-weight:700;cursor:pointer}
-
-/* профиль */
 #scr-prof{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .prof-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
 .prof-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
@@ -229,8 +213,6 @@ button{font-family:var(--sans)}
 .logout-btn{width:100%;margin-top:10px;border:1.5px solid #e0c9c9;border-radius:15px;padding:14px;background:transparent;font-size:14px;font-weight:700;color:#b06a6a;cursor:pointer;transition:.25s}
 .logout-btn:hover{background:#f7eaea}
 .prof-ver{text-align:center;color:var(--butter-mut);font-size:11px;margin-top:20px;letter-spacing:.1em}
-
-/* чат */
 #scr-chat{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto;display:flex;flex-direction:column}
 .chat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .chat-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
@@ -245,7 +227,6 @@ button{font-family:var(--sans)}
 .chat-send{width:46px;height:46px;flex-shrink:0;border:none;border-radius:50%;background:var(--lilac);display:grid;place-items:center;cursor:pointer;transition:.25s}
 .chat-send:hover{background:#8A6DAA}
 .chat-send svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
-
 .toast{position:absolute;bottom:26px;left:50%;transform:translate(-50%,16px);background:#3A2A4A;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;opacity:0;transition:.35s;z-index:70;white-space:nowrap;box-shadow:0 14px 34px #2a243544}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 </style>
@@ -253,7 +234,6 @@ button{font-family:var(--sans)}
 <body>
 <main class="app">
 
-  <!-- СЛАЙДЫ -->
   <section class="scr active" id="scr-onb">
     <div class="onb-top">Six<em>Why</em></div>
     <div class="onb-slides">
@@ -279,7 +259,6 @@ button{font-family:var(--sans)}
     </div>
   </section>
 
-  <!-- РЕГИСТРАЦИЯ -->
   <section class="scr" id="scr-auth">
     <div class="logo-dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="wordmark">Six<em>Why</em></div>
@@ -291,7 +270,6 @@ button{font-family:var(--sans)}
     <div class="disclaimer">SixWhy — инструмент саморефлексии, он не заменяет консультацию психолога или врача.</div>
   </section>
 
-  <!-- PIN -->
   <section class="scr" id="scr-pin">
     <div class="pin-lock">🔐</div>
     <h2>Введи пароль</h2>
@@ -300,7 +278,6 @@ button{font-family:var(--sans)}
     <button class="go-btn" id="pinBtn" style="max-width:200px">Открыть →</button>
   </section>
 
-  <!-- ГЛАВНАЯ -->
   <section class="scr" id="scr-home">
     <div class="home-top">
       <div class="wm">Six<em>Why</em></div>
@@ -340,7 +317,6 @@ button{font-family:var(--sans)}
     <div class="home-foot">Записи остаются только у тебя · без рекламы и сбора данных</div>
   </section>
 
-  <!-- ДИАЛОГ -->
   <section class="scr" id="scr-main">
     <div class="topbar">
       <div class="wm">Six<em>Why</em></div>
@@ -364,7 +340,6 @@ button{font-family:var(--sans)}
     </div>
   </section>
 
-  <!-- ФИНАЛ -->
   <section class="scr" id="scr-done">
     <div class="done-check">
       <svg viewBox="0 0 64 64" width="66" height="66"><circle cx="32" cy="32" r="29" fill="none" stroke="#9B7EBD" stroke-width="2.5"/><path d="M20 33l8.5 8.5L44 25" fill="none" stroke="#EFC368" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -383,7 +358,6 @@ button{font-family:var(--sans)}
     <div class="done-disc">Если тебе очень тяжело — пожалуйста, обратись к специалисту или на линию психологической помощи.</div>
   </section>
 
-  <!-- ИСТОРИЯ -->
   <section class="scr" id="scr-hist">
     <div class="hist-head">
       <h2>История</h2>
@@ -392,7 +366,6 @@ button{font-family:var(--sans)}
     <div id="histList"></div>
   </section>
 
-  <!-- ПРОФИЛЬ -->
   <section class="scr" id="scr-prof">
     <div class="prof-head">
       <h2>Профиль</h2>
@@ -402,7 +375,6 @@ button{font-family:var(--sans)}
       <div class="prof-ava" id="profAva">?</div>
       <div><div class="pn" id="profName">—</div><div class="ps">твоё личное пространство</div></div>
     </div>
-
     <div class="p-card">
       <h3>🔐 Конфиденциальность</h3>
       <div class="st-line" id="pinStatus">Пароль не установлен — приложение открывается свободно.</div>
@@ -412,19 +384,16 @@ button{font-family:var(--sans)}
         <button id="removePinBtn" style="display:none">Убрать</button>
       </div>
     </div>
-
     <div class="creator-card" id="creatorCard">
       <h3>👑 Уголок создателя</h3>
       <p>Только ты видишь этот блок. Здесь — статистика посещений твоего приложения: уникальные гости, просмотры и откуда приходят люди.</p>
       <button class="stats-btn" id="statsBtn">📊 Посмотреть статистику</button>
     </div>
-
     <button class="intro-btn" id="introBtn">📖 Посмотреть введение</button>
     <button class="logout-btn" id="logoutBtn">Выйти из аккаунта</button>
     <div class="prof-ver">SIXWHY · СОЗДАНО С ЛЮБОВЬЮ</div>
   </section>
 
-  <!-- ЧАТ -->
   <section class="scr" id="scr-chat">
     <div class="chat-head">
       <h2>🧠 Прямой диалог</h2>
@@ -472,23 +441,142 @@ fetch('config.json?'+Date.now(),{cache:'no-store'})
   .then(j=>{if(j){CFG=Object.assign(CFG,j);renderQuote();}})
   .catch(()=>{});
 
-const CATEGORIES=[
-  {keywords:['плохо','грустно','тяжело','больно','тоскливо','паршиво','хреново','ужасно','кошмар'],q:'Что ты чувствуешь прямо сейчас?',resp:'Я слышу, как тебе тяжело. Грусть — это не слабость, это сигнал, что что-то важно для тебя.'},
-  {keywords:['боюсь','страх','тревога','паника','нервничаю','волнуюсь','опасаюсь'],q:'Чего ты боишься в этой ситуации?',resp:'Страх пытается тебя защитить. Давай посмотрим, чего именно он боится — и станет ли от этого легче.'},
-  {keywords:['устал','устала','измотан','выгорел','нет сил','обессилел','замучен'],q:'Когда ты последний раз отдыхал по-настоящему?',resp:'Ты несёшь так много. Усталость — это не лень, это просьба тела о бережности.'},
-  {keywords:['злюсь','бешусь','раздражён','ненавижу','бесит','достало','взбесило'],q:'Что именно вызывает эту злость?',resp:'Злость — это энергия. Она показывает, где нарушены твои границы. Давай найдём, где именно.'},
-  {keywords:['одинок','одиноко','никто','пусто','брошен','забыт','ненужный'],q:'Кого тебе сейчас не хватает рядом?',resp:'Одиночество болит, потому что ты создан для связи. Это не навсегда — даже если сейчас так кажется.'},
-  {keywords:['стыдно','вина','виноват','совесть','упрёк','раскаиваюсь'],q:'Перед кем или чем ты чувствуешь вину?',resp:'Вина говорит, что ты человек с сердцем. Но иногда мы берём на себя чужую ответственность. Давай разберёмся.'},
-  {keywords:['не знаю','растерян','потерян','запутался','тупик','не понимаю'],q:'Что бы ты хотел понять в первую очередь?',resp:'Не знать — это нормально. Иногда туман нужен, чтобы увидеть, куда действительно хочется идти.'},
-  {keywords:['скучно','рутина','однообразно','серость','надоело','пресно'],q:'Чего тебе не хватает для радости?',resp:'Скука — это тихий голос, который просит смысла. Что раньше зажигало в тебе искру?'},
-  {keywords:['давление','требуют','должен','обязан','нагрузка','перегруз'],q:'Кто или что давит на тебя сильнее всего?',resp:'Так много «должен». А где в этом списке есть «я хочу»? Давай найдём хотя бы одно.'},
-  {keywords:['будущее','завтра','что будет','неизвестность','переживаю за'],q:'Что в будущем пугает тебя больше всего?',resp:'Будущее ещё не наступило. Прямо сейчас ты здесь, дышишь, и этого достаточно для одного шага.'}
+/* ── ЖИВОЙ ИИ: по 4-5 вариантов на каждую эмоцию + случайные вопросы ── */
+const AI={
+  sadness:{
+    keys:['плохо','грустно','тяжело','больно','тоскливо','паршиво','хреново','ужасно','кошмар','плачу','слёзы','рев'],
+    replies:[
+      'Я слышу, как тебе тяжело. Грусть — это не слабость, это сигнал, что что-то важно для тебя.',
+      'Мне жаль, что тебе так больно прямо сейчас. Ты не обязан быть сильным каждую секунду.',
+      'Грустить — нормально. Иногда сердцу нужно время, чтобы прожить то, что случилось.',
+      'Я рядом. Расскажи чуть больше — что именно давит сильнее всего?'
+    ],
+    questions:['Что случилось совсем недавно?','Когда ты в последний раз позволял себе просто погрустить?','Есть ли кто-то, кому ты мог бы сейчас позвонить?']
+  },
+  fear:{
+    keys:['боюсь','страх','тревога','паника','нервничаю','волнуюсь','опасаюсь','жутко','страшно','переживаю'],
+    replies:[
+      'Страх пытается тебя защитить. Давай посмотрим, чего именно он боится — и станет ли от этого легче.',
+      'Тревога — это как шум в голове, который мешает услышать себя. Давай попробуем его приглушить.',
+      'Я понимаю, как это — когда сердце колотится от неизвестности. Ты не один в этом.',
+      'Страх часто больше самой ситуации. Давай разберём его по кусочкам.'
+    ],
+    questions:['Что самое страшное может случиться, если твои опасения оправдаются?','Было ли раньше что-то похожее — и как ты с этим справился?','Что бы ты сказал другу, который боится того же?']
+  },
+  fatigue:{
+    keys:['устал','устала','измотан','выгорел','нет сил','обессилел','замучен','усталость','вымотал','сил нет'],
+    replies:[
+      'Ты несёшь так много. Усталость — это не лень, это просьба тела о бережности.',
+      'Выгорание подкрадывается тихо. То, что ты это замечаешь — уже первый шаг к себе.',
+      'Мне жаль, что ты так вымотан. Иногда «ничего не делать» — это самое продуктивное, что можно сделать.',
+      'Ты имеешь право отдыхать. Даже если кажется, что «ещё не время».'
+    ],
+    questions:['Когда ты в последний раз делал что-то просто для себя?','Что отнимает у тебя больше всего сил прямо сейчас?','Если бы у тебя был свободный день — как бы ты его провёл?']
+  },
+  anger:{
+    keys:['злюсь','бешусь','раздражён','ненавижу','бесит','достало','взбесило','злость','ярость','раздражает'],
+    replies:[
+      'Злость — это энергия. Она показывает, где нарушены твои границы. Давай найдём, где именно.',
+      'Я слышу твою злость. Она имеет право быть. Давай посмотрим, что она хочет тебе сказать.',
+      'Раздражение — это часто непрожитая обида или усталость. Что стоит за этой злостью?',
+      'Злиться — нормально. Главное — не дать ей решить за тебя. Давай разберёмся вместе.'
+    ],
+    questions:['Кто или что вызвало эту злость?','Если бы эта злость могла говорить — что бы она сказала?','Что бы ты хотел изменить в этой ситуации?']
+  },
+  loneliness:{
+    keys:['одинок','одиноко','никто','пусто','брошен','забыт','ненужный','одиночество','один','одна'],
+    replies:[
+      'Одиночество болит, потому что ты создан для связи. Это не навсегда — даже если сейчас так кажется.',
+      'Мне жаль, что тебе так одиноко. Это одно из самых тяжёлых чувств. Я здесь.',
+      'Пустота внутри — это не пустота вокруг. Иногда мы чувствуем себя одинокими даже среди людей.',
+      'Ты важен. Даже если сейчас кажется, что никто этого не видит.'
+    ],
+    questions:['Кого тебе сейчас не хватает рядом?','Было ли время, когда ты чувствовал себя по-настоящему понятым?','Что бы ты хотел, чтобы кто-то сказал тебе прямо сейчас?']
+  },
+  guilt:{
+    keys:['стыдно','вина','виноват','совесть','упрёк','раскаиваюсь','стыд','чувствую вину'],
+    replies:[
+      'Вина говорит, что ты человек с сердцем. Но иногда мы берём на себя чужую ответственность. Давай разберёмся.',
+      'Стыд — тяжёлое чувство. Но он не определяет тебя. Ты больше своей ошибки.',
+      'Чувство вины часто бывает непропорциональным. Давай посмотрим, насколько оно реально.',
+      'Ты имеешь право на прощение — в том числе от самого себя.'
+    ],
+    questions:['Перед кем или чем ты чувствуешь вину?','Если бы друг оказался в такой ситуации — ты бы его винил так же сильно?','Что бы ты хотел исправить, если бы мог?']
+  },
+  confusion:{
+    keys:['не знаю','растерян','потерян','запутался','тупик','не понимаю','растерянность','непонятно'],
+    replies:[
+      'Не знать — это нормально. Иногда туман нужен, чтобы увидеть, куда действительно хочется идти.',
+      'Растерянность — это не тупик, это перекрёсток. Ты просто ещё не выбрал дорогу.',
+      'Я понимаю, как это — когда всё кажется запутанным. Давай распутаем по ниточке.',
+      'Иногда «не знаю» — это самый честный ответ. И с него можно начать.'
+    ],
+    questions:['Что бы ты хотел понять в первую очередь?','Если бы страх ошибиться исчез — что бы ты выбрал?','Что раньше помогало тебе находить ясность?']
+  },
+  boredom:{
+    keys:['скучно','рутина','однообразно','серость','надоело','пресно','скука','бессмысленно'],
+    replies:[
+      'Скука — это тихий голос, который просит смысла. Что раньше зажигало в тебе искру?',
+      'Рутина может выматывать не меньше, чем стресс. То, что ты это чувствуешь — важно.',
+      'Серость — это сигнал, что тебе хочется чего-то живого. Давай вспомним, что это было.',
+      'Надоело — значит, ты вырос из этого. Это хорошая новость, хоть и неприятная.'
+    ],
+    questions:['Что раньше приносило тебе радость?','Если бы рутина исчезла — чем бы ты занялся?','Чего тебе не хватает для ощущения жизни?']
+  },
+  pressure:{
+    keys:['давление','требуют','должен','обязан','нагрузка','перегруз','давлят','должна','обязана'],
+    replies:[
+      'Так много «должен». А где в этом списке есть «я хочу»? Давай найдём хотя бы одно.',
+      'Перегруз — это когда «надо» становится больше, чем «могу». Ты имеешь право сказать «стоп».',
+      'Давление извне часто превращается в давление изнутри. Давай разделим их.',
+      'Ты не машина для выполнения обязательств. Ты живой человек.'
+    ],
+    questions:['Кто или что давит на тебя сильнее всего?','Что из этого «должен» ты можешь отложить или делегировать?','Что бы ты выбрал, если бы никто не ждал от тебя результатов?']
+  },
+  future:{
+    keys:['будущее','завтра','что будет','неизвестность','переживаю за','впереди','что дальше'],
+    replies:[
+      'Будущее ещё не наступило. Прямо сейчас ты здесь, дышишь, и этого достаточно для одного шага.',
+      'Тревога о будущем — это попытка контролировать неконтролируемое. Давай вернёмся в «сейчас».',
+      'Неизвестность пугает, потому что мозг любит предсказуемость. Но в ней есть и свобода.',
+      'Завтра ещё не написано. И это, на самом деле, хорошая новость.'
+    ],
+    questions:['Что именно в будущем пугает тебя больше всего?','Что ты можешь сделать сегодня, чтобы завтра было чуть спокойнее?','Если бы будущее было добрым к тебе — каким бы оно было?']
+  }
+};
+const AI_FALLBACK_REPLIES=[
+  'Я слышу тебя. То, что ты поделился — уже шаг.',
+  'Спасибо, что доверяешь мне это. Давай разберёмся вместе.',
+  'Я рядом. Расскажи чуть больше — что стоит за этими словами?',
+  'То, что ты чувствуешь — важно. Давай посмотрим на это поближе.'
 ];
-const FALLBACK_Q='Загляни чуть глубже — что стоит за этими словами?';
-const FALLBACK_RESP='Ты прошёл длинный путь, отвечая честно. Это уже много. Даже если корень пока не ясен — ты ближе к себе, чем был в начале.';
-function findSmartQuestion(t){const l=t.toLowerCase();for(const c of CATEGORIES){if(c.keywords.some(k=>l.includes(k)))return c.q;}return FALLBACK_Q;}
-function findMirrorResponse(t){const l=t.toLowerCase();for(const c of CATEGORIES){if(c.keywords.some(k=>l.includes(k)))return c.resp;}return FALLBACK_RESP;}
-function generateChatResponse(t){const l=t.toLowerCase();for(const c of CATEGORIES){if(c.keywords.some(k=>l.includes(k)))return c.resp+' Попробуй спросить себя: почему это важно именно сейчас? Иногда ответ приходит не сразу, и это нормально.';}return 'Я слышу тебя. То, что ты поделился — уже шаг. Попробуй спросить себя: что самое важное в этой ситуации для тебя прямо сейчас?';}
+const AI_FALLBACK_QUESTIONS=[
+  'Попробуй спросить себя: почему это важно именно сейчас?',
+  'Что самое главное в этой ситуации для тебя прямо сейчас?',
+  'Если бы эта проблема могла говорить — что бы она сказала?',
+  'Что бы ты хотел почувствовать вместо этого?'
+];
+function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
+function detectEmotion(text){
+  const l=text.toLowerCase();
+  for(const k in AI){if(AI[k].keys.some(w=>l.includes(w)))return AI[k];}
+  return null;
+}
+function generateChatResponse(text){
+  const emo=detectEmotion(text);
+  if(emo){return pick(emo.replies)+' '+pick(emo.questions);}
+  return pick(AI_FALLBACK_REPLIES)+' '+pick(AI_FALLBACK_QUESTIONS);
+}
+function findSmartQuestion(text){
+  const emo=detectEmotion(text);
+  if(emo){return pick(emo.questions);}
+  return pick(AI_FALLBACK_QUESTIONS);
+}
+function findMirrorResponse(allText){
+  const emo=detectEmotion(allText);
+  if(emo){return pick(emo.replies)+' '+pick(emo.questions);}
+  return 'Ты прошёл длинный путь, отвечая честно. Это уже много. '+pick(AI_FALLBACK_QUESTIONS);
+}
 
 function go(id){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');}
 let toastT;
@@ -502,7 +590,6 @@ function enterApp(){
   go('scr-home');
 }
 
-/* слайды */
 const slides=document.querySelectorAll('.slide');
 const odots=document.querySelectorAll('.odot');
 let onbIdx=0;
@@ -515,7 +602,6 @@ $('#onbBtn').onclick=()=>{
   else{go('scr-auth');setTimeout(()=>$('#nameInput').focus(),450);}
 };
 
-/* регистрация */
 function register(){
   const v=$('#nameInput').value.trim();
   name=v||'друг';
@@ -527,7 +613,6 @@ function register(){
 $('#enterBtn').onclick=register;
 $('#nameInput').addEventListener('keydown',e=>{if(e.key==='Enter')register();});
 
-/* PIN-вход */
 $('#pinBtn').onclick=tryPin;
 $('#pinInput').addEventListener('keydown',e=>{if(e.key==='Enter')tryPin();});
 function tryPin(){
@@ -536,13 +621,11 @@ function tryPin(){
   else{toast('Неверный пароль 🙈');$('#pinInput').value='';$('#pinInput').focus();}
 }
 
-/* стартовая логика */
 if(name && onboarded){
   if(pin){go('scr-pin');}
   else{enterApp();}
 }else{go('scr-onb');showSlide(0);}
 
-/* главная: плитки режимов */
 function renderHome(){
   document.querySelectorAll('.tile').forEach(t=>t.classList.toggle('sel',t.dataset.mode===mode));
   $('#subRow').classList.toggle('show',mode==='mirror');
@@ -572,7 +655,6 @@ $('#startBtn').onclick=()=>{
 $('#histBtn').onclick=()=>{renderHist();go('scr-hist');};
 $('#profBtn').onclick=()=>{renderProf();go('scr-prof');};
 
-/* профиль */
 function renderProf(){
   $('#profName').textContent=name||'друг';
   $('#profAva').textContent=(name||'?').trim().charAt(0).toUpperCase();
@@ -610,7 +692,6 @@ $('#logoutBtn').onclick=()=>{
   toast('До встречи 💜');
 };
 
-/* диалог */
 $('#homeBtn').onclick=()=>go('scr-home');
 function resetDialog(){
   phase='start';session={start:null,whys:[],action:null};
@@ -703,7 +784,6 @@ $('#capsuleBtn').onclick=()=>{
 $('#againBtn').onclick=()=>{resetDialog();go('scr-main');setTimeout(()=>$('#msgInput').focus(),450);};
 $('#toHomeBtn').onclick=()=>go('scr-home');
 
-/* история */
 $('#backBtn').onclick=()=>go('scr-home');
 function renderHist(){
   const L=$('#histList');
@@ -718,7 +798,6 @@ function renderHist(){
   $('#clearHist').onclick=()=>{history=[];try{localStorage.removeItem('sixwhy_hist');}catch(e){}renderHist();toast('История очищена');};
 }
 
-/* чат */
 $('#chatBackBtn').onclick=()=>go('scr-home');
 function addChatMsg(t,u){
   const a=$('#chatArea');const m=document.createElement('div');
