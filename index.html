@@ -28,7 +28,7 @@ body{font-family:var(--sans);color:var(--ink);background:#F2EADB;-webkit-tap-hig
 .scr.active{opacity:1;transform:none;pointer-events:auto}
 button{font-family:var(--sans)}
 
-/* ── СЛАЙДЫ (до регистрации) ── */
+/* слайды */
 #scr-onb{padding:max(20px,env(safe-area-inset-top)) 30px max(26px,env(safe-area-inset-bottom))}
 .onb-top{text-align:center;font-family:var(--serif);font-size:22px;font-weight:600}
 .onb-top em{font-style:italic;color:var(--lilac)}
@@ -43,7 +43,7 @@ button{font-family:var(--sans)}
 .odot{width:7px;height:7px;border-radius:50%;background:#E0D8E8;transition:.35s}
 .odot.on{background:var(--butter);width:20px;border-radius:100px}
 
-/* ── РЕГИСТРАЦИЯ ── */
+/* регистрация */
 #scr-auth{padding:28px 30px max(26px,env(safe-area-inset-bottom));justify-content:center;overflow-y:auto}
 .logo-dots{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
 .logo-dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--lilac);opacity:0;animation:dotIn .5s forwards}
@@ -56,8 +56,8 @@ button{font-family:var(--sans)}
 .wordmark em{font-style:italic;color:var(--lilac)}
 .auth-sub{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--mut);margin:10px 0 28px}
 .field-lbl{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:9px}
-#nameInput{width:100%;border:1.5px solid var(--line);border-radius:15px;padding:15px 16px;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--card);outline:none;transition:.25s}
-#nameInput:focus{border-color:var(--lilac);box-shadow:0 0 0 4px #9b7ebd1c}
+#nameInput,#pinInput{width:100%;border:1.5px solid var(--line);border-radius:15px;padding:15px 16px;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--card);outline:none;transition:.25s}
+#nameInput:focus,#pinInput:focus{border-color:var(--lilac);box-shadow:0 0 0 4px #9b7ebd1c}
 .go-btn{width:100%;margin-top:14px;border:none;border-radius:15px;padding:16px;font-size:15px;font-weight:800;background:var(--lilac);color:#fff;cursor:pointer;transition:.25s;box-shadow:0 12px 26px #9b7ebd3d}
 .go-btn:hover{background:#8A6DAA}
 .go-btn:active{transform:scale(.98)}
@@ -68,34 +68,59 @@ button{font-family:var(--sans)}
 .priv-note{margin-top:22px;background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:14px;padding:13px 15px;font-size:12.5px;line-height:1.55;color:var(--butter-ink);display:flex;gap:10px}
 .disclaimer{margin-top:14px;font-size:11px;line-height:1.5;color:#b0a5b8;text-align:center}
 
-/* ── ГЛАВНАЯ («ДОМ») ── */
+/* PIN-экран */
+#scr-pin{padding:30px;justify-content:center;align-items:center;text-align:center}
+.pin-lock{font-size:44px;margin-bottom:14px}
+#scr-pin h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px;margin-bottom:8px}
+#scr-pin .ps{font-size:13px;color:var(--mut);margin-bottom:24px}
+#pinInput{max-width:200px;text-align:center;letter-spacing:12px;font-size:20px;font-weight:800}
+
+/* главная */
 #scr-home{padding:max(18px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom));overflow-y:auto}
-.home-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.home-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
 .home-top .wm{font-family:var(--serif);font-size:24px;font-weight:600}
 .home-top .wm em{font-style:italic;color:var(--lilac)}
 .home-top .acts{display:flex;gap:4px}
 .ibtn{border:none;background:transparent;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:var(--mut);cursor:pointer;transition:.2s}
 .ibtn:hover{background:var(--butter-soft);color:var(--butter-mut)}
 .ibtn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.greet{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;margin-bottom:22px}
+.greet{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;margin-bottom:18px}
 .greet b{color:var(--lilac);font-weight:600}
-.quote-card{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:18px;padding:20px 20px 18px;margin-bottom:16px;position:relative}
-.quote-card::before{content:"❝";position:absolute;top:10px;left:16px;font-family:var(--serif);font-size:30px;color:var(--butter);line-height:1}
-.qc-q{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.45;color:var(--butter-ink);padding-left:22px}
-.qc-a{font-size:11px;font-weight:700;color:var(--butter-mut);margin-top:8px;text-align:right}
-.about-card{background:var(--card);border:1px solid var(--butter-line);border-radius:18px;padding:16px 18px;margin-bottom:24px;cursor:pointer;transition:.25s}
+.ann{background:var(--lilac-soft);border:1px solid var(--lilac-line);color:#5A4A6A;border-radius:12px;padding:10px 14px;font-size:12.5px;line-height:1.5;margin-bottom:14px}
+.quote-card{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:18px;padding:18px 18px 16px;margin-bottom:12px;position:relative}
+.quote-card.lil{background:var(--lilac-soft);border-color:var(--lilac-line)}
+.quote-card::before{content:"❝";position:absolute;top:8px;left:14px;font-family:var(--serif);font-size:28px;color:var(--butter);line-height:1}
+.quote-card.lil::before{color:var(--lilac)}
+.qc-lbl{font-size:9.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:6px;padding-left:20px}
+.quote-card.lil .qc-lbl{color:var(--lilac)}
+.qc-q{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.45;color:var(--butter-ink);padding-left:20px}
+.quote-card.lil .qc-q{color:#4A3A5A}
+.qc-a{font-size:11px;font-weight:700;color:var(--butter-mut);margin-top:6px;text-align:right}
+.quote-card.lil .qc-a{color:var(--lilac)}
+.about-card{background:var(--card);border:1px solid var(--butter-line);border-radius:18px;padding:14px 16px;margin:6px 0 18px;cursor:pointer;transition:.25s}
 .about-card:hover{border-color:var(--butter)}
-.about-head{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:8px}
+.about-head{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--butter-mut)}
 .about-head .chev{margin-left:auto;transition:.3s;color:var(--butter)}
 .about-card.open .about-head .chev{transform:rotate(180deg)}
 .about-body{font-size:13.5px;line-height:1.6;color:var(--mut);max-height:0;overflow:hidden;transition:max-height .4s ease}
-.about-card.open .about-body{max-height:200px}
-.start-btn{width:100%;border:none;border-radius:18px;padding:18px;font-size:16px;font-weight:800;background:var(--lilac);color:#fff;cursor:pointer;transition:.25s;box-shadow:0 14px 30px #9b7ebd3d;display:flex;align-items:center;justify-content:center;gap:10px}
+.about-card.open .about-body{max-height:220px;padding-top:10px}
+.tiles-lbl{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{border-radius:18px;padding:16px 14px;border:1.5px solid var(--butter-line);background:var(--card);cursor:pointer;transition:.25s;text-align:left}
+.tile .ti{font-size:22px}
+.tile .tt{font-size:13.5px;font-weight:800;margin-top:8px}
+.tile .td{font-size:11px;color:var(--mut);margin-top:3px;line-height:1.4}
+.tile.sel{border-color:var(--lilac);background:var(--lilac-soft);box-shadow:0 8px 20px #9b7ebd22}
+.subrow{display:none;gap:8px;margin-top:12px}
+.subrow.show{display:flex}
+.pill{flex:1;border:1.5px solid var(--butter-line);border-radius:100px;padding:11px 8px;font-size:12.5px;font-weight:700;background:var(--card);cursor:pointer;transition:.2s;color:var(--mut)}
+.pill.sel{border-color:var(--butter);background:var(--butter-soft);color:var(--butter-ink)}
+.start-btn{width:100%;margin-top:18px;border:none;border-radius:18px;padding:18px;font-size:16px;font-weight:800;background:var(--lilac);color:#fff;cursor:pointer;transition:.25s;box-shadow:0 14px 30px #9b7ebd3d}
 .start-btn:hover{background:#8A6DAA;transform:translateY(-2px)}
 .start-btn:active{transform:scale(.98)}
-.home-foot{text-align:center;font-size:11px;color:#b8aec2;margin-top:22px;line-height:1.5}
+.home-foot{text-align:center;font-size:11px;color:#b8aec2;margin-top:20px;line-height:1.5}
 
-/* ── ДИАЛОГ (цепочка) ── */
+/* диалог */
 #scr-main{display:flex;flex-direction:column}
 .topbar{display:flex;justify-content:space-between;align-items:center;padding:max(10px,env(safe-area-inset-top)) 16px 6px}
 .topbar .wm{font-family:var(--serif);font-size:21px;font-weight:600}
@@ -136,7 +161,7 @@ button{font-family:var(--sans)}
 .thinking i:nth-child(2){animation-delay:.15s}.thinking i:nth-child(3){animation-delay:.3s}
 @keyframes bl{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-5px);opacity:1}}
 
-/* ── ФИНАЛ ── */
+/* финал */
 #scr-done{padding:34px 28px max(28px,env(safe-area-inset-bottom));overflow-y:auto;align-items:center;text-align:center}
 .done-check svg circle{stroke-dasharray:183;stroke-dashoffset:183;animation:draw .9s .2s ease forwards}
 .done-check svg path{stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s 1s ease forwards}
@@ -161,7 +186,7 @@ button{font-family:var(--sans)}
 .done-btns .go-btn{margin-top:0}
 .done-disc{font-size:10.5px;color:#b8aec2;margin-top:18px;line-height:1.5;animation:rise .6s 1.7s both}
 
-/* ── ИСТОРИЯ ── */
+/* история */
 #scr-hist{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .hist-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .hist-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
@@ -175,38 +200,37 @@ button{font-family:var(--sans)}
 .hempty{text-align:center;color:#b8aec2;padding:70px 20px;font-size:14px;line-height:1.6}
 .clear-link{display:block;margin:8px auto 0;border:none;background:none;color:#9B5A7A;font-size:12.5px;font-weight:700;cursor:pointer}
 
-/* ── ПРОФИЛЬ ── */
+/* профиль */
 #scr-prof{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .prof-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
 .prof-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
-.prof-user{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.prof-user{display:flex;align-items:center;gap:14px;margin-bottom:24px}
 .prof-ava{width:56px;height:56px;border-radius:18px;background:var(--lilac);display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:24px;color:#fff;flex-shrink:0}
 .prof-user .pn{font-size:17px;font-weight:700}
 .prof-user .ps{font-size:12.5px;color:var(--mut);margin-top:2px}
-.mode-card{background:var(--card);border:1.5px solid var(--butter-line);border-radius:18px;padding:18px 20px;margin-bottom:14px}
-.mode-card h3{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:14px}
-.mode-opt{display:flex;align-items:flex-start;gap:13px;padding:13px 14px;border:1.5px solid var(--butter-line);border-radius:14px;margin-bottom:10px;cursor:pointer;transition:.22s}
-.mode-opt:last-child{margin-bottom:0}
-.mode-opt:hover{border-color:var(--butter)}
-.mode-opt.sel{border-color:var(--butter);background:var(--butter-soft)}
-.mode-radio{width:20px;height:20px;border-radius:50%;border:2px solid var(--butter);flex-shrink:0;margin-top:1px;display:grid;place-items:center;transition:.22s}
-.mode-opt.sel .mode-radio{border-color:var(--butter)}
-.mode-opt.sel .mode-radio::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--butter)}
-.mode-opt .mt{font-size:14.5px;font-weight:700}
-.mode-opt .md{font-size:12.5px;color:var(--mut);line-height:1.5;margin-top:3px}
-.sub-modes{margin-top:12px;padding-top:12px;border-top:1px solid var(--butter-line);display:none}
-.mode-opt.sel .sub-modes{display:block}
-.sub-opt{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--butter-line);border-radius:10px;margin-bottom:8px;cursor:pointer;transition:.2s;font-size:13px}
-.sub-opt:last-child{margin-bottom:0}
-.sub-opt:hover{border-color:var(--butter)}
-.sub-opt.sel{border-color:var(--butter);background:var(--butter-soft);font-weight:600}
-.intro-btn{width:100%;margin-top:14px;border:none;border-radius:15px;padding:14px;background:var(--butter);font-size:14px;font-weight:800;color:var(--butter-ink);cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 10px 22px #efc36840}
+.p-card{background:var(--card);border:1.5px solid var(--butter-line);border-radius:18px;padding:18px 20px;margin-bottom:14px}
+.p-card h3{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:12px}
+.p-card .st-line{font-size:13px;color:var(--mut);margin-bottom:12px;line-height:1.5}
+.pin-row{display:flex;gap:8px}
+.pin-row input{flex:1;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-family:var(--sans);font-size:16px;letter-spacing:6px;font-weight:800;background:var(--card);outline:none;text-align:center}
+.pin-row input:focus{border-color:var(--lilac)}
+.pin-row button{border:none;border-radius:12px;padding:12px 16px;font-size:13px;font-weight:800;cursor:pointer;transition:.2s}
+#setPinBtn{background:var(--lilac);color:#fff}
+#setPinBtn:hover{background:#8A6DAA}
+#removePinBtn{background:transparent;border:1.5px solid #e0c9c9 !important;color:#b06a6a}
+.creator-card{background:linear-gradient(135deg,var(--lilac-soft),var(--butter-soft));border:1.5px solid var(--lilac-line);border-radius:18px;padding:18px 20px;margin-bottom:14px;display:none}
+.creator-card.show{display:block}
+.creator-card h3{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--lilac);margin-bottom:10px}
+.creator-card p{font-size:12.5px;line-height:1.55;color:var(--mut);margin-bottom:12px}
+.stats-btn{width:100%;border:none;border-radius:12px;padding:13px;background:var(--lilac);color:#fff;font-size:13.5px;font-weight:800;cursor:pointer;transition:.2s}
+.stats-btn:hover{background:#8A6DAA}
+.intro-btn{width:100%;margin-top:4px;border:none;border-radius:15px;padding:14px;background:var(--butter);font-size:14px;font-weight:800;color:var(--butter-ink);cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 10px 22px #efc36840}
 .intro-btn:hover{background:#D4A84A}
 .logout-btn{width:100%;margin-top:10px;border:1.5px solid #e0c9c9;border-radius:15px;padding:14px;background:transparent;font-size:14px;font-weight:700;color:#b06a6a;cursor:pointer;transition:.25s}
 .logout-btn:hover{background:#f7eaea}
 .prof-ver{text-align:center;color:var(--butter-mut);font-size:11px;margin-top:20px;letter-spacing:.1em}
 
-/* ── ЧАТ (прямой диалог) ── */
+/* чат */
 #scr-chat{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto;display:flex;flex-direction:column}
 .chat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .chat-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
@@ -229,39 +253,22 @@ button{font-family:var(--sans)}
 <body>
 <main class="app">
 
-  <!-- 1. СЛАЙДЫ (самые первые, до регистрации) -->
+  <!-- СЛАЙДЫ -->
   <section class="scr active" id="scr-onb">
     <div class="onb-top">Six<em>Why</em></div>
     <div class="onb-slides">
       <div class="slide active">
-        <svg width="130" height="130" viewBox="0 0 120 120" fill="none">
-          <path d="M14 84C30 40 52 40 56 62C60 84 40 92 38 74C36 56 66 44 82 52C98 60 92 84 106 78" stroke="#9B7EBD" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="14" cy="84" r="4" fill="#EFC368" opacity=".7"/>
-        </svg>
+        <svg width="130" height="130" viewBox="0 0 120 120" fill="none"><path d="M14 84C30 40 52 40 56 62C60 84 40 92 38 74C36 56 66 44 82 52C98 60 92 84 106 78" stroke="#9B7EBD" stroke-width="2.5" stroke-linecap="round"/><circle cx="14" cy="84" r="4" fill="#EFC368" opacity=".7"/></svg>
         <div class="st">Часто мы не можем решить проблему — даже когда выход очень прост.</div>
         <div class="benefit">💡 <b>SixWhy помогает</b> распутать мысли за 2 минуты и найти корень того, что тревожит.</div>
       </div>
       <div class="slide">
-        <svg width="130" height="130" viewBox="0 0 120 120" fill="none">
-          <rect x="12" y="18" width="58" height="40" rx="14" stroke="#9B7EBD" stroke-width="2.5"/>
-          <path d="M26 58v12l12-12" stroke="#9B7EBD" stroke-width="2.5" stroke-linejoin="round"/>
-          <rect x="50" y="56" width="58" height="40" rx="14" fill="#FBF0D7" stroke="#EFC368" stroke-width="2.5"/>
-          <path d="M94 96v12l-12-12" stroke="#EFC368" stroke-width="2.5" stroke-linejoin="round"/>
-          <circle cx="31" cy="38" r="3" fill="#9B7EBD"/><circle cx="41" cy="38" r="3" fill="#9B7EBD"/><circle cx="51" cy="38" r="3" fill="#9B7EBD"/>
-          <circle cx="69" cy="76" r="3" fill="#EFC368"/><circle cx="79" cy="76" r="3" fill="#EFC368"/><circle cx="89" cy="76" r="3" fill="#EFC368"/>
-        </svg>
+        <svg width="130" height="130" viewBox="0 0 120 120" fill="none"><rect x="12" y="18" width="58" height="40" rx="14" stroke="#9B7EBD" stroke-width="2.5"/><path d="M26 58v12l12-12" stroke="#9B7EBD" stroke-width="2.5" stroke-linejoin="round"/><rect x="50" y="56" width="58" height="40" rx="14" fill="#FBF0D7" stroke="#EFC368" stroke-width="2.5"/><path d="M94 96v12l-12-12" stroke="#EFC368" stroke-width="2.5" stroke-linejoin="round"/><circle cx="31" cy="38" r="3" fill="#9B7EBD"/><circle cx="41" cy="38" r="3" fill="#9B7EBD"/><circle cx="51" cy="38" r="3" fill="#9B7EBD"/><circle cx="69" cy="76" r="3" fill="#EFC368"/><circle cx="79" cy="76" r="3" fill="#EFC368"/><circle cx="89" cy="76" r="3" fill="#EFC368"/></svg>
         <div class="st">На самом деле нужно только одно — честно <b>поговорить с самим собой</b>.</div>
         <div class="benefit">✨ <b>Ты получишь</b> ясность, спокойствие и конкретный шаг — вместо бесконечного круга мыслей.</div>
       </div>
       <div class="slide">
-        <svg width="130" height="130" viewBox="0 0 120 120" fill="none">
-          <circle cx="60" cy="16" r="5" stroke="#9B7EBD" stroke-width="2.5" opacity=".4"/>
-          <circle cx="60" cy="34" r="5.5" stroke="#9B7EBD" stroke-width="2.5" opacity=".55"/>
-          <circle cx="60" cy="52" r="6" stroke="#9B7EBD" stroke-width="2.5" opacity=".7"/>
-          <circle cx="60" cy="70" r="6.5" stroke="#EFC368" stroke-width="2.5" opacity=".85"/>
-          <circle cx="60" cy="89" r="7" fill="#EFC368"/>
-          <path d="M60 102v14M53 105.5l14 7M67 105.5l-14 7" stroke="#EFC368" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
+        <svg width="130" height="130" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="16" r="5" stroke="#9B7EBD" stroke-width="2.5" opacity=".4"/><circle cx="60" cy="34" r="5.5" stroke="#9B7EBD" stroke-width="2.5" opacity=".55"/><circle cx="60" cy="52" r="6" stroke="#9B7EBD" stroke-width="2.5" opacity=".7"/><circle cx="60" cy="70" r="6.5" stroke="#EFC368" stroke-width="2.5" opacity=".85"/><circle cx="60" cy="89" r="7" fill="#EFC368"/><path d="M60 102v14M53 105.5l14 7M67 105.5l-14 7" stroke="#EFC368" stroke-width="2.5" stroke-linecap="round"/></svg>
         <div class="st">Именно для этого создано приложение <b>SixWhy</b>: шесть вопросов доведут до корня, а седьмой подскажет шаг.</div>
         <div class="benefit">🌱 <b>Результат:</b> ты поймёшь, что чувствуешь, почему, и что можешь сделать прямо сейчас.</div>
       </div>
@@ -272,7 +279,7 @@ button{font-family:var(--sans)}
     </div>
   </section>
 
-  <!-- 2. РЕГИСТРАЦИЯ (после слайдов) -->
+  <!-- РЕГИСТРАЦИЯ -->
   <section class="scr" id="scr-auth">
     <div class="logo-dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="wordmark">Six<em>Why</em></div>
@@ -284,7 +291,16 @@ button{font-family:var(--sans)}
     <div class="disclaimer">SixWhy — инструмент саморефлексии, он не заменяет консультацию психолога или врача.</div>
   </section>
 
-  <!-- 3. ГЛАВНАЯ «ДОМ» (цитата + вставка «для чего» + кнопка начать) -->
+  <!-- PIN -->
+  <section class="scr" id="scr-pin">
+    <div class="pin-lock">🔐</div>
+    <h2>Введи пароль</h2>
+    <div class="ps">Это твоё личное пространство</div>
+    <input type="password" id="pinInput" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="off">
+    <button class="go-btn" id="pinBtn" style="max-width:200px">Открыть →</button>
+  </section>
+
+  <!-- ГЛАВНАЯ -->
   <section class="scr" id="scr-home">
     <div class="home-top">
       <div class="wm">Six<em>Why</em></div>
@@ -294,16 +310,37 @@ button{font-family:var(--sans)}
       </div>
     </div>
     <div class="greet" id="greet">Привет, <b>друг</b> 👋</div>
-    <div class="quote-card"><div class="qc-q" id="quoteText"></div><div class="qc-a" id="quoteAuthor"></div></div>
+    <div class="ann" id="annBar" style="display:none"></div>
+    <div class="quote-card">
+      <div class="qc-lbl">Цитата дня</div>
+      <div class="qc-q" id="quoteText"></div>
+      <div class="qc-a" id="quoteAuthor"></div>
+    </div>
+    <div class="quote-card lil">
+      <div class="qc-lbl">Слово создателя</div>
+      <div class="qc-q" id="quote2Text"></div>
+      <div class="qc-a" id="quote2Author"></div>
+    </div>
     <div class="about-card" id="aboutCard">
       <div class="about-head">💭 Для чего это приложение <span class="chev">▾</span></div>
       <div class="about-body">SixWhy — это 2 минуты честного разговора с собой. Шесть вопросов «почему» доводят до корня того, что тревожит, а седьмой подсказывает маленький шаг. Без оценок, без спешки — только ты и твои мысли.</div>
+    </div>
+    <div class="tiles-lbl">Что выбираешь сегодня?</div>
+    <div class="tiles">
+      <div class="tile sel" data-mode="empathy"><div class="ti">💜</div><div class="tt">Эмпатия</div><div class="td">умный третий вопрос</div></div>
+      <div class="tile" data-mode="classic"><div class="ti">💛</div><div class="tt">Классика</div><div class="td">шесть «почему» подряд</div></div>
+      <div class="tile" data-mode="mirror"><div class="ti">🧠</div><div class="tt">ИИ-зеркало</div><div class="td">бережный разбор или диалог</div></div>
+      <div class="tile" data-mode="capsule"><div class="ti">🌱</div><div class="tt">Капсула</div><div class="td">цепочка + заметка на память</div></div>
+    </div>
+    <div class="subrow" id="subRow">
+      <button class="pill sel" data-sub="analyze">📊 Анализ цепочки</button>
+      <button class="pill" data-sub="chat">💬 Прямой диалог</button>
     </div>
     <button class="start-btn" id="startBtn">Начать разговор с собой →</button>
     <div class="home-foot">Записи остаются только у тебя · без рекламы и сбора данных</div>
   </section>
 
-  <!-- 4. ДИАЛОГ (цепочка почему) -->
+  <!-- ДИАЛОГ -->
   <section class="scr" id="scr-main">
     <div class="topbar">
       <div class="wm">Six<em>Why</em></div>
@@ -327,7 +364,7 @@ button{font-family:var(--sans)}
     </div>
   </section>
 
-  <!-- 5. ФИНАЛ -->
+  <!-- ФИНАЛ -->
   <section class="scr" id="scr-done">
     <div class="done-check">
       <svg viewBox="0 0 64 64" width="66" height="66"><circle cx="32" cy="32" r="29" fill="none" stroke="#9B7EBD" stroke-width="2.5"/><path d="M20 33l8.5 8.5L44 25" fill="none" stroke="#EFC368" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -346,7 +383,7 @@ button{font-family:var(--sans)}
     <div class="done-disc">Если тебе очень тяжело — пожалуйста, обратись к специалисту или на линию психологической помощи.</div>
   </section>
 
-  <!-- 6. ИСТОРИЯ -->
+  <!-- ИСТОРИЯ -->
   <section class="scr" id="scr-hist">
     <div class="hist-head">
       <h2>История</h2>
@@ -355,7 +392,7 @@ button{font-family:var(--sans)}
     <div id="histList"></div>
   </section>
 
-  <!-- 7. ПРОФИЛЬ -->
+  <!-- ПРОФИЛЬ -->
   <section class="scr" id="scr-prof">
     <div class="prof-head">
       <h2>Профиль</h2>
@@ -363,40 +400,31 @@ button{font-family:var(--sans)}
     </div>
     <div class="prof-user">
       <div class="prof-ava" id="profAva">?</div>
-      <div><div class="pn" id="profName">—</div><div class="ps">выбери, как тебе удобнее работать с собой</div></div>
+      <div><div class="pn" id="profName">—</div><div class="ps">твоё личное пространство</div></div>
     </div>
-    <div class="mode-card">
-      <h3>Режим работы</h3>
-      <div class="mode-opt sel" data-mode="empathy">
-        <div class="mode-radio"></div>
-        <div><div class="mt">💜 Эмпатия</div><div class="md">Третий вопрос подбирается под твою проблему — мягко и по смыслу.</div></div>
-      </div>
-      <div class="mode-opt" data-mode="classic">
-        <div class="mode-radio"></div>
-        <div><div class="mt">💛 Классика</div><div class="md">Шесть одинаковых «Почему?» подряд — чистая методика, медитативный ритм.</div></div>
-      </div>
-      <div class="mode-opt" data-mode="mirror">
-        <div class="mode-radio"></div>
-        <div>
-          <div class="mt">🧠 ИИ-зеркало</div>
-          <div class="md">Умный помощник, который слышит тебя. Выбери, как использовать:</div>
-          <div class="sub-modes">
-            <div class="sub-opt sel" data-sub="analyze">📊 Анализ цепочки — пройди вопросы, получи бережный разбор</div>
-            <div class="sub-opt" data-sub="chat">💬 Прямой диалог — напиши проблему, получи ответ сразу</div>
-          </div>
-        </div>
-      </div>
-      <div class="mode-opt" data-mode="capsule">
-        <div class="mode-radio"></div>
-        <div><div class="mt">🌱 Капсула</div><div class="md">В конце любой цепочки можно сохранить её как личную заметку-напоминание.</div></div>
+
+    <div class="p-card">
+      <h3>🔐 Конфиденциальность</h3>
+      <div class="st-line" id="pinStatus">Пароль не установлен — приложение открывается свободно.</div>
+      <div class="pin-row">
+        <input type="password" id="pinInputProf" inputmode="numeric" maxlength="4" placeholder="4 цифры">
+        <button id="setPinBtn">Создать</button>
+        <button id="removePinBtn" style="display:none">Убрать</button>
       </div>
     </div>
+
+    <div class="creator-card" id="creatorCard">
+      <h3>👑 Уголок создателя</h3>
+      <p>Только ты видишь этот блок. Здесь — статистика посещений твоего приложения: уникальные гости, просмотры и откуда приходят люди.</p>
+      <button class="stats-btn" id="statsBtn">📊 Посмотреть статистику</button>
+    </div>
+
     <button class="intro-btn" id="introBtn">📖 Посмотреть введение</button>
     <button class="logout-btn" id="logoutBtn">Выйти из аккаунта</button>
     <div class="prof-ver">SIXWHY · СОЗДАНО С ЛЮБОВЬЮ</div>
   </section>
 
-  <!-- 8. ЧАТ (прямой диалог) -->
+  <!-- ЧАТ -->
   <section class="scr" id="scr-chat">
     <div class="chat-head">
       <h2>🧠 Прямой диалог</h2>
@@ -417,20 +445,26 @@ button{font-family:var(--sans)}
 <script>
 const $=s=>document.querySelector(s);
 let phase='start', session={start:null,whys:[],action:null};
-let name='', history=[], onboarded=false, mode='empathy', subMode='analyze';
+let name='', history=[], onboarded=false, mode='empathy', subMode='analyze', pin='';
 try{
   name=localStorage.getItem('sixwhy_name')||'';
   history=JSON.parse(localStorage.getItem('sixwhy_hist')||'[]');
   onboarded=localStorage.getItem('sixwhy_onb')==='1';
   mode=localStorage.getItem('sixwhy_mode')||'empathy';
   subMode=localStorage.getItem('sixwhy_submode')||'analyze';
+  pin=localStorage.getItem('sixwhy_pin')||'';
 }catch(e){history=[];}
 
-let CFG={quote:'Даже самый маленький шаг — уже шаг.',author:'SixWhy',announcement:''};
+let CFG={quote:'Даже самый маленький шаг — уже шаг.',author:'SixWhy',quote2:'Ты сильнее, чем тебе кажется. 💜',author2:'создательница SixWhy',announcement:'',creator:''};
 function renderQuote(){
   $('#quoteText').textContent='«'+CFG.quote+'»';
   const a=$('#quoteAuthor');
   if(CFG.author){a.textContent='— '+CFG.author;a.style.display='block';}else{a.style.display='none';}
+  $('#quote2Text').textContent='«'+CFG.quote2+'»';
+  const a2=$('#quote2Author');
+  if(CFG.author2){a2.textContent='— '+CFG.author2;a2.style.display='block';}else{a2.style.display='none';}
+  const ann=$('#annBar');
+  if(CFG.announcement){ann.textContent=CFG.announcement;ann.style.display='block';}else{ann.style.display='none';}
 }
 renderQuote();
 fetch('config.json?'+Date.now(),{cache:'no-store'})
@@ -452,7 +486,6 @@ const CATEGORIES=[
 ];
 const FALLBACK_Q='Загляни чуть глубже — что стоит за этими словами?';
 const FALLBACK_RESP='Ты прошёл длинный путь, отвечая честно. Это уже много. Даже если корень пока не ясен — ты ближе к себе, чем был в начале.';
-
 function findSmartQuestion(t){const l=t.toLowerCase();for(const c of CATEGORIES){if(c.keywords.some(k=>l.includes(k)))return c.q;}return FALLBACK_Q;}
 function findMirrorResponse(t){const l=t.toLowerCase();for(const c of CATEGORIES){if(c.keywords.some(k=>l.includes(k)))return c.resp;}return FALLBACK_RESP;}
 function generateChatResponse(t){const l=t.toLowerCase();for(const c of CATEGORIES){if(c.keywords.some(k=>l.includes(k)))return c.resp+' Попробуй спросить себя: почему это важно именно сейчас? Иногда ответ приходит не сразу, и это нормально.';}return 'Я слышу тебя. То, что ты поделился — уже шаг. Попробуй спросить себя: что самое важное в этой ситуации для тебя прямо сейчас?';}
@@ -463,28 +496,26 @@ function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');cl
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 function scrollDown(){const c=$('#canvas');c.scrollTo({top:c.scrollHeight,behavior:'smooth'});}
 
-/* куда вести после входа: если выбран прямой диалог — в чат, иначе на «дом» */
 function enterApp(){
   $('#greet').innerHTML='Привет, <b>'+esc(name||'друг')+'</b> 👋';
-  if(mode==='mirror' && subMode==='chat'){go('scr-chat');setTimeout(()=>$('#chatInput').focus(),450);}
-  else{go('scr-home');}
+  renderHome();
+  go('scr-home');
 }
 
-/* ── СЛАЙДЫ ── */
+/* слайды */
 const slides=document.querySelectorAll('.slide');
 const odots=document.querySelectorAll('.odot');
 let onbIdx=0;
 function showSlide(i){
   slides.forEach((s,k)=>s.classList.toggle('active',k===i));
   odots.forEach((d,k)=>d.classList.toggle('on',k===i));
-  $('#onbBtn').textContent=(i===slides.length-1)?'Далее →':'Далее →';
 }
 $('#onbBtn').onclick=()=>{
   if(onbIdx<slides.length-1){onbIdx++;showSlide(onbIdx);}
   else{go('scr-auth');setTimeout(()=>$('#nameInput').focus(),450);}
 };
 
-/* ── РЕГИСТРАЦИЯ ── */
+/* регистрация */
 function register(){
   const v=$('#nameInput').value.trim();
   name=v||'друг';
@@ -496,61 +527,90 @@ function register(){
 $('#enterBtn').onclick=register;
 $('#nameInput').addEventListener('keydown',e=>{if(e.key==='Enter')register();});
 
-/* стартовая логика: слайды → регистрация → дом */
-if(name && onboarded){ enterApp(); }
-else { go('scr-onb'); showSlide(0); }
+/* PIN-вход */
+$('#pinBtn').onclick=tryPin;
+$('#pinInput').addEventListener('keydown',e=>{if(e.key==='Enter')tryPin();});
+function tryPin(){
+  const v=$('#pinInput').value;
+  if(v===pin){$('#pinInput').value='';enterApp();}
+  else{toast('Неверный пароль 🙈');$('#pinInput').value='';$('#pinInput').focus();}
+}
 
-/* ── ГЛАВНАЯ «ДОМ» ── */
-$('#aboutCard').onclick=()=>{$('#aboutCard').classList.toggle('open');};
+/* стартовая логика */
+if(name && onboarded){
+  if(pin){go('scr-pin');}
+  else{enterApp();}
+}else{go('scr-onb');showSlide(0);}
+
+/* главная: плитки режимов */
+function renderHome(){
+  document.querySelectorAll('.tile').forEach(t=>t.classList.toggle('sel',t.dataset.mode===mode));
+  $('#subRow').classList.toggle('show',mode==='mirror');
+  document.querySelectorAll('.pill').forEach(p=>p.classList.toggle('sel',p.dataset.sub===subMode));
+}
+document.querySelectorAll('.tile').forEach(t=>{
+  t.onclick=()=>{
+    mode=t.dataset.mode;
+    try{localStorage.setItem('sixwhy_mode',mode);}catch(e){}
+    renderHome();
+    toast(mode==='empathy'?'Эмпатия 💜':mode==='classic'?'Классика 💛':mode==='mirror'?'ИИ-зеркало 🧠':'Капсула 🌱');
+  };
+});
+document.querySelectorAll('.pill').forEach(p=>{
+  p.onclick=()=>{
+    subMode=p.dataset.sub;
+    try{localStorage.setItem('sixwhy_submode',subMode);}catch(e){}
+    renderHome();
+    toast(subMode==='analyze'?'Анализ цепочки':'Прямой диалог');
+  };
+});
+$('#aboutCard').onclick=()=>$('#aboutCard').classList.toggle('open');
 $('#startBtn').onclick=()=>{
   if(mode==='mirror' && subMode==='chat'){go('scr-chat');setTimeout(()=>$('#chatInput').focus(),450);}
-  else{ resetDialog(); go('scr-main'); setTimeout(()=>$('#msgInput').focus(),450); }
+  else{resetDialog();go('scr-main');setTimeout(()=>$('#msgInput').focus(),450);}
 };
 $('#histBtn').onclick=()=>{renderHist();go('scr-hist');};
 $('#profBtn').onclick=()=>{renderProf();go('scr-prof');};
 
-/* ── ПРОФИЛЬ ── */
+/* профиль */
 function renderProf(){
   $('#profName').textContent=name||'друг';
   $('#profAva').textContent=(name||'?').trim().charAt(0).toUpperCase();
-  document.querySelectorAll('.mode-opt').forEach(o=>o.classList.toggle('sel',o.dataset.mode===mode));
-  document.querySelectorAll('.sub-opt').forEach(o=>o.classList.toggle('sel',o.dataset.sub===subMode));
+  const hasPin=!!pin;
+  $('#pinStatus').textContent=hasPin?'Пароль установлен — приложение открывается только по нему. 🔐':'Пароль не установлен — приложение открывается свободно.';
+  $('#removePinBtn').style.display=hasPin?'block':'none';
+  $('#setPinBtn').textContent=hasPin?'Сменить':'Создать';
+  if(CFG.creator && name && name.toLowerCase()===String(CFG.creator).toLowerCase()){$('#creatorCard').classList.add('show');}
+  else{$('#creatorCard').classList.remove('show');}
 }
 $('#profBackBtn').onclick=()=>go('scr-home');
+$('#setPinBtn').onclick=()=>{
+  const v=$('#pinInputProf').value.trim();
+  if(!/^\d{4}$/.test(v)){toast('Пароль — ровно 4 цифры');return;}
+  pin=v;
+  try{localStorage.setItem('sixwhy_pin',pin);}catch(e){}
+  $('#pinInputProf').value='';
+  renderProf();toast('Пароль установлен 🔐');
+};
+$('#removePinBtn').onclick=()=>{
+  pin='';
+  try{localStorage.removeItem('sixwhy_pin');}catch(e){}
+  renderProf();toast('Пароль убран');
+};
+$('#statsBtn').onclick=()=>{window.open('https://github.com/singdarrad-oss/-SixWhy/graphs/traffic','_blank');};
 $('#introBtn').onclick=()=>{onbIdx=0;showSlide(0);go('scr-onb');};
-document.querySelectorAll('.mode-opt').forEach(o=>{
-  o.onclick=()=>{
-    mode=o.dataset.mode;
-    try{localStorage.setItem('sixwhy_mode',mode);}catch(e){}
-    renderProf();
-    toast(mode==='empathy'?'Эмпатия 💜':mode==='classic'?'Классика 💛':mode==='mirror'?'ИИ-зеркало 🧠':'Капсула 🌱');
-  };
-});
-document.querySelectorAll('.sub-opt').forEach(o=>{
-  o.onclick=(e)=>{
-    e.stopPropagation();
-    subMode=o.dataset.sub;
-    try{localStorage.setItem('sixwhy_submode',subMode);}catch(e){}
-    renderProf();
-    toast(subMode==='analyze'?'Анализ цепочки':'Прямой диалог');
-  };
-});
-
-/* ВЫХОД ИЗ АККАУНТА = полный сброс → слайды заново */
 $('#logoutBtn').onclick=()=>{
   try{
-    localStorage.removeItem('sixwhy_name');
-    localStorage.removeItem('sixwhy_onb');
-    localStorage.removeItem('sixwhy_mode');
-    localStorage.removeItem('sixwhy_submode');
+    localStorage.removeItem('sixwhy_name');localStorage.removeItem('sixwhy_onb');
+    localStorage.removeItem('sixwhy_mode');localStorage.removeItem('sixwhy_submode');
+    localStorage.removeItem('sixwhy_pin');
   }catch(e){}
-  name='';onboarded=false;mode='empathy';subMode='analyze';
-  onbIdx=0;showSlide(0);
-  go('scr-onb');
+  name='';onboarded=false;mode='empathy';subMode='analyze';pin='';
+  onbIdx=0;showSlide(0);go('scr-onb');
   toast('До встречи 💜');
 };
 
-/* ── ДИАЛОГ ── */
+/* диалог */
 $('#homeBtn').onclick=()=>go('scr-home');
 function resetDialog(){
   phase='start';session={start:null,whys:[],action:null};
@@ -618,6 +678,7 @@ $('#msgInput').addEventListener('keydown',e=>{if(e.key==='Enter')submit();});
 function finish(){
   const d=new Date();
   const done={date:d.toLocaleDateString('ru-RU',{day:'numeric',month:'long'})+', '+d.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'}),start:session.start,root:session.whys[session.whys.length-1],action:session.action,capsule:false};
+  if(mode==='capsule'){done.capsule=true;}
   history.push(done);
   try{localStorage.setItem('sixwhy_hist',JSON.stringify(history));}catch(e){}
   $('#rootText').textContent='«'+done.root+'»';
@@ -628,7 +689,7 @@ function finish(){
     $('#mirrorBlock').style.display='block';
   }else{$('#mirrorBlock').style.display='none';}
   const dc=$('#scr-done .done-check svg'),cl=dc.cloneNode(true);dc.parentNode.replaceChild(cl,dc);
-  setTimeout(()=>go('scr-done'),600);
+  setTimeout(()=>{go('scr-done');if(mode==='capsule')toast('Капсула сохранена 🌱');},600);
 }
 $('#capsuleBtn').onclick=()=>{
   if(history.length>0){
@@ -642,7 +703,7 @@ $('#capsuleBtn').onclick=()=>{
 $('#againBtn').onclick=()=>{resetDialog();go('scr-main');setTimeout(()=>$('#msgInput').focus(),450);};
 $('#toHomeBtn').onclick=()=>go('scr-home');
 
-/* ── ИСТОРИЯ ── */
+/* история */
 $('#backBtn').onclick=()=>go('scr-home');
 function renderHist(){
   const L=$('#histList');
@@ -657,7 +718,7 @@ function renderHist(){
   $('#clearHist').onclick=()=>{history=[];try{localStorage.removeItem('sixwhy_hist');}catch(e){}renderHist();toast('История очищена');};
 }
 
-/* ── ЧАТ ── */
+/* чат */
 $('#chatBackBtn').onclick=()=>go('scr-home');
 function addChatMsg(t,u){
   const a=$('#chatArea');const m=document.createElement('div');
