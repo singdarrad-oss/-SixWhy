@@ -5,24 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SixWhy — шесть «почему» и один шаг</title>
 <meta name="description" content="Минутная техника самопомощи: шесть вопросов доводят до корня эмоции, седьмой — подсказывает шаг. Записи остаются только у тебя.">
-<meta name="theme-color" content="#FEFCF9">
+<meta name="theme-color" content="#FAF4E7">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="SixWhy">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='116' fill='%239B7EBD'/%3E%3Ccircle cx='256' cy='110' r='18' fill='%23FEFCF9' opacity='.5'/%3E%3Ccircle cx='256' cy='172' r='20' fill='%23FEFCF9' opacity='.6'/%3E%3Ccircle cx='256' cy='234' r='22' fill='%23FEFCF9' opacity='.7'/%3E%3Ccircle cx='256' cy='296' r='24' fill='%23FEFCF9' opacity='.8'/%3E%3Ccircle cx='256' cy='358' r='26' fill='%23FEFCF9' opacity='.9'/%3E%3Ccircle cx='256' cy='426' r='30' fill='%23EFC368'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='116' fill='%239B7EBD'/%3E%3Ccircle cx='256' cy='110' r='18' fill='%23FAF4E7' opacity='.5'/%3E%3Ccircle cx='256' cy='172' r='20' fill='%23FAF4E7' opacity='.6'/%3E%3Ccircle cx='256' cy='234' r='22' fill='%23FAF4E7' opacity='.7'/%3E%3Ccircle cx='256' cy='296' r='24' fill='%23FAF4E7' opacity='.8'/%3E%3Ccircle cx='256' cy='358' r='26' fill='%23FAF4E7' opacity='.9'/%3E%3Ccircle cx='256' cy='426' r='30' fill='%23EFC368'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#2A2435;--mut:#7A6B8A;--lilac:#9B7EBD;--lilac-soft:#F3EDF7;
-  --lilac-line:#D4C5E2;--paper:#FEFCF9;--line:#E8E0EE;
+  --lilac-line:#D4C5E2;--paper:#FAF4E7;--card:#FFFDF6;--line:#E9DFCB;
   --butter:#EFC368;--butter-soft:#FBF0D7;--butter-line:#EFD9A7;
   --butter-ink:#5C4A1E;--butter-mut:#A9852F;
   --serif:'Cormorant Garamond',serif;--sans:'Manrope',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%}
-body{font-family:var(--sans);color:var(--ink);background:#FAF7F2;-webkit-tap-highlight-color:transparent}
+body{font-family:var(--sans);color:var(--ink);background:#F2EADB;-webkit-tap-highlight-color:transparent}
 .app{position:relative;max-width:480px;margin:0 auto;height:100vh;height:100dvh;background:var(--paper);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 0 60px #2a243522}
 .scr{position:absolute;inset:0;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .4s,transform .4s;display:flex;flex-direction:column}
 .scr.active{opacity:1;transform:none;pointer-events:auto}
@@ -39,11 +39,15 @@ button{font-family:var(--sans)}
 .wordmark em{font-style:italic;color:var(--lilac)}
 .auth-sub{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--mut);margin:10px 0 28px}
 .field-lbl{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:9px}
-#nameInput{width:100%;border:1.5px solid var(--line);border-radius:15px;padding:15px 16px;font-family:var(--sans);font-size:16px;color:var(--ink);background:#fff;outline:none;transition:.25s}
+#nameInput{width:100%;border:1.5px solid var(--line);border-radius:15px;padding:15px 16px;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--card);outline:none;transition:.25s}
 #nameInput:focus{border-color:var(--lilac);box-shadow:0 0 0 4px #9b7ebd1c}
-.go-btn{width:100%;margin-top:14px;border:none;border-radius:15px;padding:16px;font-size:15px;font-weight:800;background:linear-gradient(135deg,var(--lilac),var(--butter));color:#fff;cursor:pointer;transition:.25s;box-shadow:0 12px 26px #9b7ebd3d}
-.go-btn:hover{background:linear-gradient(135deg,#8A6DAA,#D4A84A)}
+.go-btn{width:100%;margin-top:14px;border:none;border-radius:15px;padding:16px;font-size:15px;font-weight:800;background:var(--lilac);color:#fff;cursor:pointer;transition:.25s;box-shadow:0 12px 26px #9b7ebd3d}
+.go-btn:hover{background:#8A6DAA}
 .go-btn:active{transform:scale(.98)}
+.go-btn.butter{background:var(--butter);color:var(--butter-ink);box-shadow:0 12px 26px #efc36840}
+.go-btn.butter:hover{background:#D4A84A}
+.go-btn.outline{background:transparent;color:var(--lilac);border:1.5px solid var(--lilac-line);box-shadow:none}
+.go-btn.outline:hover{border-color:var(--lilac)}
 .priv-note{margin-top:22px;background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:14px;padding:13px 15px;font-size:12.5px;line-height:1.55;color:var(--butter-ink);display:flex;gap:10px}
 .disclaimer{margin-top:14px;font-size:11px;line-height:1.5;color:#b0a5b8;text-align:center}
 #scr-onb{padding:max(20px,env(safe-area-inset-top)) 30px max(26px,env(safe-area-inset-bottom))}
@@ -67,13 +71,13 @@ button{font-family:var(--sans)}
 .ibtn:hover{background:var(--butter-soft);color:var(--butter-mut)}
 .ibtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .inputbar{display:flex;gap:9px;padding:6px 16px 10px}
-#msgInput{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:100px;padding:13px 19px;font-family:var(--sans);font-size:16px;color:var(--ink);background:#fff;outline:none;transition:.25s}
+#msgInput{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:100px;padding:13px 19px;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--card);outline:none;transition:.25s}
 #msgInput:focus{border-color:var(--butter);box-shadow:0 0 0 4px #efc36822}
 #msgInput::placeholder{color:#b8aec2}
-.send{width:46px;height:46px;flex-shrink:0;border:none;border-radius:50%;background:linear-gradient(135deg,var(--lilac),var(--butter));display:grid;place-items:center;cursor:pointer;transition:.25s;box-shadow:0 8px 18px #9b7ebd40}
-.send:hover{background:linear-gradient(135deg,#8A6DAA,#D4A84A)}
+.send{width:46px;height:46px;flex-shrink:0;border:none;border-radius:50%;background:var(--butter);display:grid;place-items:center;cursor:pointer;transition:.25s;box-shadow:0 8px 18px #efc36850}
+.send:hover{background:#D4A84A}
 .send:active{transform:scale(.92)}
-.send svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.send svg{width:19px;height:19px;fill:none;stroke:var(--butter-ink);stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
 .progress{display:flex;align-items:center;justify-content:center;gap:9px;padding:2px 0 6px}
 .pdot{width:7px;height:7px;border-radius:50%;background:#E0D8E8;transition:.4s}
 .pdot.on{background:var(--lilac);transform:scale(1.2)}
@@ -93,7 +97,7 @@ button{font-family:var(--sans)}
 .thread{border-left:1.5px solid var(--butter-line);margin-left:6px;padding:6px 0 10px 26px}
 .entry{position:relative;margin-bottom:26px;animation:rise .55s cubic-bezier(.22,1,.36,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.entry::before{content:"";position:absolute;left:-31px;top:7px;width:8px;height:8px;border-radius:50%;background:#fff;border:2px solid var(--butter)}
+.entry::before{content:"";position:absolute;left:-31px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--card);border:2px solid var(--butter)}
 .entry.first::before{background:var(--butter);border-color:var(--butter)}
 .entry .who{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:5px}
 .entry .txt{font-size:15px;line-height:1.5;color:#3A3045;font-weight:500}
@@ -113,9 +117,9 @@ button{font-family:var(--sans)}
 #scr-done h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:31px;margin:18px 0 6px}
 #scr-done .sub{color:var(--mut);font-size:13.5px;margin-bottom:24px}
 .root-block,.step-block,.mirror-block{width:100%;text-align:left;border-radius:18px;padding:18px 20px;margin-bottom:14px;animation:rise .6s .8s both}
-.root-block{background:#fff;border:1px solid var(--butter-line)}
+.root-block{background:var(--card);border:1px solid var(--butter-line)}
 .step-block{background:var(--butter-soft);border:1px solid var(--butter-line);animation-delay:1.1s}
-.mirror-block{background:linear-gradient(135deg,var(--lilac-soft),var(--butter-soft));border:1px solid var(--butter-line);animation-delay:1.4s}
+.mirror-block{background:var(--lilac-soft);border:1px solid var(--lilac-line);animation-delay:1.4s}
 .blk-lbl{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
 .step-block .blk-lbl{color:var(--butter-mut)}
 .mirror-block .blk-lbl{color:var(--lilac)}
@@ -127,17 +131,12 @@ button{font-family:var(--sans)}
 @keyframes breathe{0%,100%{transform:scale(.8);opacity:.5}50%{transform:scale(1.5);opacity:1}}
 .breath span{font-size:12px;color:var(--mut)}
 .done-btns{width:100%;display:flex;flex-direction:column;gap:10px;animation:rise .6s 1.5s both}
-.btn-p{border:none;border-radius:15px;padding:15px;font-size:14.5px;font-weight:800;background:linear-gradient(135deg,var(--lilac),var(--butter));color:#fff;cursor:pointer;transition:.25s}
-.btn-p:hover{background:linear-gradient(135deg,#8A6DAA,#D4A84A)}
-.btn-g{border:1.5px solid var(--butter-line);border-radius:15px;padding:14px;background:transparent;font-size:14px;font-weight:700;color:var(--butter-mut);cursor:pointer;transition:.25s}
-.btn-g:hover{border-color:var(--butter);color:var(--butter-ink)}
-.btn-capsule{border:1.5px solid var(--butter-line);border-radius:15px;padding:14px;background:var(--butter-soft);font-size:14px;font-weight:700;color:var(--butter-ink);cursor:pointer;transition:.25s}
-.btn-capsule:hover{background:#F5E6C8}
+.done-btns .go-btn{margin-top:0}
 .done-disc{font-size:10.5px;color:#b8aec2;margin-top:18px;line-height:1.5;animation:rise .6s 1.7s both}
 #scr-hist{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .hist-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .hist-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
-.hcard{background:#fff;border:1px solid var(--butter-line);border-radius:16px;padding:16px 18px;margin-bottom:12px;animation:rise .5s both}
+.hcard{background:var(--card);border:1px solid var(--butter-line);border-radius:16px;padding:16px 18px;margin-bottom:12px;animation:rise .5s both}
 .hcard.capsule{border-color:var(--butter);background:var(--butter-soft)}
 .hdate{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
 .hdate .cap-tag{color:var(--butter-ink);font-size:9px}
@@ -150,10 +149,10 @@ button{font-family:var(--sans)}
 .prof-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
 .prof-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
 .prof-user{display:flex;align-items:center;gap:14px;margin-bottom:26px}
-.prof-ava{width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,var(--lilac),var(--butter));display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:24px;color:#fff;flex-shrink:0}
+.prof-ava{width:56px;height:56px;border-radius:18px;background:var(--lilac);display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:24px;color:#fff;flex-shrink:0}
 .prof-user .pn{font-size:17px;font-weight:700}
 .prof-user .ps{font-size:12.5px;color:var(--mut);margin-top:2px}
-.mode-card{background:#fff;border:1.5px solid var(--butter-line);border-radius:18px;padding:18px 20px;margin-bottom:14px}
+.mode-card{background:var(--card);border:1.5px solid var(--butter-line);border-radius:18px;padding:18px 20px;margin-bottom:14px}
 .mode-card h3{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:14px}
 .mode-opt{display:flex;align-items:flex-start;gap:13px;padding:13px 14px;border:1.5px solid var(--butter-line);border-radius:14px;margin-bottom:10px;cursor:pointer;transition:.22s}
 .mode-opt:last-child{margin-bottom:0}
@@ -170,8 +169,8 @@ button{font-family:var(--sans)}
 .sub-opt:last-child{margin-bottom:0}
 .sub-opt:hover{border-color:var(--butter)}
 .sub-opt.sel{border-color:var(--butter);background:var(--butter-soft);font-weight:600}
-.intro-btn{width:100%;margin-top:14px;border:1.5px solid var(--butter-line);border-radius:15px;padding:14px;background:var(--butter-soft);font-size:14px;font-weight:700;color:var(--butter-ink);cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:8px}
-.intro-btn:hover{background:#F5E6C8}
+.intro-btn{width:100%;margin-top:14px;border:none;border-radius:15px;padding:14px;background:var(--butter);font-size:14px;font-weight:800;color:var(--butter-ink);cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 10px 22px #efc36840}
+.intro-btn:hover{background:#D4A84A}
 .prof-ver{text-align:center;color:var(--butter-mut);font-size:11px;margin-top:24px;letter-spacing:.1em}
 #scr-chat{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .chat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
@@ -179,15 +178,15 @@ button{font-family:var(--sans)}
 .chat-area{flex:1;overflow-y:auto;padding:10px 0}
 .chat-msg{margin-bottom:16px;animation:rise .5s both}
 .chat-msg.user{text-align:right}
-.chat-msg.user .bubble{background:linear-gradient(135deg,var(--lilac),var(--butter));color:#fff;border-radius:18px 18px 4px 18px;padding:12px 16px;display:inline-block;max-width:85%;font-size:14.5px;line-height:1.5}
+.chat-msg.user .bubble{background:var(--lilac);color:#fff;border-radius:18px 18px 4px 18px;padding:12px 16px;display:inline-block;max-width:85%;font-size:14.5px;line-height:1.5}
 .chat-msg.ai .bubble{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:18px 18px 18px 4px;padding:14px 16px;display:inline-block;max-width:90%;font-size:14px;line-height:1.6;color:var(--butter-ink)}
 .chat-input{display:flex;gap:9px;padding:10px 0}
-#chatInput{flex:1;border:1.5px solid var(--butter-line);border-radius:100px;padding:13px 19px;font-family:var(--sans);font-size:15px;color:var(--ink);background:#fff;outline:none;transition:.25s}
+#chatInput{flex:1;border:1.5px solid var(--line);border-radius:100px;padding:13px 19px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--card);outline:none;transition:.25s}
 #chatInput:focus{border-color:var(--butter);box-shadow:0 0 0 4px #efc36822}
-.chat-send{width:46px;height:46px;flex-shrink:0;border:none;border-radius:50%;background:linear-gradient(135deg,var(--lilac),var(--butter));display:grid;place-items:center;cursor:pointer;transition:.25s}
-.chat-send:hover{background:linear-gradient(135deg,#8A6DAA,#D4A84A)}
+.chat-send{width:46px;height:46px;flex-shrink:0;border:none;border-radius:50%;background:var(--lilac);display:grid;place-items:center;cursor:pointer;transition:.25s}
+.chat-send:hover{background:#8A6DAA}
 .chat-send svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
-.toast{position:absolute;bottom:26px;left:50%;transform:translate(-50%,16px);background:linear-gradient(135deg,#3A2A4A,#5C4A1E);color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;opacity:0;transition:.35s;z-index:70;white-space:nowrap;box-shadow:0 14px 34px #2a243544}
+.toast{position:absolute;bottom:26px;left:50%;transform:translate(-50%,16px);background:#3A2A4A;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;opacity:0;transition:.35s;z-index:70;white-space:nowrap;box-shadow:0 14px 34px #2a243544}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 </style>
 </head>
@@ -243,7 +242,7 @@ button{font-family:var(--sans)}
     </div>
     <div class="onb-bottom">
       <div class="onb-dots"><span class="odot on"></span><span class="odot"></span><span class="odot"></span></div>
-      <button class="go-btn" id="onbBtn" style="margin-top:0">Далее →</button>
+      <button class="go-btn butter" id="onbBtn" style="margin-top:0">Далее →</button>
     </div>
   </section>
 
@@ -287,9 +286,9 @@ button{font-family:var(--sans)}
     <div class="mirror-block" id="mirrorBlock" style="display:none"><div class="blk-lbl">🧠 Взгляд со стороны</div><div class="rt" id="mirrorText"></div></div>
     <div class="breath"><i></i><span>Один спокойный вдох — и можно действовать.</span></div>
     <div class="done-btns">
-      <button class="btn-capsule" id="capsuleBtn">🌱 Сохранить как капсулу</button>
-      <button class="btn-p" id="againBtn">Начать заново</button>
-      <button class="btn-g" id="toHistBtn">Посмотреть историю</button>
+      <button class="go-btn butter" id="capsuleBtn">🌱 Сохранить как капсулу</button>
+      <button class="go-btn" id="againBtn">Начать заново</button>
+      <button class="go-btn outline" id="toHistBtn">Посмотреть историю</button>
     </div>
     <div class="done-disc">Если тебе очень тяжело — пожалуйста, обратись к специалисту или на линию психологической помощи.</div>
   </section>
@@ -390,7 +389,7 @@ const CATEGORIES=[
   {keywords:['устал','устала','измотан','выгорел','нет сил','обессилел','замучен'],q:'Когда ты последний раз отдыхал по-настоящему?',emo:'усталость',resp:'Ты несёшь так много. Усталость — это не лень, это просьба тела о бережности.'},
   {keywords:['злюсь','бешусь','раздражён','ненавижу','бесит','достало','взбесило'],q:'Что именно вызывает эту злость?',emo:'злость',resp:'Злость — это энергия. Она показывает, где нарушены твои границы. Давай найдём, где именно.'},
   {keywords:['одинок','одиноко','никто','пусто','брошен','забыт','ненужный'],q:'Кого тебе сейчас не хватает рядом?',emo:'одиночество',resp:'Одиночество болит, потому что ты создан для связи. Это не навсегда — даже если сейчас так кажется.'},
-  {keywords:['стыдно','вина','виноват','совесть','упрёк','раскаиваюсь'],q:'Перед кем или чем ты чувствуешь вину?',emo:'вина',resp:'Вина говорит, что ты caring person. Но иногда мы берём на себя чужую ответственность. Давай разберёмся.'},
+  {keywords:['стыдно','вина','виноват','совесть','упрёк','раскаиваюсь'],q:'Перед кем или чем ты чувствуешь вину?',emo:'вина',resp:'Вина говорит, что ты человек с сердцем. Но иногда мы берём на себя чужую ответственность. Давай разберёмся.'},
   {keywords:['не знаю','растерян','потерян','запутался','тупик','не понимаю'],q:'Что бы ты хотел понять в первую очередь?',emo:'растерянность',resp:'Не знать — это нормально. Иногда туман нужен, чтобы увидеть, куда действительно хочется идти.'},
   {keywords:['скучно','рутина','однообразно','серость','надоело','пресно'],q:'Чего тебе не хватает для радости?',emo:'скука',resp:'Скука — это тихий голос, который просит смысла. Что раньше зажигало в тебе искру?'},
   {keywords:['давление','требуют','должен','обязан','нагрузка','перегруз'],q:'Кто или что давит на тебя сильнее всего?',emo:'давление',resp:'Так много «должен». А где в этом списке есть «я хочу»? Давай найдём хотя бы одно.'},
@@ -417,7 +416,7 @@ function generateChatResponse(text){
   const lower=text.toLowerCase();
   for(const cat of CATEGORIES){
     if(cat.keywords.some(kw=>lower.includes(kw))){
-      return cat.resp+' '+ 'Попробуй спросить себя: почему это важно именно сейчас? Иногда ответ приходит не сразу, и это нормально.';
+      return cat.resp+' Попробуй спросить себя: почему это важно именно сейчас? Иногда ответ приходит не сразу, и это нормально.';
     }
   }
   return 'Я слышу тебя. То, что ты поделился — уже шаг. Попробуй спросить себя: что самое важное в этой ситуации для тебя прямо сейчас?';
@@ -471,7 +470,7 @@ function renderProf(){
   document.querySelectorAll('.sub-opt').forEach(o=>o.classList.toggle('sel',o.dataset.sub===subMode));
 }
 $('#profBtn').onclick=()=>{renderProf();go('scr-prof');};
-$('#profBackBtn').onclick=()=>startApp();
+$('#profBackBtn').onclick=()=>{go('scr-main');};
 $('#introBtn').onclick=()=>{onbIdx=0;showSlide(0);go('scr-onb');};
 document.querySelectorAll('.mode-opt').forEach(o=>{
   o.onclick=()=>{
@@ -552,14 +551,12 @@ function finish(){
   try{localStorage.setItem('sixwhy_hist',JSON.stringify(history));}catch(e){}
   $('#rootText').textContent='«'+done.root+'»';
   $('#stepText').textContent=done.action;
-  
   if(mode==='mirror' && subMode==='analyze'){
     const allText=session.start+' '+session.whys.join(' ')+' '+session.action;
     const resp=findMirrorResponse(allText);
     $('#mirrorText').textContent=resp;
     $('#mirrorBlock').style.display='block';
   }else{$('#mirrorBlock').style.display='none';}
-  
   const dc=$('#scr-done .done-check svg'),cl=dc.cloneNode(true);dc.parentNode.replaceChild(cl,dc);
   setTimeout(()=>go('scr-done'),600);
 }
@@ -581,11 +578,15 @@ $('#againBtn').onclick=()=>{
   $('#msgInput').placeholder='Напиши, что происходит…';
   $('#capsuleBtn').textContent='🌱 Сохранить как капсулу';
   $('#capsuleBtn').disabled=false;
-  startApp();
+  go('scr-main');
 };
 $('#toHistBtn').onclick=()=>{renderHist();go('scr-hist');};
 $('#histBtn').onclick=()=>{renderHist();go('scr-hist');};
-$('#backBtn').onclick=()=>startApp();
+$('#backBtn').onclick=()=>{go('scr-main');};
+
+/* ИСПРАВЛЕНО: стрелка из чата теперь всегда ведёт на главный экран */
+$('#chatBackBtn').onclick=()=>{go('scr-main');toast('Ты вернулся на главный экран ');};
+
 function renderHist(){
   const L=$('#histList');
   if(!history.length){L.innerHTML='<div class="hempty">Пока пусто.<br>Пройди свою первую цепочку 💜</div>';return;}
@@ -599,7 +600,8 @@ function renderHist(){
   $('#clearHist').onclick=()=>{history=[];try{localStorage.removeItem('sixwhy_hist');}catch(e){}renderHist();toast('История очищена');};
 }
 
-$('#chatBackBtn').onclick=()=>startApp();
+$('#chatSendBtn').onclick=sendChat;
+$('#chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat();});
 function addChatMsg(text,isUser){
   const area=$('#chatArea');
   const msg=document.createElement('div');
@@ -618,8 +620,6 @@ function sendChat(){
     addChatMsg(resp,false);
   },800);
 }
-$('#chatSendBtn').onclick=sendChat;
-$('#chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat();});
 </script>
 </body>
 </html>
