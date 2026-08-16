@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#FEFCF9">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="SixWhy">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='116' fill='%239B7EBD'/%3E%3Ccircle cx='256' cy='110' r='18' fill='%23FEFCF9' opacity='.5'/%3E%3Ccircle cx='256' cy='172' r='20' fill='%23FEFCF9' opacity='.6'/%3E%3Ccircle cx='256' cy='234' r='22' fill='%23FEFCF9' opacity='.7'/%3E%3Ccircle cx='256' cy='296' r='24' fill='%23FEFCF9' opacity='.8'/%3E%3Ccircle cx='256' cy='358' r='26' fill='%23FEFCF9' opacity='.9'/%3E%3Ccircle cx='256' cy='426' r='30' fill='%23FEFCF9'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='116' fill='%239B7EBD'/%3E%3Ccircle cx='256' cy='110' r='18' fill='%23FEFCF9' opacity='.5'/%3E%3Ccircle cx='256' cy='172' r='20' fill='%23FEFCF9' opacity='.6'/%3E%3Ccircle cx='256' cy='234' r='22' fill='%23FEFCF9' opacity='.7'/%3E%3Ccircle cx='256' cy='296' r='24' fill='%23FEFCF9' opacity='.8'/%3E%3Ccircle cx='256' cy='358' r='26' fill='%23FEFCF9' opacity='.9'/%3E%3Ccircle cx='256' cy='426' r='30' fill='%23EFC368'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,6 +16,8 @@
 :root{
   --ink:#2A2435;--mut:#7A6B8A;--lilac:#9B7EBD;--lilac-soft:#F3EDF7;
   --lilac-line:#D4C5E2;--paper:#FEFCF9;--line:#E8E0EE;
+  --butter:#EFC368;--butter-soft:#FBF0D7;--butter-line:#EFD9A7;
+  --butter-ink:#5C4A1E;--butter-mut:#A9852F;
   --serif:'Cormorant Garamond',serif;--sans:'Manrope',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -28,7 +30,7 @@ button{font-family:var(--sans)}
 #scr-auth{padding:28px 30px max(26px,env(safe-area-inset-bottom));justify-content:center;overflow-y:auto}
 .logo-dots{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
 .logo-dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--lilac);opacity:0;animation:dotIn .5s forwards}
-.logo-dots i:nth-child(6){background:var(--lilac)}
+.logo-dots i:nth-child(6){background:var(--butter);border-color:var(--butter)}
 .logo-dots i:nth-child(1){animation-delay:.1s}.logo-dots i:nth-child(2){animation-delay:.2s}.logo-dots i:nth-child(3){animation-delay:.3s}
 .logo-dots i:nth-child(4){animation-delay:.4s}.logo-dots i:nth-child(5){animation-delay:.5s}.logo-dots i:nth-child(6){animation-delay:.6s}
 @keyframes dotIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
@@ -73,10 +75,16 @@ button{font-family:var(--sans)}
 .progress{display:flex;align-items:center;justify-content:center;gap:9px;padding:2px 0 6px}
 .pdot{width:7px;height:7px;border-radius:50%;background:#E0D8E8;transition:.4s}
 .pdot.on{background:var(--lilac);transform:scale(1.2)}
+.pdot.on:nth-child(6){background:var(--butter)}
 .pcap{font-size:10px;font-weight:800;letter-spacing:.1em;color:#B8AEC2;margin-left:8px;text-transform:uppercase}
 .canvas{flex:1;overflow-y:auto;padding:10px 24px max(40px,env(safe-area-inset-bottom));scrollbar-width:none}
 .canvas::-webkit-scrollbar{display:none}
-.hint-empty{text-align:center;padding:60px 22px;animation:pulseSoft 3s ease-in-out infinite}
+.ann{background:var(--lilac-soft);border:1px solid var(--lilac-line);color:#5A4A6A;border-radius:12px;padding:10px 14px;font-size:12.5px;line-height:1.5;margin:2px 0 12px;animation:rise .5s both}
+.quote-card{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:16px;padding:14px 16px 12px;margin:2px 0 18px;position:relative;animation:rise .5s both}
+.quote-card::before{content:"❝";position:absolute;top:6px;left:12px;font-family:var(--serif);font-size:26px;color:var(--butter);line-height:1}
+.qc-q{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.45;color:var(--butter-ink);padding-left:20px}
+.qc-a{font-size:11px;font-weight:700;color:var(--butter-mut);margin-top:6px;text-align:right}
+.hint-empty{text-align:center;padding:44px 22px;animation:pulseSoft 3s ease-in-out infinite}
 .hint-empty .hd{font-family:var(--serif);font-style:italic;font-size:23px;color:#a89bb5;margin-bottom:10px}
 .hint-empty p{font-size:13.5px;line-height:1.65;color:#b8aec2}
 @keyframes pulseSoft{0%,100%{opacity:.7}50%{opacity:1}}
@@ -90,7 +98,7 @@ button{font-family:var(--sans)}
 .entry.first .txt{font-size:17px;font-weight:600}
 .entry.prompt .q{font-family:var(--serif);font-style:italic;font-weight:600;font-size:33px;line-height:1.15;color:var(--ink)}
 .entry.prompt.smart .q{font-size:26px;color:var(--lilac)}
-.entry.prompt.act .q{color:var(--lilac);font-size:27px}
+.entry.prompt.act .q{color:var(--butter-mut);font-size:27px}
 .entry .num{font-size:10.5px;font-weight:700;letter-spacing:.12em;color:#C8BED0;margin-top:6px;text-transform:uppercase}
 .thinking{display:flex;gap:6px;padding:10px 0;margin-bottom:20px;animation:rise .4s both}
 .thinking i{width:7px;height:7px;border-radius:50%;background:#D4C5E2;animation:bl 1s ease-in-out infinite}
@@ -104,13 +112,13 @@ button{font-family:var(--sans)}
 #scr-done .sub{color:var(--mut);font-size:13.5px;margin-bottom:24px}
 .root-block,.step-block{width:100%;text-align:left;border-radius:18px;padding:18px 20px;margin-bottom:14px;animation:rise .6s .8s both}
 .root-block{background:#fff;border:1px solid var(--line)}
-.step-block{background:var(--lilac-soft);border:1px solid var(--lilac-line);animation-delay:1.1s}
+.step-block{background:var(--butter-soft);border:1px solid var(--butter-line);animation-delay:1.1s}
 .blk-lbl{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
-.step-block .blk-lbl{color:var(--lilac)}
+.step-block .blk-lbl{color:var(--butter-mut)}
 .root-block .rt{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.35}
-.step-block .rt{font-size:15px;font-weight:700;line-height:1.5;color:#4A3A5A}
+.step-block .rt{font-size:15px;font-weight:700;line-height:1.5;color:var(--butter-ink)}
 .breath{display:flex;flex-direction:column;align-items:center;gap:8px;margin:12px 0 20px;animation:rise .6s 1.4s both}
-.breath i{width:14px;height:14px;border-radius:50%;background:var(--lilac);animation:breathe 4s ease-in-out infinite}
+.breath i{width:14px;height:14px;border-radius:50%;background:var(--butter);animation:breathe 4s ease-in-out infinite}
 @keyframes breathe{0%,100%{transform:scale(.8);opacity:.5}50%{transform:scale(1.5);opacity:1}}
 .breath span{font-size:12px;color:var(--mut)}
 .done-btns{width:100%;display:flex;flex-direction:column;gap:10px;animation:rise .6s 1.5s both}
@@ -129,8 +137,6 @@ button{font-family:var(--sans)}
 .hrow p{font-size:13.5px;line-height:1.5;margin-top:2px;color:#3A3045}
 .hempty{text-align:center;color:#b8aec2;padding:70px 20px;font-size:14px;line-height:1.6}
 .clear-link{display:block;margin:8px auto 0;border:none;background:none;color:#9B5A7A;font-size:12.5px;font-weight:700;cursor:pointer}
-
-/* Профиль */
 #scr-prof{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .prof-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
 .prof-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
@@ -150,7 +156,6 @@ button{font-family:var(--sans)}
 .mode-opt .mt{font-size:14.5px;font-weight:700}
 .mode-opt .md{font-size:12.5px;color:var(--mut);line-height:1.5;margin-top:3px}
 .prof-ver{text-align:center;color:#b8aec2;font-size:11px;margin-top:24px;letter-spacing:.1em}
-
 .toast{position:absolute;bottom:26px;left:50%;transform:translate(-50%,16px);background:#3A2A4A;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;opacity:0;transition:.35s;z-index:70;white-space:nowrap;box-shadow:0 14px 34px #2a243544}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 </style>
@@ -196,8 +201,8 @@ button{font-family:var(--sans)}
           <circle cx="60" cy="34" r="5.5" stroke="#9B7EBD" stroke-width="2.5" opacity=".55"/>
           <circle cx="60" cy="52" r="6" stroke="#9B7EBD" stroke-width="2.5" opacity=".7"/>
           <circle cx="60" cy="70" r="6.5" stroke="#9B7EBD" stroke-width="2.5" opacity=".85"/>
-          <circle cx="60" cy="89" r="7" fill="#9B7EBD"/>
-          <path d="M60 102v14M53 105.5l14 7M67 105.5l-14 7" stroke="#9B7EBD" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="60" cy="89" r="7" fill="#EFC368"/>
+          <path d="M60 102v14M53 105.5l14 7M67 105.5l-14 7" stroke="#EFC368" stroke-width="2.5" stroke-linecap="round"/>
         </svg>
         <div class="st">Именно для этого создано приложение <b>SixWhy</b>: шесть вопросов доведут до корня, а седьмой подскажет шаг.</div>
       </div>
@@ -227,6 +232,8 @@ button{font-family:var(--sans)}
       <span class="pcap" id="pcap">начни писать</span>
     </div>
     <div class="canvas" id="canvas">
+      <div class="ann" id="annBar" style="display:none"></div>
+      <div class="quote-card"><div class="qc-q" id="quoteText"></div><div class="qc-a" id="quoteAuthor"></div></div>
       <div class="hint-empty" id="hintEmpty">
         <div class="hd">Здесь появится твой диалог…</div>
         <p>Напиши сверху то, что сейчас чувствуешь.<br>Например: <b>«мне плохо»</b> — и отвечай на вопросы честно.</p>
@@ -279,7 +286,7 @@ button{font-family:var(--sans)}
         <div><div class="mt">🌀 Классика</div><div class="md">Шесть одинаковых «Почему?» подряд — чистая методика, медитативный ритм.</div></div>
       </div>
     </div>
-    <div class="prof-ver">SIXWHY · ДЕМО-ВЕРСИЯ</div>
+    <div class="prof-ver">SIXWHY · СОЗДАНО С ЛЮБОВЬЮ</div>
   </section>
 
   <div class="toast" id="toast"></div>
@@ -296,6 +303,21 @@ try{
   mode=localStorage.getItem('sixwhy_mode')||'empathy';
 }catch(e){history=[];}
 
+/* ── ПУЛЬТ СОЗДАТЕЛЯ: цитата и объявление приходят из config.json ── */
+let CFG={quote:'Даже самый маленький шаг — уже шаг.',author:'SixWhy',announcement:''};
+function renderQuote(){
+  $('#quoteText').textContent='«'+CFG.quote+'»';
+  const a=$('#quoteAuthor');
+  if(CFG.author){a.textContent='— '+CFG.author;a.style.display='block';}else{a.style.display='none';}
+  const ann=$('#annBar');
+  if(CFG.announcement){ann.textContent=CFG.announcement;ann.style.display='block';}else{ann.style.display='none';}
+}
+renderQuote();
+fetch('config.json?'+Date.now(),{cache:'no-store'})
+  .then(r=>r.ok?r.json():null)
+  .then(j=>{if(j){CFG=Object.assign(CFG,j);renderQuote();}})
+  .catch(()=>{});
+
 const CATEGORIES=[
   {keywords:['плохо','грустно','тяжело','больно','тоскливо','паршиво','хреново','ужасно','кошмар'],q:'Что ты чувствуешь прямо сейчас?'},
   {keywords:['боюсь','страх','тревога','паника','нервничаю','волнуюсь','опасаюсь'],q:'Чего ты боишься в этой ситуации?'},
@@ -309,7 +331,6 @@ const CATEGORIES=[
   {keywords:['будущее','завтра','что будет','неизвестность','переживаю за'],q:'Что в будущем пугает тебя больше всего?'}
 ];
 const FALLBACK_Q='Загляни чуть глубже — что стоит за этими словами?';
-
 function findSmartQuestion(text){
   const lower=text.toLowerCase();
   for(const cat of CATEGORIES){
@@ -356,7 +377,6 @@ if(name){
 }
 $('#outBtn').onclick=()=>{try{localStorage.removeItem('sixwhy_name');}catch(e){}location.reload();};
 
-/* профиль */
 function renderProf(){
   $('#profName').textContent=name||'друг';
   $('#profAva').textContent=(name||'?').trim().charAt(0).toUpperCase();
