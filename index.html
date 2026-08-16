@@ -27,6 +27,23 @@ body{font-family:var(--sans);color:var(--ink);background:#F2EADB;-webkit-tap-hig
 .scr{position:absolute;inset:0;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .4s,transform .4s;display:flex;flex-direction:column}
 .scr.active{opacity:1;transform:none;pointer-events:auto}
 button{font-family:var(--sans)}
+
+/* ── СЛАЙДЫ (до регистрации) ── */
+#scr-onb{padding:max(20px,env(safe-area-inset-top)) 30px max(26px,env(safe-area-inset-bottom))}
+.onb-top{text-align:center;font-family:var(--serif);font-size:22px;font-weight:600}
+.onb-top em{font-style:italic;color:var(--lilac)}
+.onb-slides{flex:1;position:relative}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:24px;opacity:0;transform:translateX(36px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+.slide.active{opacity:1;transform:none}
+.slide .st{font-family:var(--serif);font-style:italic;font-weight:500;font-size:22px;line-height:1.45;color:var(--ink);max-width:300px}
+.slide .st b{color:var(--lilac);font-weight:600}
+.slide .benefit{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:14px;padding:12px 16px;font-size:13px;line-height:1.5;color:var(--butter-ink);max-width:280px;margin-top:8px}
+.onb-bottom{display:flex;flex-direction:column;align-items:center;gap:16px}
+.onb-dots{display:flex;gap:7px}
+.odot{width:7px;height:7px;border-radius:50%;background:#E0D8E8;transition:.35s}
+.odot.on{background:var(--butter);width:20px;border-radius:100px}
+
+/* ── РЕГИСТРАЦИЯ ── */
 #scr-auth{padding:28px 30px max(26px,env(safe-area-inset-bottom));justify-content:center;overflow-y:auto}
 .logo-dots{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
 .logo-dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--lilac);opacity:0;animation:dotIn .5s forwards}
@@ -50,26 +67,39 @@ button{font-family:var(--sans)}
 .go-btn.outline:hover{border-color:var(--lilac)}
 .priv-note{margin-top:22px;background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:14px;padding:13px 15px;font-size:12.5px;line-height:1.55;color:var(--butter-ink);display:flex;gap:10px}
 .disclaimer{margin-top:14px;font-size:11px;line-height:1.5;color:#b0a5b8;text-align:center}
-#scr-onb{padding:max(20px,env(safe-area-inset-top)) 30px max(26px,env(safe-area-inset-bottom))}
-.onb-top{text-align:center;font-family:var(--serif);font-size:22px;font-weight:600}
-.onb-top em{font-style:italic;color:var(--lilac)}
-.onb-slides{flex:1;position:relative}
-.slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:24px;opacity:0;transform:translateX(36px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
-.slide.active{opacity:1;transform:none}
-.slide .st{font-family:var(--serif);font-style:italic;font-weight:500;font-size:22px;line-height:1.45;color:var(--ink);max-width:300px}
-.slide .st b{color:var(--lilac);font-weight:600}
-.slide .benefit{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:14px;padding:12px 16px;font-size:13px;line-height:1.5;color:var(--butter-ink);max-width:280px;margin-top:8px}
-.onb-bottom{display:flex;flex-direction:column;align-items:center;gap:16px}
-.onb-dots{display:flex;gap:7px}
-.odot{width:7px;height:7px;border-radius:50%;background:#E0D8E8;transition:.35s}
-.odot.on{background:var(--butter);width:20px;border-radius:100px}
+
+/* ── ГЛАВНАЯ («ДОМ») ── */
+#scr-home{padding:max(18px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom));overflow-y:auto}
+.home-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.home-top .wm{font-family:var(--serif);font-size:24px;font-weight:600}
+.home-top .wm em{font-style:italic;color:var(--lilac)}
+.home-top .acts{display:flex;gap:4px}
+.ibtn{border:none;background:transparent;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:var(--mut);cursor:pointer;transition:.2s}
+.ibtn:hover{background:var(--butter-soft);color:var(--butter-mut)}
+.ibtn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.greet{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;margin-bottom:22px}
+.greet b{color:var(--lilac);font-weight:600}
+.quote-card{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:18px;padding:20px 20px 18px;margin-bottom:16px;position:relative}
+.quote-card::before{content:"❝";position:absolute;top:10px;left:16px;font-family:var(--serif);font-size:30px;color:var(--butter);line-height:1}
+.qc-q{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.45;color:var(--butter-ink);padding-left:22px}
+.qc-a{font-size:11px;font-weight:700;color:var(--butter-mut);margin-top:8px;text-align:right}
+.about-card{background:var(--card);border:1px solid var(--butter-line);border-radius:18px;padding:16px 18px;margin-bottom:24px;cursor:pointer;transition:.25s}
+.about-card:hover{border-color:var(--butter)}
+.about-head{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:8px}
+.about-head .chev{margin-left:auto;transition:.3s;color:var(--butter)}
+.about-card.open .about-head .chev{transform:rotate(180deg)}
+.about-body{font-size:13.5px;line-height:1.6;color:var(--mut);max-height:0;overflow:hidden;transition:max-height .4s ease}
+.about-card.open .about-body{max-height:200px}
+.start-btn{width:100%;border:none;border-radius:18px;padding:18px;font-size:16px;font-weight:800;background:var(--lilac);color:#fff;cursor:pointer;transition:.25s;box-shadow:0 14px 30px #9b7ebd3d;display:flex;align-items:center;justify-content:center;gap:10px}
+.start-btn:hover{background:#8A6DAA;transform:translateY(-2px)}
+.start-btn:active{transform:scale(.98)}
+.home-foot{text-align:center;font-size:11px;color:#b8aec2;margin-top:22px;line-height:1.5}
+
+/* ── ДИАЛОГ (цепочка) ── */
+#scr-main{display:flex;flex-direction:column}
 .topbar{display:flex;justify-content:space-between;align-items:center;padding:max(10px,env(safe-area-inset-top)) 16px 6px}
 .topbar .wm{font-family:var(--serif);font-size:21px;font-weight:600}
 .topbar .wm em{font-style:italic;color:var(--lilac)}
-.topbar .acts{display:flex;gap:4px}
-.ibtn{border:none;background:transparent;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;color:var(--mut);cursor:pointer;transition:.2s}
-.ibtn:hover{background:var(--butter-soft);color:var(--butter-mut)}
-.ibtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .inputbar{display:flex;gap:9px;padding:6px 16px 10px}
 #msgInput{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:100px;padding:13px 19px;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--card);outline:none;transition:.25s}
 #msgInput:focus{border-color:var(--butter);box-shadow:0 0 0 4px #efc36822}
@@ -85,13 +115,8 @@ button{font-family:var(--sans)}
 .pcap{font-size:10px;font-weight:800;letter-spacing:.1em;color:#B8AEC2;margin-left:8px;text-transform:uppercase}
 .canvas{flex:1;overflow-y:auto;padding:10px 24px max(40px,env(safe-area-inset-bottom));scrollbar-width:none}
 .canvas::-webkit-scrollbar{display:none}
-.ann{background:var(--butter-soft);border:1px solid var(--butter-line);color:var(--butter-ink);border-radius:12px;padding:10px 14px;font-size:12.5px;line-height:1.5;margin:2px 0 12px;animation:rise .5s both}
-.quote-card{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:16px;padding:14px 16px 12px;margin:2px 0 18px;position:relative;animation:rise .5s both}
-.quote-card::before{content:"❝";position:absolute;top:6px;left:12px;font-family:var(--serif);font-size:26px;color:var(--butter);line-height:1}
-.qc-q{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.45;color:var(--butter-ink);padding-left:20px}
-.qc-a{font-size:11px;font-weight:700;color:var(--butter-mut);margin-top:6px;text-align:right}
-.hint-empty{text-align:center;padding:44px 22px;animation:pulseSoft 3s ease-in-out infinite}
-.hint-empty .hd{font-family:var(--serif);font-style:italic;font-size:23px;color:#a89bb5;margin-bottom:10px}
+.hint-empty{text-align:center;padding:50px 22px;animation:pulseSoft 3s ease-in-out infinite}
+.hint-empty .hd{font-family:var(--serif);font-style:italic;font-size:22px;color:#a89bb5;margin-bottom:10px}
 .hint-empty p{font-size:13.5px;line-height:1.65;color:#b8aec2}
 @keyframes pulseSoft{0%,100%{opacity:.7}50%{opacity:1}}
 .thread{border-left:1.5px solid var(--butter-line);margin-left:6px;padding:6px 0 10px 26px}
@@ -110,6 +135,8 @@ button{font-family:var(--sans)}
 .thinking i{width:7px;height:7px;border-radius:50%;background:var(--butter);animation:bl 1s ease-in-out infinite}
 .thinking i:nth-child(2){animation-delay:.15s}.thinking i:nth-child(3){animation-delay:.3s}
 @keyframes bl{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-5px);opacity:1}}
+
+/* ── ФИНАЛ ── */
 #scr-done{padding:34px 28px max(28px,env(safe-area-inset-bottom));overflow-y:auto;align-items:center;text-align:center}
 .done-check svg circle{stroke-dasharray:183;stroke-dashoffset:183;animation:draw .9s .2s ease forwards}
 .done-check svg path{stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s 1s ease forwards}
@@ -133,6 +160,8 @@ button{font-family:var(--sans)}
 .done-btns{width:100%;display:flex;flex-direction:column;gap:10px;animation:rise .6s 1.5s both}
 .done-btns .go-btn{margin-top:0}
 .done-disc{font-size:10.5px;color:#b8aec2;margin-top:18px;line-height:1.5;animation:rise .6s 1.7s both}
+
+/* ── ИСТОРИЯ ── */
 #scr-hist{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .hist-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .hist-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
@@ -145,6 +174,8 @@ button{font-family:var(--sans)}
 .hrow p{font-size:13.5px;line-height:1.5;margin-top:2px;color:#3A3045}
 .hempty{text-align:center;color:#b8aec2;padding:70px 20px;font-size:14px;line-height:1.6}
 .clear-link{display:block;margin:8px auto 0;border:none;background:none;color:#9B5A7A;font-size:12.5px;font-weight:700;cursor:pointer}
+
+/* ── ПРОФИЛЬ ── */
 #scr-prof{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .prof-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
 .prof-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
@@ -171,8 +202,12 @@ button{font-family:var(--sans)}
 .sub-opt.sel{border-color:var(--butter);background:var(--butter-soft);font-weight:600}
 .intro-btn{width:100%;margin-top:14px;border:none;border-radius:15px;padding:14px;background:var(--butter);font-size:14px;font-weight:800;color:var(--butter-ink);cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 10px 22px #efc36840}
 .intro-btn:hover{background:#D4A84A}
-.prof-ver{text-align:center;color:var(--butter-mut);font-size:11px;margin-top:24px;letter-spacing:.1em}
-#scr-chat{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
+.logout-btn{width:100%;margin-top:10px;border:1.5px solid #e0c9c9;border-radius:15px;padding:14px;background:transparent;font-size:14px;font-weight:700;color:#b06a6a;cursor:pointer;transition:.25s}
+.logout-btn:hover{background:#f7eaea}
+.prof-ver{text-align:center;color:var(--butter-mut);font-size:11px;margin-top:20px;letter-spacing:.1em}
+
+/* ── ЧАТ (прямой диалог) ── */
+#scr-chat{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto;display:flex;flex-direction:column}
 .chat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .chat-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
 .chat-area{flex:1;overflow-y:auto;padding:10px 0}
@@ -186,6 +221,7 @@ button{font-family:var(--sans)}
 .chat-send{width:46px;height:46px;flex-shrink:0;border:none;border-radius:50%;background:var(--lilac);display:grid;place-items:center;cursor:pointer;transition:.25s}
 .chat-send:hover{background:#8A6DAA}
 .chat-send svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+
 .toast{position:absolute;bottom:26px;left:50%;transform:translate(-50%,16px);background:#3A2A4A;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;opacity:0;transition:.35s;z-index:70;white-space:nowrap;box-shadow:0 14px 34px #2a243544}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 </style>
@@ -193,18 +229,8 @@ button{font-family:var(--sans)}
 <body>
 <main class="app">
 
-  <section class="scr active" id="scr-auth">
-    <div class="logo-dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <div class="wordmark">Six<em>Why</em></div>
-    <div class="auth-sub">Шесть вопросов к себе. Один шаг вперёд.</div>
-    <div class="field-lbl">Как к тебе обращаться?</div>
-    <input type="text" id="nameInput" placeholder="Имя или ник" maxlength="24" autocomplete="off">
-    <button class="go-btn" id="enterBtn">Продолжить →</button>
-    <div class="priv-note">🔒&nbsp;<span><b>Твои записи хранятся только на этом устройстве</b> и никуда не передаются. Мы ничего не собираем и не показываем рекламу.</span></div>
-    <div class="disclaimer">SixWhy — инструмент саморефлексии, он не заменяет консультацию психолога или врача.</div>
-  </section>
-
-  <section class="scr" id="scr-onb">
+  <!-- 1. СЛАЙДЫ (самые первые, до регистрации) -->
+  <section class="scr active" id="scr-onb">
     <div class="onb-top">Six<em>Why</em></div>
     <div class="onb-slides">
       <div class="slide active">
@@ -246,14 +272,42 @@ button{font-family:var(--sans)}
     </div>
   </section>
 
-  <section class="scr" id="scr-main">
-    <div class="topbar">
+  <!-- 2. РЕГИСТРАЦИЯ (после слайдов) -->
+  <section class="scr" id="scr-auth">
+    <div class="logo-dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="wordmark">Six<em>Why</em></div>
+    <div class="auth-sub">Шесть вопросов к себе. Один шаг вперёд.</div>
+    <div class="field-lbl">Как к тебе обращаться?</div>
+    <input type="text" id="nameInput" placeholder="Имя или ник" maxlength="24" autocomplete="off">
+    <button class="go-btn" id="enterBtn">Продолжить →</button>
+    <div class="priv-note">🔒&nbsp;<span><b>Твои записи хранятся только на этом устройстве</b> и никуда не передаются. Мы ничего не собираем и не показываем рекламу.</span></div>
+    <div class="disclaimer">SixWhy — инструмент саморефлексии, он не заменяет консультацию психолога или врача.</div>
+  </section>
+
+  <!-- 3. ГЛАВНАЯ «ДОМ» (цитата + вставка «для чего» + кнопка начать) -->
+  <section class="scr" id="scr-home">
+    <div class="home-top">
       <div class="wm">Six<em>Why</em></div>
       <div class="acts">
         <button class="ibtn" id="histBtn" title="История"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></button>
         <button class="ibtn" id="profBtn" title="Профиль"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg></button>
-        <button class="ibtn" id="outBtn" title="Выйти"><svg viewBox="0 0 24 24"><path d="M9 4H6a2 2 0 00-2 2v12a2 2 0 002 2h3M15 8l4 4-4 4M19 12H9"/></svg></button>
       </div>
+    </div>
+    <div class="greet" id="greet">Привет, <b>друг</b> 👋</div>
+    <div class="quote-card"><div class="qc-q" id="quoteText"></div><div class="qc-a" id="quoteAuthor"></div></div>
+    <div class="about-card" id="aboutCard">
+      <div class="about-head">💭 Для чего это приложение <span class="chev">▾</span></div>
+      <div class="about-body">SixWhy — это 2 минуты честного разговора с собой. Шесть вопросов «почему» доводят до корня того, что тревожит, а седьмой подсказывает маленький шаг. Без оценок, без спешки — только ты и твои мысли.</div>
+    </div>
+    <button class="start-btn" id="startBtn">Начать разговор с собой →</button>
+    <div class="home-foot">Записи остаются только у тебя · без рекламы и сбора данных</div>
+  </section>
+
+  <!-- 4. ДИАЛОГ (цепочка почему) -->
+  <section class="scr" id="scr-main">
+    <div class="topbar">
+      <div class="wm">Six<em>Why</em></div>
+      <button class="ibtn" id="homeBtn" title="На главную"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5"/></svg></button>
     </div>
     <div class="inputbar">
       <input type="text" id="msgInput" placeholder="Напиши, что происходит…" maxlength="160" autocomplete="off">
@@ -265,16 +319,15 @@ button{font-family:var(--sans)}
       <span class="pcap" id="pcap">начни писать</span>
     </div>
     <div class="canvas" id="canvas">
-      <div class="ann" id="annBar" style="display:none"></div>
-      <div class="quote-card"><div class="qc-q" id="quoteText"></div><div class="qc-a" id="quoteAuthor"></div></div>
       <div class="hint-empty" id="hintEmpty">
         <div class="hd">Здесь появится твой диалог…</div>
-        <p>Напиши сверху то, что сейчас чувствуешь.<br>Например: <b>«мне плохо»</b> — и отвечай на вопросы честно.</p>
+        <p>Напиши сверху то, что сейчас чувствуешь.<br>Например: <b>«мне плохо»</b> — и отвечай честно.</p>
       </div>
       <div class="thread" id="thread" style="display:none"></div>
     </div>
   </section>
 
+  <!-- 5. ФИНАЛ -->
   <section class="scr" id="scr-done">
     <div class="done-check">
       <svg viewBox="0 0 64 64" width="66" height="66"><circle cx="32" cy="32" r="29" fill="none" stroke="#9B7EBD" stroke-width="2.5"/><path d="M20 33l8.5 8.5L44 25" fill="none" stroke="#EFC368" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -288,11 +341,12 @@ button{font-family:var(--sans)}
     <div class="done-btns">
       <button class="go-btn butter" id="capsuleBtn">🌱 Сохранить как капсулу</button>
       <button class="go-btn" id="againBtn">Начать заново</button>
-      <button class="go-btn outline" id="toHistBtn">Посмотреть историю</button>
+      <button class="go-btn outline" id="toHomeBtn">На главную</button>
     </div>
     <div class="done-disc">Если тебе очень тяжело — пожалуйста, обратись к специалисту или на линию психологической помощи.</div>
   </section>
 
+  <!-- 6. ИСТОРИЯ -->
   <section class="scr" id="scr-hist">
     <div class="hist-head">
       <h2>История</h2>
@@ -301,6 +355,7 @@ button{font-family:var(--sans)}
     <div id="histList"></div>
   </section>
 
+  <!-- 7. ПРОФИЛЬ -->
   <section class="scr" id="scr-prof">
     <div class="prof-head">
       <h2>Профиль</h2>
@@ -337,13 +392,15 @@ button{font-family:var(--sans)}
       </div>
     </div>
     <button class="intro-btn" id="introBtn">📖 Посмотреть введение</button>
+    <button class="logout-btn" id="logoutBtn">Выйти из аккаунта</button>
     <div class="prof-ver">SIXWHY · СОЗДАНО С ЛЮБОВЬЮ</div>
   </section>
 
+  <!-- 8. ЧАТ (прямой диалог) -->
   <section class="scr" id="scr-chat">
     <div class="chat-head">
       <h2>🧠 Прямой диалог</h2>
-      <button class="ibtn" id="chatBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="ibtn" id="chatBackBtn"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5"/></svg></button>
     </div>
     <div class="chat-area" id="chatArea">
       <div class="chat-msg ai"><div class="bubble">Привет. Я здесь, чтобы выслушать. Напиши, что тебя тревожит — я отвечу бережно и по существу. 💜</div></div>
@@ -374,8 +431,6 @@ function renderQuote(){
   $('#quoteText').textContent='«'+CFG.quote+'»';
   const a=$('#quoteAuthor');
   if(CFG.author){a.textContent='— '+CFG.author;a.style.display='block';}else{a.style.display='none';}
-  const ann=$('#annBar');
-  if(CFG.announcement){ann.textContent=CFG.announcement;ann.style.display='block';}else{ann.style.display='none';}
 }
 renderQuote();
 fetch('config.json?'+Date.now(),{cache:'no-store'})
@@ -384,93 +439,84 @@ fetch('config.json?'+Date.now(),{cache:'no-store'})
   .catch(()=>{});
 
 const CATEGORIES=[
-  {keywords:['плохо','грустно','тяжело','больно','тоскливо','паршиво','хреново','ужасно','кошмар'],q:'Что ты чувствуешь прямо сейчас?',emo:'грусть',resp:'Я слышу, как тебе тяжело. Грусть — это не слабость, это сигнал, что что-то важно для тебя.'},
-  {keywords:['боюсь','страх','тревога','паника','нервничаю','волнуюсь','опасаюсь'],q:'Чего ты боишься в этой ситуации?',emo:'страх',resp:'Страх пытается тебя защитить. Давай посмотрим, чего именно он боится — и станет ли от этого легче.'},
-  {keywords:['устал','устала','измотан','выгорел','нет сил','обессилел','замучен'],q:'Когда ты последний раз отдыхал по-настоящему?',emo:'усталость',resp:'Ты несёшь так много. Усталость — это не лень, это просьба тела о бережности.'},
-  {keywords:['злюсь','бешусь','раздражён','ненавижу','бесит','достало','взбесило'],q:'Что именно вызывает эту злость?',emo:'злость',resp:'Злость — это энергия. Она показывает, где нарушены твои границы. Давай найдём, где именно.'},
-  {keywords:['одинок','одиноко','никто','пусто','брошен','забыт','ненужный'],q:'Кого тебе сейчас не хватает рядом?',emo:'одиночество',resp:'Одиночество болит, потому что ты создан для связи. Это не навсегда — даже если сейчас так кажется.'},
-  {keywords:['стыдно','вина','виноват','совесть','упрёк','раскаиваюсь'],q:'Перед кем или чем ты чувствуешь вину?',emo:'вина',resp:'Вина говорит, что ты человек с сердцем. Но иногда мы берём на себя чужую ответственность. Давай разберёмся.'},
-  {keywords:['не знаю','растерян','потерян','запутался','тупик','не понимаю'],q:'Что бы ты хотел понять в первую очередь?',emo:'растерянность',resp:'Не знать — это нормально. Иногда туман нужен, чтобы увидеть, куда действительно хочется идти.'},
-  {keywords:['скучно','рутина','однообразно','серость','надоело','пресно'],q:'Чего тебе не хватает для радости?',emo:'скука',resp:'Скука — это тихий голос, который просит смысла. Что раньше зажигало в тебе искру?'},
-  {keywords:['давление','требуют','должен','обязан','нагрузка','перегруз'],q:'Кто или что давит на тебя сильнее всего?',emo:'давление',resp:'Так много «должен». А где в этом списке есть «я хочу»? Давай найдём хотя бы одно.'},
-  {keywords:['будущее','завтра','что будет','неизвестность','переживаю за'],q:'Что в будущем пугает тебя больше всего?',emo:'тревога за будущее',resp:'Будущее ещё не наступило. Прямо сейчас ты здесь, дышишь, и этого достаточно для одного шага.'}
+  {keywords:['плохо','грустно','тяжело','больно','тоскливо','паршиво','хреново','ужасно','кошмар'],q:'Что ты чувствуешь прямо сейчас?',resp:'Я слышу, как тебе тяжело. Грусть — это не слабость, это сигнал, что что-то важно для тебя.'},
+  {keywords:['боюсь','страх','тревога','паника','нервничаю','волнуюсь','опасаюсь'],q:'Чего ты боишься в этой ситуации?',resp:'Страх пытается тебя защитить. Давай посмотрим, чего именно он боится — и станет ли от этого легче.'},
+  {keywords:['устал','устала','измотан','выгорел','нет сил','обессилел','замучен'],q:'Когда ты последний раз отдыхал по-настоящему?',resp:'Ты несёшь так много. Усталость — это не лень, это просьба тела о бережности.'},
+  {keywords:['злюсь','бешусь','раздражён','ненавижу','бесит','достало','взбесило'],q:'Что именно вызывает эту злость?',resp:'Злость — это энергия. Она показывает, где нарушены твои границы. Давай найдём, где именно.'},
+  {keywords:['одинок','одиноко','никто','пусто','брошен','забыт','ненужный'],q:'Кого тебе сейчас не хватает рядом?',resp:'Одиночество болит, потому что ты создан для связи. Это не навсегда — даже если сейчас так кажется.'},
+  {keywords:['стыдно','вина','виноват','совесть','упрёк','раскаиваюсь'],q:'Перед кем или чем ты чувствуешь вину?',resp:'Вина говорит, что ты человек с сердцем. Но иногда мы берём на себя чужую ответственность. Давай разберёмся.'},
+  {keywords:['не знаю','растерян','потерян','запутался','тупик','не понимаю'],q:'Что бы ты хотел понять в первую очередь?',resp:'Не знать — это нормально. Иногда туман нужен, чтобы увидеть, куда действительно хочется идти.'},
+  {keywords:['скучно','рутина','однообразно','серость','надоело','пресно'],q:'Чего тебе не хватает для радости?',resp:'Скука — это тихий голос, который просит смысла. Что раньше зажигало в тебе искру?'},
+  {keywords:['давление','требуют','должен','обязан','нагрузка','перегруз'],q:'Кто или что давит на тебя сильнее всего?',resp:'Так много «должен». А где в этом списке есть «я хочу»? Давай найдём хотя бы одно.'},
+  {keywords:['будущее','завтра','что будет','неизвестность','переживаю за'],q:'Что в будущем пугает тебя больше всего?',resp:'Будущее ещё не наступило. Прямо сейчас ты здесь, дышишь, и этого достаточно для одного шага.'}
 ];
 const FALLBACK_Q='Загляни чуть глубже — что стоит за этими словами?';
 const FALLBACK_RESP='Ты прошёл длинный путь, отвечая честно. Это уже много. Даже если корень пока не ясен — ты ближе к себе, чем был в начале.';
 
-function findSmartQuestion(text){
-  const lower=text.toLowerCase();
-  for(const cat of CATEGORIES){
-    if(cat.keywords.some(kw=>lower.includes(kw))){return cat.q;}
-  }
-  return FALLBACK_Q;
-}
-function findMirrorResponse(allText){
-  const lower=allText.toLowerCase();
-  for(const cat of CATEGORIES){
-    if(cat.keywords.some(kw=>lower.includes(kw))){return cat.resp;}
-  }
-  return FALLBACK_RESP;
-}
-function generateChatResponse(text){
-  const lower=text.toLowerCase();
-  for(const cat of CATEGORIES){
-    if(cat.keywords.some(kw=>lower.includes(kw))){
-      return cat.resp+' Попробуй спросить себя: почему это важно именно сейчас? Иногда ответ приходит не сразу, и это нормально.';
-    }
-  }
-  return 'Я слышу тебя. То, что ты поделился — уже шаг. Попробуй спросить себя: что самое важное в этой ситуации для тебя прямо сейчас?';
-}
+function findSmartQuestion(t){const l=t.toLowerCase();for(const c of CATEGORIES){if(c.keywords.some(k=>l.includes(k)))return c.q;}return FALLBACK_Q;}
+function findMirrorResponse(t){const l=t.toLowerCase();for(const c of CATEGORIES){if(c.keywords.some(k=>l.includes(k)))return c.resp;}return FALLBACK_RESP;}
+function generateChatResponse(t){const l=t.toLowerCase();for(const c of CATEGORIES){if(c.keywords.some(k=>l.includes(k)))return c.resp+' Попробуй спросить себя: почему это важно именно сейчас? Иногда ответ приходит не сразу, и это нормально.';}return 'Я слышу тебя. То, что ты поделился — уже шаг. Попробуй спросить себя: что самое важное в этой ситуации для тебя прямо сейчас?';}
 
 function go(id){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');}
 let toastT;
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2200);}
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 function scrollDown(){const c=$('#canvas');c.scrollTo({top:c.scrollHeight,behavior:'smooth'});}
-function startApp(){
+
+/* куда вести после входа: если выбран прямой диалог — в чат, иначе на «дом» */
+function enterApp(){
+  $('#greet').innerHTML='Привет, <b>'+esc(name||'друг')+'</b> 👋';
   if(mode==='mirror' && subMode==='chat'){go('scr-chat');setTimeout(()=>$('#chatInput').focus(),450);}
-  else{go('scr-main');setTimeout(()=>$('#msgInput').focus(),450);}
+  else{go('scr-home');}
 }
 
+/* ── СЛАЙДЫ ── */
 const slides=document.querySelectorAll('.slide');
 const odots=document.querySelectorAll('.odot');
 let onbIdx=0;
 function showSlide(i){
   slides.forEach((s,k)=>s.classList.toggle('active',k===i));
   odots.forEach((d,k)=>d.classList.toggle('on',k===i));
-  $('#onbBtn').textContent=(i===slides.length-1)?'Начать →':'Далее →';
+  $('#onbBtn').textContent=(i===slides.length-1)?'Далее →':'Далее →';
 }
 $('#onbBtn').onclick=()=>{
   if(onbIdx<slides.length-1){onbIdx++;showSlide(onbIdx);}
-  else{
-    try{localStorage.setItem('sixwhy_onb','1');}catch(e){}
-    onboarded=true;startApp();toast('Привет, '+name+' 💜');
-  }
+  else{go('scr-auth');setTimeout(()=>$('#nameInput').focus(),450);}
 };
 
-function enter(){
+/* ── РЕГИСТРАЦИЯ ── */
+function register(){
   const v=$('#nameInput').value.trim();
   name=v||'друг';
-  try{localStorage.setItem('sixwhy_name',name);}catch(e){}
-  if(onboarded){startApp();toast('Привет, '+name+' 💜');}
-  else{onbIdx=0;showSlide(0);go('scr-onb');}
+  try{localStorage.setItem('sixwhy_name',name);localStorage.setItem('sixwhy_onb','1');}catch(e){}
+  onboarded=true;
+  enterApp();
+  toast('Добро пожаловать, '+name+' 💜');
 }
-$('#enterBtn').onclick=enter;
-$('#nameInput').addEventListener('keydown',e=>{if(e.key==='Enter')enter();});
-if(name){
-  if(onboarded){startApp();}
-  else{go('scr-onb');showSlide(0);}
-}
-$('#outBtn').onclick=()=>{try{localStorage.removeItem('sixwhy_name');}catch(e){}location.reload();};
+$('#enterBtn').onclick=register;
+$('#nameInput').addEventListener('keydown',e=>{if(e.key==='Enter')register();});
 
+/* стартовая логика: слайды → регистрация → дом */
+if(name && onboarded){ enterApp(); }
+else { go('scr-onb'); showSlide(0); }
+
+/* ── ГЛАВНАЯ «ДОМ» ── */
+$('#aboutCard').onclick=()=>{$('#aboutCard').classList.toggle('open');};
+$('#startBtn').onclick=()=>{
+  if(mode==='mirror' && subMode==='chat'){go('scr-chat');setTimeout(()=>$('#chatInput').focus(),450);}
+  else{ resetDialog(); go('scr-main'); setTimeout(()=>$('#msgInput').focus(),450); }
+};
+$('#histBtn').onclick=()=>{renderHist();go('scr-hist');};
+$('#profBtn').onclick=()=>{renderProf();go('scr-prof');};
+
+/* ── ПРОФИЛЬ ── */
 function renderProf(){
   $('#profName').textContent=name||'друг';
   $('#profAva').textContent=(name||'?').trim().charAt(0).toUpperCase();
   document.querySelectorAll('.mode-opt').forEach(o=>o.classList.toggle('sel',o.dataset.mode===mode));
   document.querySelectorAll('.sub-opt').forEach(o=>o.classList.toggle('sel',o.dataset.sub===subMode));
 }
-$('#profBtn').onclick=()=>{renderProf();go('scr-prof');};
-$('#profBackBtn').onclick=()=>{go('scr-main');};
+$('#profBackBtn').onclick=()=>go('scr-home');
 $('#introBtn').onclick=()=>{onbIdx=0;showSlide(0);go('scr-onb');};
 document.querySelectorAll('.mode-opt').forEach(o=>{
   o.onclick=()=>{
@@ -490,6 +536,31 @@ document.querySelectorAll('.sub-opt').forEach(o=>{
   };
 });
 
+/* ВЫХОД ИЗ АККАУНТА = полный сброс → слайды заново */
+$('#logoutBtn').onclick=()=>{
+  try{
+    localStorage.removeItem('sixwhy_name');
+    localStorage.removeItem('sixwhy_onb');
+    localStorage.removeItem('sixwhy_mode');
+    localStorage.removeItem('sixwhy_submode');
+  }catch(e){}
+  name='';onboarded=false;mode='empathy';subMode='analyze';
+  onbIdx=0;showSlide(0);
+  go('scr-onb');
+  toast('До встречи 💜');
+};
+
+/* ── ДИАЛОГ ── */
+$('#homeBtn').onclick=()=>go('scr-home');
+function resetDialog(){
+  phase='start';session={start:null,whys:[],action:null};
+  $('#thread').innerHTML='';$('#thread').style.display='none';
+  $('#hintEmpty').style.display='';
+  setProgress(0,'начни писать');
+  $('#msgInput').placeholder='Напиши, что происходит…';
+  $('#capsuleBtn').textContent='🌱 Сохранить как капсулу';
+  $('#capsuleBtn').disabled=false;
+}
 function addUser(text,first){
   $('#thread').style.display='block';$('#hintEmpty').style.display='none';
   const e=document.createElement('div');
@@ -509,8 +580,8 @@ function askWhy(n){
   setProgress(n,'отвечай честно');
   $('#msgInput').placeholder='Потому что…';$('#msgInput').focus();
 }
-function askSmart(lastAnswer){
-  const q=findSmartQuestion(lastAnswer);
+function askSmart(a){
+  const q=findSmartQuestion(a);
   const e=document.createElement('div');e.className='entry prompt smart';
   e.innerHTML='<div class="q">'+q+'</div><div class="num">вопрос 3 из 6 · подобран для тебя</div>';
   $('#thread').appendChild(e);scrollDown();
@@ -552,15 +623,13 @@ function finish(){
   $('#rootText').textContent='«'+done.root+'»';
   $('#stepText').textContent=done.action;
   if(mode==='mirror' && subMode==='analyze'){
-    const allText=session.start+' '+session.whys.join(' ')+' '+session.action;
-    const resp=findMirrorResponse(allText);
-    $('#mirrorText').textContent=resp;
+    const all=session.start+' '+session.whys.join(' ')+' '+session.action;
+    $('#mirrorText').textContent=findMirrorResponse(all);
     $('#mirrorBlock').style.display='block';
   }else{$('#mirrorBlock').style.display='none';}
   const dc=$('#scr-done .done-check svg'),cl=dc.cloneNode(true);dc.parentNode.replaceChild(cl,dc);
   setTimeout(()=>go('scr-done'),600);
 }
-
 $('#capsuleBtn').onclick=()=>{
   if(history.length>0){
     history[history.length-1].capsule=true;
@@ -570,23 +639,11 @@ $('#capsuleBtn').onclick=()=>{
     $('#capsuleBtn').disabled=true;
   }
 };
-$('#againBtn').onclick=()=>{
-  phase='start';session={start:null,whys:[],action:null};
-  $('#thread').innerHTML='';$('#thread').style.display='none';
-  $('#hintEmpty').style.display='';
-  setProgress(0,'начни писать');
-  $('#msgInput').placeholder='Напиши, что происходит…';
-  $('#capsuleBtn').textContent='🌱 Сохранить как капсулу';
-  $('#capsuleBtn').disabled=false;
-  go('scr-main');
-};
-$('#toHistBtn').onclick=()=>{renderHist();go('scr-hist');};
-$('#histBtn').onclick=()=>{renderHist();go('scr-hist');};
-$('#backBtn').onclick=()=>{go('scr-main');};
+$('#againBtn').onclick=()=>{resetDialog();go('scr-main');setTimeout(()=>$('#msgInput').focus(),450);};
+$('#toHomeBtn').onclick=()=>go('scr-home');
 
-/* ИСПРАВЛЕНО: стрелка из чата теперь всегда ведёт на главный экран */
-$('#chatBackBtn').onclick=()=>{go('scr-main');toast('Ты вернулся на главный экран ');};
-
+/* ── ИСТОРИЯ ── */
+$('#backBtn').onclick=()=>go('scr-home');
 function renderHist(){
   const L=$('#histList');
   if(!history.length){L.innerHTML='<div class="hempty">Пока пусто.<br>Пройди свою первую цепочку 💜</div>';return;}
@@ -600,26 +657,21 @@ function renderHist(){
   $('#clearHist').onclick=()=>{history=[];try{localStorage.removeItem('sixwhy_hist');}catch(e){}renderHist();toast('История очищена');};
 }
 
-$('#chatSendBtn').onclick=sendChat;
-$('#chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat();});
-function addChatMsg(text,isUser){
-  const area=$('#chatArea');
-  const msg=document.createElement('div');
-  msg.className='chat-msg '+(isUser?'user':'ai');
-  msg.innerHTML='<div class="bubble">'+esc(text)+'</div>';
-  area.appendChild(msg);
-  area.scrollTo({top:area.scrollHeight,behavior:'smooth'});
+/* ── ЧАТ ── */
+$('#chatBackBtn').onclick=()=>go('scr-home');
+function addChatMsg(t,u){
+  const a=$('#chatArea');const m=document.createElement('div');
+  m.className='chat-msg '+(u?'user':'ai');
+  m.innerHTML='<div class="bubble">'+esc(t)+'</div>';
+  a.appendChild(m);a.scrollTo({top:a.scrollHeight,behavior:'smooth'});
 }
 function sendChat(){
-  const inp=$('#chatInput');const v=inp.value.trim();
-  if(!v)return;
-  addChatMsg(v,true);
-  inp.value='';
-  setTimeout(()=>{
-    const resp=generateChatResponse(v);
-    addChatMsg(resp,false);
-  },800);
+  const inp=$('#chatInput');const v=inp.value.trim();if(!v)return;
+  addChatMsg(v,true);inp.value='';
+  setTimeout(()=>addChatMsg(generateChatResponse(v),false),800);
 }
+$('#chatSendBtn').onclick=sendChat;
+$('#chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat();});
 </script>
 </body>
 </html>
