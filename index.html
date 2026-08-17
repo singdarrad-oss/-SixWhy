@@ -13,8 +13,6 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="IMG_5479.jpeg">
 <link rel="icon" href="IMG_5479.jpeg">
-
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -35,7 +33,6 @@ body{font-family:var(--sans);color:var(--ink);background:#EFE8DC;-webkit-tap-hig
 .scr{position:absolute;inset:0;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .4s,transform .4s;display:flex;flex-direction:column}
 .scr.active{opacity:1;transform:none;pointer-events:auto}
 button{font-family:var(--sans)}
-
 #scr-onb{padding:max(20px,env(safe-area-inset-top)) 30px max(26px,env(safe-area-inset-bottom))}
 .onb-top{text-align:center;font-family:var(--serif);font-size:22px;font-weight:600}
 .onb-top em{font-style:italic;color:var(--lilac-deep)}
@@ -49,7 +46,6 @@ button{font-family:var(--sans)}
 .onb-dots{display:flex;gap:7px}
 .odot{width:7px;height:7px;border-radius:50%;background:#E0D8E8;transition:.35s}
 .odot.on{background:var(--butter-mut);width:20px;border-radius:100px}
-
 #scr-auth{padding:24px 30px max(26px,env(safe-area-inset-bottom));justify-content:center;overflow-y:auto}
 .logo-dots{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
 .logo-dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--lilac);opacity:0;animation:dotIn .5s forwards}
@@ -76,13 +72,11 @@ button{font-family:var(--sans)}
 .go-btn.outline:hover{border-color:var(--lilac)}
 .priv-note{margin-top:20px;background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:14px;padding:13px 15px;font-size:12.5px;line-height:1.55;color:var(--butter-ink);display:flex;gap:10px}
 .disclaimer{margin-top:14px;font-size:11px;line-height:1.5;color:#b0a5b8;text-align:center}
-
 #scr-pin{padding:30px;justify-content:center;align-items:center;text-align:center}
 .pin-lock{font-size:44px;margin-bottom:14px}
 #scr-pin h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px;margin-bottom:8px}
 #scr-pin .ps{font-size:13px;color:var(--mut);margin-bottom:24px}
 #pinInput{max-width:200px;text-align:center;letter-spacing:12px;font-size:20px;font-weight:800}
-
 #scr-home{padding:max(16px,env(safe-area-inset-top)) 22px max(24px,env(safe-area-inset-bottom));overflow-y:auto}
 .home-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
 .home-top .wm{font-family:var(--serif);font-size:23px;font-weight:600}
@@ -101,6 +95,8 @@ button{font-family:var(--sans)}
 .ch-dot{flex:1;height:8px;border-radius:100px;background:#fff;border:1px solid var(--lilac-line);transition:.3s}
 .ch-dot.on{background:var(--lilac);border-color:var(--lilac)}
 .challenge .ch-msg{font-size:12.5px;color:var(--mut);margin-top:10px;line-height:1.5}
+.install-btn{width:100%;border:1.5px solid var(--butter-line);border-radius:14px;padding:13px;background:var(--butter2);color:var(--butter-ink);font-size:13px;font-weight:800;cursor:pointer;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s}
+.install-btn:hover{background:var(--butter)}
 .whatsnew-btn{width:100%;border:1.5px dashed var(--lilac);border-radius:14px;padding:12px;background:var(--lilac-soft);color:var(--lilac-deep);font-size:13px;font-weight:800;cursor:pointer;margin-bottom:14px;display:none;align-items:center;justify-content:center;gap:8px}
 .whatsnew-btn.show{display:flex}
 .youalone{text-align:center;font-size:12px;color:var(--mut);margin-bottom:14px;line-height:1.5}
@@ -147,7 +143,6 @@ button{font-family:var(--sans)}
 .start-btn:hover{background:var(--lilac-deep);transform:translateY(-2px)}
 .start-btn:active{transform:scale(.98)}
 .home-foot{text-align:center;font-size:11px;color:#b8aec2;margin-top:18px;line-height:1.5}
-
 #scr-main{display:flex;flex-direction:column}
 .topbar{display:flex;justify-content:space-between;align-items:center;padding:max(10px,env(safe-area-inset-top)) 16px 6px}
 .topbar .wm{font-family:var(--serif);font-size:21px;font-weight:600}
@@ -187,11 +182,10 @@ button{font-family:var(--sans)}
 .thinking i{width:7px;height:7px;border-radius:50%;background:var(--butter-mut);animation:bl 1s ease-in-out infinite}
 .thinking i:nth-child(2){animation-delay:.15s}.thinking i:nth-child(3){animation-delay:.3s}
 @keyframes bl{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-5px);opacity:1}}
-
 #scr-draw{padding:max(14px,env(safe-area-inset-top)) 18px max(24px,env(safe-area-inset-bottom));overflow-y:auto}
 .draw-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .draw-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:25px}
-.draw-sub{font-size:12.5px;color:var(--mut);margin-bottom:12px;line-height:1.5;font-style:italic;font-family:var(--serif);font-size:15px}
+.draw-sub{font-size:15px;color:var(--mut);margin-bottom:12px;line-height:1.5;font-style:italic;font-family:var(--serif)}
 .method-row{display:flex;gap:10px;margin-bottom:12px}
 .method{flex:1;border:1.5px solid var(--line);border-radius:14px;padding:12px;background:var(--card);cursor:pointer;transition:.22s;text-align:left}
 .method.sel{border-color:var(--lilac);background:var(--lilac-soft)}
@@ -223,7 +217,6 @@ button{font-family:var(--sans)}
 .reflect-card .rh{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:8px}
 #reflectInput{width:100%;border:1.5px solid var(--line);border-radius:15px;padding:14px 16px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--card);outline:none;margin-bottom:10px}
 #reflectInput:focus{border-color:var(--lilac)}
-
 #scr-done{padding:34px 26px max(28px,env(safe-area-inset-bottom));overflow-y:auto;align-items:center;text-align:center}
 .done-check svg circle{stroke-dasharray:183;stroke-dashoffset:183;animation:drawk .9s .2s ease forwards}
 .done-check svg path{stroke-dasharray:40;stroke-dashoffset:40;animation:drawk .5s 1s ease forwards}
@@ -253,7 +246,6 @@ button{font-family:var(--sans)}
 .done-btns{width:100%;display:flex;flex-direction:column;gap:10px;animation:rise .6s 1.6s both}
 .done-btns .go-btn{margin-top:0}
 .done-disc{font-size:10.5px;color:#b8aec2;margin-top:18px;line-height:1.5;animation:rise .6s 1.8s both}
-
 #scr-hist{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .sec-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .sec-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
@@ -266,7 +258,6 @@ button{font-family:var(--sans)}
 .hrow p{font-size:13.5px;line-height:1.5;margin-top:2px;color:#3A3045}
 .hempty{text-align:center;color:#b8aec2;padding:60px 20px;font-size:14px;line-height:1.6}
 .clear-link{display:block;margin:8px auto 0;border:none;background:none;color:#9B5A7A;font-size:12.5px;font-weight:700;cursor:pointer}
-
 #scr-mood{padding:max(16px,env(safe-area-inset-top)) 20px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
 .cal-nav .cm{font-family:var(--serif);font-style:italic;font-size:22px;font-weight:600}
@@ -282,7 +273,7 @@ button{font-family:var(--sans)}
 .cal-legend{display:flex;flex-wrap:wrap;gap:10px 14px;justify-content:center;margin-top:18px;padding:14px;background:var(--card);border:1px solid var(--line);border-radius:16px}
 .cal-legend .lg{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--mut)}
 .cal-legend .lg i{width:12px;height:12px;border-radius:50%}
-.cal-summary{text-align:center;font-size:13px;color:var(--mut);margin-top:14px;line-height:1.5;font-family:var(--serif);font-style:italic;font-size:16px}
+.cal-summary{text-align:center;font-size:16px;color:var(--mut);margin-top:14px;line-height:1.5;font-family:var(--serif);font-style:italic}
 .cal-summary b{color:var(--lilac-deep);font-weight:600}
 .mood-sheet{position:absolute;left:0;right:0;bottom:0;background:var(--paper);border-top:1.5px solid var(--lilac-line);border-radius:24px 24px 0 0;padding:20px 22px max(24px,env(safe-area-inset-bottom));transform:translateY(110%);transition:.4s;z-index:40;box-shadow:0 -10px 40px #2a243522}
 .mood-sheet.show{transform:none}
@@ -295,7 +286,6 @@ button{font-family:var(--sans)}
 .ms-mood span{font-size:10px;color:var(--mut)}
 #moodNote{width:100%;border:1.5px solid var(--line);border-radius:13px;padding:12px 14px;font-family:var(--sans);font-size:14px;background:var(--card);outline:none;margin-bottom:12px;resize:none}
 #moodNote:focus{border-color:var(--lilac)}
-
 #scr-prof{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto}
 .prof-user{display:flex;align-items:center;gap:14px;margin-bottom:22px}
 .prof-ava{width:56px;height:56px;border-radius:18px;background:var(--lilac);display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:24px;color:#fff;flex-shrink:0}
@@ -330,14 +320,12 @@ button{font-family:var(--sans)}
 .logout-btn{width:100%;margin-top:10px;border:1.5px solid #e0c9c9;border-radius:15px;padding:14px;background:transparent;font-size:14px;font-weight:700;color:#b06a6a;cursor:pointer;transition:.25s}
 .logout-btn:hover{background:#f7eaea}
 .prof-ver{text-align:center;color:var(--butter-mut);font-size:11px;margin-top:20px;letter-spacing:.1em}
-
 #scr-qr{padding:30px;align-items:center;text-align:center;justify-content:center}
 #scr-qr h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px;margin-bottom:8px}
 #scr-qr .qs{font-size:13px;color:var(--mut);margin-bottom:22px;line-height:1.5}
 .qr-box{background:#fff;padding:18px;border-radius:20px;border:1px solid var(--line)}
 #qrCanvas{display:block}
 #scr-qr .qh{font-size:12px;color:var(--mut);margin-top:18px;line-height:1.5;max-width:280px}
-
 .overlay{position:absolute;inset:0;background:#2a243566;opacity:0;pointer-events:none;transition:.35s;z-index:50;display:flex;align-items:flex-end;justify-content:center}
 .overlay.show{opacity:1;pointer-events:auto}
 .wn-panel{width:100%;max-width:480px;background:var(--paper);border-radius:24px 24px 0 0;padding:max(22px,env(safe-area-inset-top)) 26px max(28px,env(safe-area-inset-bottom));transform:translateY(40px);transition:.4s}
@@ -348,11 +336,16 @@ button{font-family:var(--sans)}
 .wn-slide .wi{font-size:46px}
 .wn-slide .wt{font-family:var(--serif);font-style:italic;font-size:22px;font-weight:600;line-height:1.4}
 .wn-slide .wd{font-size:13.5px;color:var(--mut);line-height:1.6;max-width:300px}
-.wn-dots{display:flex;gap:7px;justify-content:center;margin:18px 0}
+.wn-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin:18px 0}
+.wn-arrow{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--lilac-line);background:var(--card);color:var(--lilac-deep);font-size:22px;cursor:pointer;transition:.2s}
+.wn-arrow:active{transform:scale(.9)}
+.wn-dots{display:flex;gap:7px}
 .wn-dots i{width:7px;height:7px;border-radius:50%;background:#E0D8E8;transition:.3s}
 .wn-dots i.on{background:var(--lilac);width:18px;border-radius:100px}
 .wn-close{width:100%;border:none;border-radius:15px;padding:15px;background:var(--lilac);color:#fff;font-size:15px;font-weight:800;cursor:pointer}
-
+.inst-step{display:flex;gap:12px;align-items:flex-start;text-align:left;margin-bottom:12px}
+.inst-step .n{width:26px;height:26px;border-radius:50%;background:var(--lilac);color:#fff;font-size:13px;font-weight:800;display:grid;place-items:center;flex-shrink:0}
+.inst-step .s{font-size:14px;line-height:1.55;color:var(--ink)}
 .toast{position:absolute;bottom:26px;left:50%;transform:translate(-50%,16px);background:#3A2A4A;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;opacity:0;transition:.35s;z-index:70;white-space:nowrap;box-shadow:0 14px 34px #2a243544}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 </style>
@@ -372,23 +365,23 @@ button{font-family:var(--sans)}
   <section class="scr" id="scr-auth">
     <div class="logo-dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="wordmark">Six<em>Why</em></div>
-    <div class="auth-sub" data-i18n="authSub">Шесть вопросов к себе. Один шаг вперёд.</div>
-    <div class="field-lbl" data-i18n="nameLbl">Как к тебе обращаться?</div>
+    <div class="auth-sub" data-i18n="authSub"></div>
+    <div class="field-lbl" data-i18n="nameLbl"></div>
     <input type="text" id="nameInput" placeholder="Имя или ник" maxlength="24" autocomplete="off">
-    <div class="field-lbl mt" data-i18n="pinLbl">Создай пароль (4 цифры)</div>
+    <div class="field-lbl mt" data-i18n="pinLbl"></div>
     <input type="password" id="pinInputReg" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="off">
-    <div class="field-hint" data-i18n="pinHint">Пароль защитит твои записи — без него приложение не откроется.</div>
-    <button class="go-btn" id="enterBtn" data-i18n="continue">Продолжить →</button>
-    <div class="priv-note">🔒&nbsp;<span data-i18n="privNote"><b>Твои записи хранятся только на этом устройстве</b> и никуда не передаются. Мы ничего не собираем и не показываем рекламу.</span></div>
-    <div class="disclaimer" data-i18n="disclaimer">SixWhy — инструмент саморефлексии, он не заменяет консультацию психолога или врача.</div>
+    <div class="field-hint" data-i18n="pinHint"></div>
+    <button class="go-btn" id="enterBtn" data-i18n="continue"></button>
+    <div class="priv-note">🔒&nbsp;<span data-i18n="privNote"></span></div>
+    <div class="disclaimer" data-i18n="disclaimer"></div>
   </section>
 
   <section class="scr" id="scr-pin">
     <div class="pin-lock">🔐</div>
-    <h2 data-i18n="enterPin">Введи пароль</h2>
-    <div class="ps" data-i18n="pinSpace">Это твоё личное пространство</div>
+    <h2 data-i18n="enterPin"></h2>
+    <div class="ps" data-i18n="pinSpace"></div>
     <input type="password" id="pinInput" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="off">
-    <button class="go-btn" id="pinBtn" style="max-width:200px" data-i18n="open">Открыть →</button>
+    <button class="go-btn" id="pinBtn" style="max-width:200px" data-i18n="open"></button>
   </section>
 
   <section class="scr" id="scr-home">
@@ -402,52 +395,53 @@ button{font-family:var(--sans)}
     </div>
     <div class="greet" id="greet"></div>
     <div class="challenge" id="challenge">
-      <div class="ch-top"><div class="ch-t" data-i18n="chTitle">7 дней честности</div><div class="ch-d" id="chDay">день 1 из 7</div></div>
+      <div class="ch-top"><div class="ch-t" data-i18n="chTitle"></div><div class="ch-d" id="chDay"></div></div>
       <div class="ch-dots" id="chDots"></div>
       <div class="ch-msg" id="chMsg"></div>
     </div>
-    <button class="whatsnew-btn" id="whatsnewBtn">✨ <span data-i18n="whatsnew">Что нового</span></button>
+    <button class="install-btn" id="installBtn">📲 <span data-i18n="install"></span></button>
+    <button class="whatsnew-btn" id="whatsnewBtn">✨ <span data-i18n="whatsnew"></span></button>
     <div class="youalone" id="youAlone"></div>
     <div class="ann" id="annBar" style="display:none"></div>
     <div class="quote-card lil">
-      <div class="qc-lbl" data-i18n="quoteDay">Цитата дня</div>
+      <div class="qc-lbl" data-i18n="quoteDay"></div>
       <div class="qc-q" id="quoteText"></div>
       <div class="qc-a" id="quoteAuthor"></div>
     </div>
     <div class="quote-card but">
-      <div class="qc-lbl" data-i18n="creatorWord">Слово создателя</div>
+      <div class="qc-lbl" data-i18n="creatorWord"></div>
       <div class="qc-q" id="quote2Text"></div>
       <div class="qc-a" id="quote2Author"></div>
     </div>
     <div class="about-card" id="aboutCard">
-      <div class="about-head"><span data-i18n="aboutHead">💭 Для чего это приложение</span> <span class="chev">▾</span></div>
-      <div class="about-body" data-i18n="aboutBody">SixWhy — это 2 минуты честного разговора с собой. Шесть вопросов «почему» доводят до корня того, что тревожит, а седьмой подсказывает маленький шаг. Без оценок, без спешки — только ты и твои мысли.</div>
+      <div class="about-head"><span data-i18n="aboutHead"></span> <span class="chev">▾</span></div>
+      <div class="about-body" data-i18n="aboutBody"></div>
     </div>
-    <div class="tiles-lbl" data-i18n="chooseToday">Что выбираешь сегодня?</div>
+    <div class="tiles-lbl" data-i18n="chooseToday"></div>
     <div class="tiles">
       <div class="tile lil sel" data-mode="empathy">
         <div class="ti"><svg viewBox="0 0 24 24"><path d="M12 20s-7.2-4.6-9.2-9.1C1.5 8 3.4 5 6.6 5c2 0 3.4 1.1 4.4 2.7L12 9l1-1.3C14 6.1 15.4 5 17.4 5c3.2 0 5.1 3 3.8 5.9-2 4.5-9.2 9.1-9.2 9.1z"/></svg></div>
-        <div class="tt" data-i18n="empathy">Эмпатия</div><div class="td" data-i18n="empathyD">умный третий вопрос</div>
+        <div class="tt" data-i18n="empathy"></div><div class="td" data-i18n="empathyD"></div>
       </div>
       <div class="tile but" data-mode="classic">
         <div class="ti"><svg viewBox="0 0 24 24"><circle cx="12" cy="3.5" r="1.6"/><circle cx="12" cy="7.7" r="1.7"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="16.3" r="1.9"/><circle cx="12" cy="20.7" r="2"/></svg></div>
-        <div class="tt" data-i18n="classic">Классика</div><div class="td" data-i18n="classicD">шесть «почему» подряд</div>
+        <div class="tt" data-i18n="classic"></div><div class="td" data-i18n="classicD"></div>
       </div>
       <div class="tile but" data-mode="mirror">
         <div class="ti"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 6.3L21 12l-6.8 2.7L12 21l-2.2-6.3L3 12l6.8-2.7z"/></svg></div>
-        <div class="tt" data-i18n="mirror">Зеркало</div><div class="td" data-i18n="mirrorD">бережный разбор цепочки</div>
+        <div class="tt" data-i18n="mirror"></div><div class="td" data-i18n="mirrorD"></div>
       </div>
       <div class="tile lil" data-mode="capsule">
         <div class="ti"><svg viewBox="0 0 24 24"><path d="M12 21v-8"/><path d="M12 13c0-4.2 3.2-6.5 7.5-6.5 0 4.2-3.2 6.5-7.5 6.5z"/><path d="M12 13c0-3.2-2.6-5-6.5-5 0 3.2 2.6 5 6.5 5z"/></svg></div>
-        <div class="tt" data-i18n="capsule">Капсула</div><div class="td" data-i18n="capsuleD">цепочка + заметка на память</div>
+        <div class="tt" data-i18n="capsule"></div><div class="td" data-i18n="capsuleD"></div>
       </div>
       <div class="tile wide lil" data-mode="draw">
         <div class="ti"><svg viewBox="0 0 24 24"><path d="M15.5 4.5l4 4L8 20H4v-4z"/><path d="M13 7l4 4"/></svg></div>
-        <div><div class="tt" data-i18n="draw">Когда нет слов</div><div class="td" data-i18n="drawD">нарисуй своё чувство — и пойми его</div></div>
+        <div><div class="tt" data-i18n="draw"></div><div class="td" data-i18n="drawD"></div></div>
       </div>
     </div>
-    <button class="start-btn" id="startBtn" data-i18n="startTalk">Начать разговор с собой →</button>
-    <div class="home-foot" data-i18n="homeFoot">Записи остаются только у тебя · без рекламы и сбора данных</div>
+    <button class="start-btn" id="startBtn" data-i18n="startTalk"></button>
+    <div class="home-foot" data-i18n="homeFoot"></div>
   </section>
 
   <section class="scr" id="scr-main">
@@ -466,8 +460,8 @@ button{font-family:var(--sans)}
     </div>
     <div class="canvas" id="canvas">
       <div class="hint-empty" id="hintEmpty">
-        <div class="hd" data-i18n="hintH">Здесь появится твой диалог…</div>
-        <p data-i18n="hintP">Напиши сверху то, что сейчас чувствуешь.<br>Например: <b>«мне плохо»</b> — и отвечай честно.</p>
+        <div class="hd" data-i18n="hintH"></div>
+        <p data-i18n="hintP"></p>
       </div>
       <div class="thread" id="thread" style="display:none"></div>
     </div>
@@ -475,14 +469,14 @@ button{font-family:var(--sans)}
 
   <section class="scr" id="scr-draw">
     <div class="draw-head">
-      <h2 data-i18n="draw">Когда нет слов</h2>
+      <h2 data-i18n="draw"></h2>
       <button class="ibtn" id="drawBackBtn"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5"/></svg></button>
     </div>
-    <div class="draw-sub" data-i18n="drawSub">Здесь нет правильно и неправильно — рисуй так, как ведёт рука.</div>
-    <button class="music-btn" id="musicBtn"><svg viewBox="0 0 24 24"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg><span data-i18n="musicOn">Включить музыку для погружения</span></button>
+    <div class="draw-sub" data-i18n="drawSub"></div>
+    <button class="music-btn" id="musicBtn"><svg viewBox="0 0 24 24"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg><span data-i18n="musicOn"></span></button>
     <div class="method-row">
-      <div class="method sel" data-method="lines"><div class="mt" data-i18n="mLines">Линии эмоции</div><div class="md" data-i18n="mLinesD">рисуй состояние линиями</div></div>
-      <div class="method" data-method="weather"><div class="mt" data-i18n="mWeather">Внутренняя погода</div><div class="md" data-i18n="mWeatherD">какая погода внутри?</div></div>
+      <div class="method sel" data-method="lines"><div class="mt" data-i18n="mLines"></div><div class="md" data-i18n="mLinesD"></div></div>
+      <div class="method" data-method="weather"><div class="mt" data-i18n="mWeather"></div><div class="md" data-i18n="mWeatherD"></div></div>
     </div>
     <div class="draw-wrap"><canvas id="drawCanvas"></canvas></div>
     <div class="tools">
@@ -496,14 +490,14 @@ button{font-family:var(--sans)}
     <div class="color-sep"></div>
     <div class="colors" id="colorRow2"></div>
     <div class="draw-actions">
-      <button class="go-btn outline" id="clearBtn" data-i18n="clear">Очистить</button>
-      <button class="go-btn butter" id="doneDrawBtn" data-i18n="done">Готово ✓</button>
+      <button class="go-btn outline" id="clearBtn" data-i18n="clear"></button>
+      <button class="go-btn butter" id="doneDrawBtn" data-i18n="done"></button>
     </div>
     <div class="reflect" id="reflect">
-      <button class="read-btn" id="readBtn">📖 <span data-i18n="howRead">Как читать рисунок</span></button>
+      <button class="read-btn" id="readBtn">📖 <span data-i18n="howRead"></span></button>
       <div class="read-body" id="readBody"></div>
       <input type="text" id="reflectInput" placeholder="Одной фразой: что у тебя на душе…" maxlength="160" autocomplete="off">
-      <button class="go-btn" id="reflectGo" data-i18n="toChain">Перейти к 6 вопросам →</button>
+      <button class="go-btn" id="reflectGo" data-i18n="toChain"></button>
     </div>
   </section>
 
@@ -511,31 +505,31 @@ button{font-family:var(--sans)}
     <div class="done-check">
       <svg viewBox="0 0 64 64" width="66" height="66"><circle cx="32" cy="32" r="29" fill="none" stroke="#B888BA" stroke-width="2.5"/><path d="M20 33l8.5 8.5L44 25" fill="none" stroke="#B888BA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
-    <h2 data-i18n="doneH">Ты дошёл до корня.</h2>
-    <div class="sub" data-i18n="doneSub">Шесть вопросов позади. Вот что получилось:</div>
-    <div class="root-block"><div class="blk-lbl" data-i18n="root">Корень</div><div class="rt" id="rootText"></div></div>
-    <div class="step-block"><div class="blk-lbl" data-i18n="step">✳ Твой шаг</div><div class="rt" id="stepText"></div></div>
-    <div class="mirror-block" id="mirrorBlock" style="display:none"><div class="blk-lbl" data-i18n="mirrorView">✦ Взгляд со стороны</div><div class="rt" id="mirrorText"></div></div>
+    <h2 data-i18n="doneH"></h2>
+    <div class="sub" data-i18n="doneSub"></div>
+    <div class="root-block"><div class="blk-lbl" data-i18n="root"></div><div class="rt" id="rootText"></div></div>
+    <div class="step-block"><div class="blk-lbl" data-i18n="step"></div><div class="rt" id="stepText"></div></div>
+    <div class="mirror-block" id="mirrorBlock" style="display:none"><div class="blk-lbl" data-i18n="mirrorView"></div><div class="rt" id="mirrorText"></div></div>
     <div class="mood-pick">
-      <div class="mp-t" data-i18n="markMood">Отметь настроение за сегодня</div>
+      <div class="mp-t" data-i18n="markMood"></div>
       <div class="mood-row" id="moodRowDone"></div>
     </div>
-    <div class="breath"><i></i><span data-i18n="breath">Один спокойный вдох — и можно действовать.</span></div>
+    <div class="breath"><i></i><span data-i18n="breath"></span></div>
     <div class="done-btns">
-      <button class="go-btn butter" id="capsuleBtn" data-i18n="saveCap">🌱 Сохранить как капсулу</button>
-      <button class="go-btn" id="againBtn" data-i18n="again">Начать заново</button>
-      <button class="go-btn outline" id="toHomeBtn" data-i18n="toHome">На главную</button>
+      <button class="go-btn butter" id="capsuleBtn" data-i18n="saveCap"></button>
+      <button class="go-btn" id="againBtn" data-i18n="again"></button>
+      <button class="go-btn outline" id="toHomeBtn" data-i18n="toHome"></button>
     </div>
-    <div class="done-disc" data-i18n="doneDisc">Если тебе очень тяжело — пожалуйста, обратись к специалисту или на линию психологической помощи.</div>
+    <div class="done-disc" data-i18n="doneDisc"></div>
   </section>
 
   <section class="scr" id="scr-hist">
-    <div class="sec-head"><h2 data-i18n="history">История</h2><button class="ibtn" id="backBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
+    <div class="sec-head"><h2 data-i18n="history"></h2><button class="ibtn" id="backBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
     <div id="histList"></div>
   </section>
 
   <section class="scr" id="scr-mood">
-    <div class="sec-head"><h2 data-i18n="moodCal">Календарь чувств</h2><button class="ibtn" id="moodBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
+    <div class="sec-head"><h2 data-i18n="moodCal"></h2><button class="ibtn" id="moodBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
     <div class="cal-nav">
       <button id="prevMonth">‹</button>
       <div class="cm" id="calMonth"></div>
@@ -547,61 +541,73 @@ button{font-family:var(--sans)}
     <div class="cal-legend" id="calLegend"></div>
     <div class="mood-sheet" id="moodSheet">
       <div class="ms-t" id="msDate"></div>
-      <div class="ms-d" data-i18n="msPick">Выбери, что ты чувствовал(а) в этот день</div>
+      <div class="ms-d" data-i18n="msPick"></div>
       <div class="ms-moods" id="msMoods"></div>
       <textarea id="moodNote" rows="2" placeholder="Короткая заметка (необязательно)…"></textarea>
-      <button class="go-btn butter" id="moodSaveBtn" data-i18n="save">Сохранить</button>
+      <button class="go-btn butter" id="moodSaveBtn" data-i18n="save"></button>
     </div>
   </section>
 
   <section class="scr" id="scr-prof">
-    <div class="sec-head"><h2 data-i18n="profile">Профиль</h2><button class="ibtn" id="profBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
+    <div class="sec-head"><h2 data-i18n="profile"></h2><button class="ibtn" id="profBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
     <div class="prof-user">
       <div class="prof-ava" id="profAva">?</div>
-      <div><div class="pn" id="profName">—</div><div class="ps" data-i18n="profPs">твоё личное пространство</div></div>
+      <div><div class="pn" id="profName">—</div><div class="ps" data-i18n="profPs"></div></div>
     </div>
     <div class="p-card">
-      <h3 data-i18n="privacy">🔐 Конфиденциальность</h3>
+      <h3 data-i18n="privacy"></h3>
       <div class="st-line" id="pinStatus"></div>
       <div class="pin-row">
         <input type="password" id="pinInputProf" inputmode="numeric" maxlength="4" placeholder="4 цифры">
-        <button id="setPinBtn" data-i18n="create">Создать</button>
-        <button id="removePinBtn" style="display:none" data-i18n="remove">Убрать</button>
+        <button id="setPinBtn" data-i18n="create"></button>
+        <button id="removePinBtn" style="display:none" data-i18n="remove"></button>
       </div>
     </div>
     <div class="p-card">
-      <h3 data-i18n="language">🌐 Язык</h3>
+      <h3 data-i18n="language"></h3>
       <div class="lang-row">
         <button data-lang="ru" class="sel">Русский</button>
         <button data-lang="en">English</button>
       </div>
     </div>
     <div class="creator-card" id="creatorCard">
-      <h3 data-i18n="creatorCorner">👑 Уголок создателя</h3>
+      <h3 data-i18n="creatorCorner"></h3>
       <div class="big-num" id="creatorCount">0</div>
-      <div class="big-lbl" data-i18n="creatorLbl">людей хотя бы раз открыли SixWhy</div>
-      <p data-i18n="creatorP">Только ты видишь этот блок. Счётчик считает уникальных гостей анонимно — без имён и личных данных.</p>
-      <button class="stats-btn" id="statsBtn" data-i18n="statsBtn">📊 Подробная статистика GitHub</button>
-      <button class="qr-btn" id="qrBtnProf" data-i18n="qrBtn">📲 QR-код приложения</button>
+      <div class="big-lbl" data-i18n="creatorLbl"></div>
+      <p data-i18n="creatorP"></p>
+      <button class="stats-btn" id="statsBtn" data-i18n="statsBtn"></button>
+      <button class="qr-btn" id="qrBtnProf" data-i18n="qrBtn"></button>
     </div>
-    <button class="intro-btn" id="introBtn" data-i18n="introBtn">📖 Посмотреть введение</button>
-    <button class="logout-btn" id="logoutBtn" data-i18n="logout">Выйти из аккаунта</button>
+    <button class="intro-btn" id="introBtn" data-i18n="introBtn"></button>
+    <button class="logout-btn" id="logoutBtn" data-i18n="logout"></button>
     <div class="prof-ver">SIXWHY · СОЗДАНО С ЛЮБОВЬЮ</div>
   </section>
 
   <section class="scr" id="scr-qr">
-    <h2 data-i18n="qrTitle">QR-код SixWhy</h2>
-    <div class="qs" data-i18n="qrSub">Покажи друзьям — пусть отсканируют и попробуют</div>
+    <h2 data-i18n="qrTitle"></h2>
+    <div class="qs" data-i18n="qrSub"></div>
     <div class="qr-box"><canvas id="qrCanvas" width="220" height="220"></canvas></div>
-    <div class="qh" data-i18n="qrHint">Совет: сохрани скриншот и распечатай — повесь в универе, кофейне или кабинете.</div>
-    <button class="go-btn outline" id="qrBackBtn" style="margin-top:22px;max-width:240px" data-i18n="back2">Назад</button>
+    <div class="qh" data-i18n="qrHint"></div>
+    <button class="go-btn outline" id="qrBackBtn" style="margin-top:22px;max-width:240px" data-i18n="back2"></button>
   </section>
 
   <div class="overlay" id="wnOverlay">
     <div class="wn-panel">
       <div class="wn-slides" id="wnSlides"></div>
-      <div class="wn-dots" id="wnDots"></div>
-      <button class="wn-close" id="wnClose" data-i18n="gotit">Понятно!</button>
+      <div class="wn-nav">
+        <button class="wn-arrow" id="wnPrev">‹</button>
+        <div class="wn-dots" id="wnDots"></div>
+        <button class="wn-arrow" id="wnNext">›</button>
+      </div>
+      <button class="wn-close" id="wnClose" data-i18n="gotit"></button>
+    </div>
+  </div>
+
+  <div class="overlay" id="instOverlay">
+    <div class="wn-panel">
+      <div class="ms-t" style="font-family:var(--serif);font-style:italic;font-size:22px;font-weight:600;text-align:center;margin-bottom:16px" data-i18n="instTitle"></div>
+      <div id="instSteps"></div>
+      <button class="wn-close" id="instClose" data-i18n="gotit"></button>
     </div>
   </div>
 
@@ -613,7 +619,6 @@ const $=s=>document.querySelector(s);
 const APP_VERSION='2.0';
 const SITE='https://singdarrad-oss.github.io/-SixWhy/';
 
-/* ── локализация ── */
 const I18N={
   ru:{
     authSub:'Шесть вопросов к себе. Один шаг вперёд.',nameLbl:'Как к тебе обращаться?',pinLbl:'Создай пароль (4 цифры)',
@@ -629,7 +634,7 @@ const I18N={
     homeFoot:'Записи остаются только у тебя · без рекламы и сбора данных',
     hintH:'Здесь появится твой диалог…',hintP:'Напиши сверху то, что сейчас чувствуешь.<br>Например: <b>«мне плохо»</b> — и отвечай честно.',
     drawSub:'Здесь нет правильно и неправильно — рисуй так, как ведёт рука.',
-    musicOn:'Включить музыку для погружения',musicOff:'Выключить музыку',
+    musicOn:'Включить музыку · Моцарт (шкатулка)',musicOff:'Выключить музыку',
     mLines:'Линии эмоции',mLinesD:'рисуй состояние линиями',mWeather:'Внутренняя погода',mWeatherD:'какая погода внутри?',
     clear:'Очистить',done:'Готово ✓',howRead:'Как читать рисунок',toChain:'Перейти к 6 вопросам →',
     doneH:'Ты дошёл до корня.',doneSub:'Шесть вопросов позади. Вот что получилось:',root:'Корень',step:'✳ Твой шаг',mirrorView:'✦ Взгляд со стороны',
@@ -642,7 +647,7 @@ const I18N={
     creatorP:'Только ты видишь этот блок. Счётчик считает уникальных гостей анонимно — без имён и личных данных.',
     statsBtn:'📊 Подробная статистика GitHub',qrBtn:'📲 QR-код приложения',introBtn:'📖 Посмотреть введение',logout:'Выйти из аккаунта',
     qrTitle:'QR-код SixWhy',qrSub:'Покажи друзьям — пусть отсканируют и попробуют',qrHint:'Совет: сохрани скриншот и распечатай — повесь в универе, кофейне или кабинете.',back2:'Назад',
-    gotit:'Понятно!',
+    gotit:'Понятно!',install:'Установить SixWhy на телефон',instTitle:'📲 Установка SixWhy',
     youAlone:(n)=>'На этой неделе свой корень искали <b>'+n+' человек</b>. Ты не один.',
     greet:(n)=>'Привет, <b>'+n+'</b> 👋',
     pinSet:'Пароль установлен 🔐',pinRemoved:'Пароль убран',pinDigits:'Пароль — ровно 4 цифры',wrongPin:'Неверный пароль 🙈',
@@ -655,11 +660,13 @@ const I18N={
     readQ:['Посмотри на рисунок. Каких цветов в нём больше?','На что он похож? Что ты чувствовал(а), пока рисовал(а)?','Если бы рисунок мог говорить — что бы он сказал?'],
     moods:['радость','спокойствие','нежность','грусть','тревога','злость','усталость'],
     summary:(m)=>'В этом месяце чаще всего ты чувствовал(а): <b>'+m+'</b>',
+    instIOS:['Открой сайт в <b>Safari</b>.','Нажми кнопку <b>«Поделиться»</b> внизу (квадратик со стрелкой вверх).','Выбери <b>«На экран “Домой”»</b> и нажми «Добавить».','Готово! Иконка SixWhy появилась на твоём экране.'],
+    instAnd:['Открой сайт в <b>Chrome</b>.','Нажми меню <b>⋮</b> в углу.','Выбери <b>«Добавить на главный экран»</b> или «Установить приложение».','Готово! Иконка SixWhy появилась на твоём экране.'],
     wn:[
       {i:'🎨',t:'Доска для рисования',d:'Когда нет слов — рисуй. Выбери технику, порисуй, а потом прочитай, что рассказал твой рисунок.'},
       {i:'📅',t:'Календарь чувств',d:'Отмечай настроение каждый день цветом. Смотри, как менялось твоё состояние за месяц.'},
       {i:'🌱',t:'7 дней честности',d:'Мягкий челлендж: одна цепочка в день семь дней подряд. Маленький шаг к себе.'},
-      {i:'📲',t:'SixWhy на домашнем экране',d:'Добавь сайт на главный экран телефона — он станет как настоящее приложение с иконкой.'}
+      {i:'📲',t:'SixWhy на домашнем экране',d:'Нажми кнопку «Установить SixWhy» на главной — и сайт станет как настоящее приложение.'}
     ],
     onb:[
       {st:'Часто мы не можем решить проблему — даже когда выход очень прост.',bf:'💡 <b>SixWhy помогает</b> распутать мысли за 2 минуты и найти корень того, что тревожит.'},
@@ -674,14 +681,14 @@ const I18N={
     disclaimer:'SixWhy is a self-reflection tool. It does not replace a psychologist or doctor.',
     enterPin:'Enter password',pinSpace:'This is your private space',open:'Open →',
     chTitle:'7 days of honesty',whatsnew:'What\'s new',quoteDay:'Quote of the day',creatorWord:'Creator\'s word',
-    aboutHead:'💭 What is this app for',aboutBody:'SixWhy is 2 minutes of an honest conversation with yourself. Six "why" questions get to the root of what troubles you, and the seventh suggests a small step. No judgment, no rush — just you and your thoughts.',
+    aboutHead:'💭 What is this app for',aboutBody:'SixWhy is 2 minutes of an honest conversation with yourself. Six "why" questions get to the root of what troubles you, and the seventh suggests a small step.',
     chooseToday:'What do you choose today?',empathy:'Empathy',empathyD:'a smart third question',classic:'Classic',classicD:'six "whys" in a row',
     mirror:'Mirror',mirrorD:'a gentle chain review',capsule:'Capsule',capsuleD:'chain + a note to remember',
     draw:'When there are no words',drawD:'draw your feeling — and understand it',startTalk:'Start a talk with yourself →',startDraw:'Draw your feeling →',
     homeFoot:'Notes stay only with you · no ads, no data collection',
     hintH:'Your dialogue will appear here…',hintP:'Write above what you feel right now.<br>For example: <b>"I feel bad"</b> — and answer honestly.',
     drawSub:'There\'s no right or wrong here — draw as your hand leads.',
-    musicOn:'Turn on music to immerse',musicOff:'Turn off music',
+    musicOn:'Turn on music · Mozart (music box)',musicOff:'Turn off music',
     mLines:'Lines of emotion',mLinesD:'draw your state with lines',mWeather:'Inner weather',mWeatherD:'what\'s the weather inside?',
     clear:'Clear',done:'Done ✓',howRead:'How to read the drawing',toChain:'Go to the 6 questions →',
     doneH:'You reached the root.',doneSub:'Six questions are behind. Here\'s what came out:',root:'Root',step:'✳ Your step',mirrorView:'✦ A view from the side',
@@ -691,10 +698,10 @@ const I18N={
     history:'History',moodCal:'Calendar of feelings',msPick:'Choose what you felt that day',save:'Save',
     profile:'Profile',profPs:'your private space',privacy:'🔐 Privacy',create:'Create',change:'Change',remove:'Remove',
     language:'🌐 Language',creatorCorner:'👑 Creator\'s corner',creatorLbl:'people opened SixWhy at least once',
-    creatorP:'Only you see this block. The counter counts unique guests anonymously — no names, no personal data.',
+    creatorP:'Only you see this block. The counter counts unique guests anonymously.',
     statsBtn:'📊 Detailed GitHub stats',qrBtn:'📲 App QR code',introBtn:'📖 View introduction',logout:'Log out',
-    qrTitle:'SixWhy QR code',qrSub:'Show friends — let them scan and try',qrHint:'Tip: save a screenshot and print it — hang it at uni, a café, or an office.',back2:'Back',
-    gotit:'Got it!',
+    qrTitle:'SixWhy QR code',qrSub:'Show friends — let them scan and try',qrHint:'Tip: save a screenshot and print it.',back2:'Back',
+    gotit:'Got it!',install:'Install SixWhy on your phone',instTitle:'📲 Install SixWhy',
     youAlone:(n)=>'This week <b>'+n+' people</b> looked for their root. You\'re not alone.',
     greet:(n)=>'Hi, <b>'+n+'</b> 👋',
     pinSet:'Password set 🔐',pinRemoved:'Password removed',pinDigits:'Password must be exactly 4 digits',wrongPin:'Wrong password 🙈',
@@ -707,11 +714,13 @@ const I18N={
     readQ:['Look at your drawing. Which colors are most present?','What does it look like? What did you feel while drawing?','If the drawing could speak — what would it say?'],
     moods:['joy','calm','tenderness','sadness','anxiety','anger','fatigue'],
     summary:(m)=>'This month you most often felt: <b>'+m+'</b>',
+    instIOS:['Open the site in <b>Safari</b>.','Tap the <b>Share</b> button at the bottom (square with an arrow).','Choose <b>"Add to Home Screen"</b> and tap "Add".','Done! The SixWhy icon is on your screen.'],
+    instAnd:['Open the site in <b>Chrome</b>.','Tap the menu <b>⋮</b>.','Choose <b>"Add to Home Screen"</b> or "Install app".','Done! The SixWhy icon is on your screen.'],
     wn:[
       {i:'🎨',t:'Drawing board',d:'When there are no words — draw. Pick a technique, draw, then read what your drawing told you.'},
       {i:'📅',t:'Calendar of feelings',d:'Mark your mood every day with a color. Watch how your state changed over the month.'},
       {i:'🌱',t:'7 days of honesty',d:'A gentle challenge: one chain a day for seven days. A small step toward yourself.'},
-      {i:'📲',t:'SixWhy on your home screen',d:'Add the site to your phone\'s home screen — it becomes like a real app with an icon.'}
+      {i:'📲',t:'SixWhy on your home screen',d:'Tap "Install SixWhy" on the home page — the site becomes like a real app.'}
     ],
     onb:[
       {st:'Often we can\'t solve a problem — even when the way out is simple.',bf:'💡 <b>SixWhy helps</b> untangle thoughts in 2 minutes and find the root of what troubles you.'},
@@ -724,7 +733,7 @@ let lang='ru';
 try{lang=localStorage.getItem('sixwhy_lang')||'ru';}catch(e){}
 function t(k){const v=(I18N[lang]&&I18N[lang][k])||I18N.ru[k]||k;return v;}
 function applyI18N(){
-  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');const v=t(k);if(v!=null)el.innerHTML=v;});
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');const v=t(k);if(v!=null&&typeof v==='string')el.innerHTML=v;});
   $('#nameInput').placeholder=lang==='ru'?'Имя или ник':'Name or nick';
   $('#msgInput').placeholder=lang==='ru'?'Напиши, что происходит…':'Write what\'s happening…';
   $('#reflectInput').placeholder=lang==='ru'?'Одной фразой: что у тебя на душе…':'In one phrase: what\'s on your mind…';
@@ -732,7 +741,6 @@ function applyI18N(){
   document.documentElement.lang=lang;
 }
 
-/* ── данные ── */
 const MOOD_COLORS=['#FFEDA8','#E2D4EC','#F8BCD3','#B9C6F2','#FBD3AE','#F4B8BB','#C6C1CC'];
 let phase='start',session={start:null,whys:[],action:null};
 let name='',history=[],onboarded=false,mode='empathy',pin='',moods={},challenge={start:null,days:[]};
@@ -749,7 +757,6 @@ function saveHist(){try{localStorage.setItem('sixwhy_hist',JSON.stringify(histor
 function saveMoods(){try{localStorage.setItem('sixwhy_moods',JSON.stringify(moods));}catch(e){}}
 function saveChallenge(){try{localStorage.setItem('sixwhy_challenge',JSON.stringify(challenge));}catch(e){}}
 
-/* ── счётчик посетителей (анонимный, через localStorage-флаг) ── */
 (function countVisit(){
   try{
     if(!localStorage.getItem('sixwhy_counted')){
@@ -761,7 +768,6 @@ function saveChallenge(){try{localStorage.setItem('sixwhy_challenge',JSON.string
 })();
 function getVisitCount(){try{return parseInt(localStorage.getItem('sixwhy_visits')||'1',10);}catch(e){return 1;}}
 
-/* ── config ── */
 let CFG={quote:'Даже самый маленький шаг — уже шаг.',author:'SixWhy',quote2:'Ты сильнее, чем тебе кажется. 💜',author2:'создательница SixWhy',announcement:'',creator:''};
 function renderQuote(){
   $('#quoteText').textContent='«'+CFG.quote+'»';
@@ -773,18 +779,17 @@ function renderQuote(){
 renderQuote();
 fetch('config.json?'+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j){CFG=Object.assign(CFG,j);renderQuote();}}).catch(()=>{});
 
-/* ── разбор цепочки (пулы, без повторов) ── */
 const AI={
-  sadness:{keys:['плохо','грустно','тяжело','больно','тоскливо','паршиво','хреново','ужасно','кошмар','плачу','слёзы','рев','умер','потеря','sad','cry','lost','hurt','awful','terrible','lonely'],
+  sadness:{keys:['плохо','грустно','тяжело','больно','тоскливо','паршиво','хреново','ужасно','кошмар','плачу','слёзы','рев','умер','потеря','sad','cry','lost','hurt','awful','terrible'],
     replies:['Я слышу, как тебе тяжело. Грусть — это не слабость, это сигнал, что что-то важно для тебя.','Мне жаль, что тебе больно прямо сейчас. Ты не обязан быть сильным каждую секунду.','Грустить — нормально. Иногда сердцу нужно время, чтобы прожить то, что случилось.','Похоже, внутри сейчас много тяжести. Ты имеешь право чувствовать это так долго, сколько нужно.'],
     questions:['Что случилось совсем недавно?','Когда ты в последний раз позволял себе просто погрустить?','Есть ли кто-то, кому ты мог бы сейчас позвонить?']},
   fear:{keys:['боюсь','страх','тревога','паника','нервничаю','волнуюсь','опасаюсь','жутко','страшно','переживаю','afraid','scared','anxious','panic','worried','nervous','fear'],
     replies:['Страх пытается тебя защитить. Давай посмотрим, чего именно он боится.','Тревога — как шум в голове, который мешает услышать себя. Попробуем приглушить его.','Я понимаю, как это — когда сердце колотится от неизвестности. Ты не один в этом.','Страх часто больше самой ситуации. Давай разберём его по кусочкам.'],
     questions:['Что самое страшное может случиться, если опасения оправдаются?','Было ли раньше что-то похожее — и как ты справился?','Что бы ты сказал другу, который боится того же?']},
-  fatigue:{keys:['устал','устала','измотан','выгорел','нет сил','обессилел','замучен','усталость','вымотал','сил нет','tired','exhausted','burnt','burnout','no energy'],
+  fatigue:{keys:['устал','устала','измотан','выгорел','нет сил','обессилел','замучен','усталость','вымотал','сил нет','tired','exhausted','burnt','burnout'],
     replies:['Ты несёшь так много. Усталость — это не лень, это просьба тела о бережности.','Выгорание подкрадывается тихо. То, что ты его замечаешь — уже шаг к себе.','Иногда «ничего не делать» — самое продуктивное, что можно сделать. Ты имеешь право на паузу.','Похоже, силы на исходе. А что их забирает больше всего?'],
     questions:['Когда ты в последний раз делал что-то просто для себя?','Что отнимает больше всего сил прямо сейчас?','Как бы ты провёл полностью свободный день?']},
-  anger:{keys:['злюсь','бешусь','раздражён','ненавижу','бесит','достало','взбесило','злость','ярость','раздражает','angry','mad','furious','hate','annoyed','pissed'],
+  anger:{keys:['злюсь','бешусь','раздражён','ненавижу','бесит','достало','взбесило','злость','ярость','раздражает','angry','mad','furious','hate','annoyed'],
     replies:['Злость — это энергия. Она показывает, где нарушены твои границы.','Я слышу твою злость, и она имеет право быть. Давай посмотрим, что она хочет сказать.','Раздражение — часто непрожитая обида или усталость. Что стоит за ним?','Злиться — нормально. Главное — не дать злости решить за тебя.'],
     questions:['Кто или что вызвало эту злость?','Если бы злость могла говорить — что бы она сказала?','Где в этой ситуации нарушена твоя граница?']},
   loneliness:{keys:['одинок','одиноко','никто','пусто','брошен','забыт','ненужный','одиночество','некому','alone','nobody','empty','abandoned'],
@@ -793,16 +798,16 @@ const AI={
   guilt:{keys:['стыдно','вина','виноват','совесть','упрёк','раскаиваюсь','стыд','guilt','ashamed','guilty','regret'],
     replies:['Вина говорит, что ты человек с сердцем. Но иногда мы берём на себя чужую ответственность.','Стыд тяжёл, но он не определяет тебя. Ты больше своей ошибки.','Чувство вины часто непропорционально. Давай проверим, насколько оно реально.','Ты имеешь право на прощение — в том числе от самого себя.'],
     questions:['Перед кем или чем ты чувствуешь вину?','Винил бы ты друга так же сильно в такой ситуации?','Что бы ты хотел исправить, если бы мог?']},
-  confusion:{keys:['не знаю','растерян','потерян','запутался','тупик','не понимаю','растерянность','непонятно','confused','lost','don\'t know','stuck'],
+  confusion:{keys:['не знаю','растерян','потерян','запутался','тупик','не понимаю','растерянность','непонятно','confused','don\'t know','stuck'],
     replies:['Не знать — нормально. Иногда туман нужен, чтобы увидеть, куда действительно хочется идти.','Растерянность — не тупик, а перекрёсток. Ты просто ещё не выбрал дорогу.','Давай распутаем по ниточке. С чего начинается этот клубок?','«Не знаю» — самый честный ответ. И с него можно начать.'],
     questions:['Что бы ты хотел понять в первую очередь?','Если бы страх ошибиться исчез — что бы ты выбрал?','Что раньше помогало тебе находить ясность?']},
-  boredom:{keys:['скучно','рутина','однообразно','серость','надоело','пресно','скука','бессмысленно','нечего делать','bored','routine','pointless','nothing to do'],
+  boredom:{keys:['скучно','рутина','однообразно','серость','надоело','пресно','скука','бессмысленно','нечего делать','bored','routine','pointless'],
     replies:['Скука — тихий голос, который просит смысла. Что раньше зажигало в тебе искру?','Рутина выматывает не меньше стресса. То, что ты это чувствуешь — важно.','«Надоело» значит «я вырос из этого». Это хорошая новость, хоть и неприятная.','Похоже, тебе хочется чего-то живого. Давай вспомним, что это было.'],
     questions:['Что раньше приносило тебе радость?','Если бы рутина исчезла — чем бы ты занялся?','Чего не хватает для ощущения жизни?']},
-  pressure:{keys:['давление','требуют','должен','обязан','нагрузка','перегруз','должна','обязана','pressure','must','have to','overwhelmed','demand'],
+  pressure:{keys:['давление','требуют','должен','обязан','нагрузка','перегруз','должна','обязана','pressure','must','overwhelmed'],
     replies:['Так много «должен». А где в этом списке есть «я хочу»?','Перегруз — это когда «надо» стало больше, чем «могу». Ты имеешь право сказать «стоп».','Давление извне часто превращается в давление изнутри. Давай разделим их.','Ты не машина для выполнения обязательств. Ты живой человек.'],
     questions:['Кто или что давит сильнее всего?','Что из «должен» можно отложить или отдать?','Что бы ты выбрал, если бы никто не ждал результатов?']},
-  future:{keys:['будущее','завтра','что будет','неизвестность','переживаю за','впереди','что дальше','future','tomorrow','unknown','what next'],
+  future:{keys:['будущее','завтра','что будет','неизвестность','переживаю за','впереди','что дальше','future','tomorrow','unknown'],
     replies:['Будущее ещё не наступило. Прямо сейчас ты здесь, дышишь — и этого достаточно для одного шага.','Тревога о будущем — попытка контролировать неконтролируемое. Вернёмся в «сейчас».','Неизвестность пугает, потому что мозг любит предсказуемость. Но в ней есть и свобода.','Завтра ещё не написано. И это, на самом деле, хорошая новость.'],
     questions:['Что именно в будущем пугает больше всего?','Что можно сделать сегодня, чтобы завтра было спокойнее?','Каким было бы доброе к тебе будущее?']}
 };
@@ -814,14 +819,12 @@ function detectEmotion(tx){const l=tx.toLowerCase();for(const k in AI){if(AI[k].
 function findSmartQuestion(tx){const e=detectEmotion(tx);return pickFresh(e?e.questions:FB_QUESTIONS,'q');}
 function findMirrorResponse(tx){const e=detectEmotion(tx);if(e)return pickFresh(e.replies,'r')+' '+pickFresh(e.questions,'q');return pickFresh(FB_REPLIES,'r')+' '+pickFresh(FB_QUESTIONS,'q');}
 
-/* ── утилиты ── */
 function go(id){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');}
 let toastT;function toast(m){const x=$('#toast');x.textContent=m;x.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>x.classList.remove('show'),2200);}
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 function scrollDown(){const c=$('#canvas');c.scrollTo({top:c.scrollHeight,behavior:'smooth'});}
 function todayKey(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
 
-/* ── слайды (введение + что нового) ── */
 function buildOnb(){
   const data=t('onb');
   $('#onbSlides').innerHTML=data.map((s,i)=>'<div class="slide'+(i===0?' active':'')+'"><div class="st">'+s.st+'</div><div class="benefit">'+s.bf+'</div></div>').join('');
@@ -832,7 +835,6 @@ function showOnb(i){
   const slides=$('#onbSlides').querySelectorAll('.slide'),dots=$('#onbDots').querySelectorAll('.odot');
   slides.forEach((s,k)=>s.classList.toggle('active',k===i));
   dots.forEach((d,k)=>d.classList.toggle('on',k===i));
-  $('#onbBtn').textContent=(i===slides.length-1)?(lang==='ru'?'Далее →':'Next →'):(lang==='ru'?'Далее →':'Next →');
 }
 $('#onbBtn').onclick=()=>{
   const n=$('#onbSlides').querySelectorAll('.slide').length;
@@ -840,7 +842,6 @@ $('#onbBtn').onclick=()=>{
   else{go('scr-auth');setTimeout(()=>$('#nameInput').focus(),450);}
 };
 
-/* ── регистрация (обязательная + пароль сразу) ── */
 function register(){
   const nm=$('#nameInput').value.trim();
   const pw=$('#pinInputReg').value.trim();
@@ -848,15 +849,12 @@ function register(){
   if(!/^\d{4}$/.test(pw)){toast(t('pinDigits'));$('#pinInputReg').focus();return;}
   name=nm;pin=pw;
   try{localStorage.setItem('sixwhy_name',name);localStorage.setItem('sixwhy_pin',pin);localStorage.setItem('sixwhy_onb','1');}catch(e){}
-  onboarded=true;
-  initChallenge();
-  enterApp();toast(t('welcome')(name));
+  onboarded=true;initChallenge();enterApp();toast(t('welcome')(name));
 }
 $('#enterBtn').onclick=register;
 $('#nameInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('#pinInputReg').focus();});
 $('#pinInputReg').addEventListener('keydown',e=>{if(e.key==='Enter')register();});
 
-/* ── PIN-вход ── */
 $('#pinBtn').onclick=tryPin;
 $('#pinInput').addEventListener('keydown',e=>{if(e.key==='Enter')tryPin();});
 function tryPin(){
@@ -865,25 +863,19 @@ function tryPin(){
   else{toast(t('wrongPin'));$('#pinInput').value='';$('#pinInput').focus();}
 }
 
-/* ── старт ── */
-function initChallenge(){
-  if(!challenge.start){challenge={start:todayKey(),days:[]};saveChallenge();}
-}
+function initChallenge(){if(!challenge.start){challenge={start:todayKey(),days:[]};saveChallenge();}}
 function enterApp(){
   $('#greet').innerHTML=t('greet')(esc(name||'?'));
-  renderHome();renderChallenge();renderYouAlone();
-  checkWhatsNew();
-  go('scr-home');
+  renderHome();renderChallenge();renderYouAlone();checkWhatsNew();go('scr-home');
 }
 function renderChallenge(){
   const d=challenge.days.length;
-  $('#chDay').textContent=t('dayOf')(d+ (challenge.days.includes(todayKey())?0:1));
+  $('#chDay').textContent=t('dayOf')(d+(challenge.days.includes(todayKey())?0:1));
   $('#chDots').innerHTML=Array.from({length:7}).map((_,i)=>'<div class="ch-dot'+(i<d?' on':'')+'"></div>').join('');
   $('#chMsg').textContent=t('chMsg')(d);
 }
 function renderYouAlone(){$('#youAlone').innerHTML=t('youAlone')(getVisitCount());}
 
-/* ── главная ── */
 function renderHome(){
   document.querySelectorAll('.tile').forEach(tl=>tl.classList.toggle('sel',tl.dataset.mode===mode));
   $('#startBtn').textContent=(mode==='draw')?t('startDraw'):t('startTalk');
@@ -901,24 +893,23 @@ $('#histBtn').onclick=()=>{renderHist();go('scr-hist');};
 $('#moodBtn').onclick=()=>{renderCalendar();go('scr-mood');};
 $('#profBtn').onclick=()=>{renderProf();go('scr-prof');};
 
-/* ── доска рисования ── */
+/* ── доска ── */
 const dCan=$('#drawCanvas'),dCtx=dCan.getContext('2d');
 const TOOLS={pencil:{w:2,a:.8},pen:{w:2.5,a:1},marker:{w:6,a:1},paint:{w:13,a:1},highlight:{w:16,a:.35}};
 const COLORS=['#E5484D','#F97B22','#FFD530','#46A758','#12A594','#3E63DD','#59B7F5','#8E4EC6','#E93D82','#8D6A4A','#2A2435'];
 const PASTEL=['#F4B8BB','#FBD3AE','#FFF3B0','#B7DFBB','#A9DDD4','#B9C6F2','#C0E4FB','#D7BCEC','#F8BCD3','#DCC6AE','#C6C1CC'];
-let curTool='marker',curColor='#8E4EC6',drawing=false,lx=0,ly=0,curMethod='lines';
+let curTool='marker',curColor='#D7BCEC',drawing=false,lx=0,ly=0,curMethod='lines';
 function buildColors(){
-  $('#colorRow').innerHTML='';$('#colorRow2').innerHTML='';
-  COLORS.forEach((c,i)=>{const d=document.createElement('div');d.className='cdot';d.style.background=c;d.onclick=()=>setColor(d,c);$('#colorRow').appendChild(d);});
-  PASTEL.forEach((c,i)=>{const d=document.createElement('div');d.className='cdot';d.style.background=c;d.onclick=()=>setColor(d,c);$('#colorRow2').appendChild(d);});
-  const def=$('#colorRow2').children[7];def.classList.add('sel');curColor=PASTEL[7];
+  COLORS.forEach(c=>{const d=document.createElement('div');d.className='cdot';d.style.background=c;d.onclick=()=>setColor(d,c);$('#colorRow').appendChild(d);});
+  PASTEL.forEach(c=>{const d=document.createElement('div');d.className='cdot';d.style.background=c;d.onclick=()=>setColor(d,c);$('#colorRow2').appendChild(d);});
+  $('#colorRow2').children[7].classList.add('sel');
 }
 function setColor(el,c){curColor=c;document.querySelectorAll('.cdot').forEach(x=>x.classList.remove('sel'));el.classList.add('sel');}
 buildColors();
 document.querySelectorAll('.tool').forEach(tl=>{tl.onclick=()=>{curTool=tl.dataset.tool;document.querySelectorAll('.tool').forEach(x=>x.classList.remove('sel'));tl.classList.add('sel');};});
 document.querySelectorAll('.method').forEach(m=>{m.onclick=()=>{curMethod=m.dataset.method;document.querySelectorAll('.method').forEach(x=>x.classList.remove('sel'));m.classList.add('sel');};});
 function sizeCanvas(){const w=dCan.parentElement.clientWidth,h=300,dpr=window.devicePixelRatio||1;dCan.width=w*dpr;dCan.height=h*dpr;dCtx.setTransform(dpr,0,0,dpr,0,0);dCtx.fillStyle='#FCFAF4';dCtx.fillRect(0,0,w,h);}
-function openDraw(){$('#reflect').classList.remove('show');$('#readBody').classList.remove('open');go('scr-draw');setTimeout(sizeCanvas,60);}
+function openDraw(){$('#reflect').classList.remove('show');$('#readBody').classList.remove('open');buildReadBody();go('scr-draw');setTimeout(sizeCanvas,60);}
 function dPos(e){const r=dCan.getBoundingClientRect();return[(e.clientX-r.left),(e.clientY-r.top)];}
 dCan.addEventListener('pointerdown',e=>{drawing=true;[lx,ly]=dPos(e);dCan.setPointerCapture(e.pointerId);seg(lx,ly);});
 dCan.addEventListener('pointermove',e=>{if(!drawing)return;const[x,y]=dPos(e);seg(x,y);[lx,ly]=[x,y];});
@@ -941,35 +932,38 @@ $('#reflectGo').onclick=()=>{
   session={start:v,whys:[],action:null};addUser(v,true);phase='whys';thinking(()=>askWhy(1));
 };
 
-/* ── музыка (WebAudio, без файлов) ── */
-let audioCtx=null,musicOn=false,musicNodes=[];
+/* ── музыка: Моцарт «Ah! vous dirai-je, maman» (музыкальная шкатулка) ── */
+let actx=null,mbTimer=null,mbIdx=0,musicOn=false;
+const MEL=[262,262,392,392,440,440,392,0,349,349,330,330,294,294,262,0,392,392,349,349,330,330,294,0,392,392,349,349,330,330,294,0,262,262,392,392,440,440,392,0,349,349,330,330,294,294,262];
+function mbStep(){
+  const f=MEL[mbIdx%MEL.length];mbIdx++;
+  if(!f||!actx)return;
+  const tt=actx.currentTime,o=actx.createOscillator(),g=actx.createGain();
+  o.type='sine';o.frequency.value=f*2;
+  g.gain.setValueAtTime(0,tt);g.gain.linearRampToValueAtTime(.08,tt+.02);g.gain.exponentialRampToValueAtTime(.0001,tt+1.3);
+  o.connect(g);g.connect(actx.destination);o.start(tt);o.stop(tt+1.4);
+}
 function startMusic(){
-  try{
-    audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
-    if(audioCtx.state==='suspended')audioCtx.resume();
-    const master=audioCtx.createGain();master.gain.value=0.0;master.connect(audioCtx.destination);
-    master.gain.linearRampToValueAtTime(0.12,audioCtx.currentTime+1.5);
-    const freqs=[130.81,164.81,196.00,261.63];
-    freqs.forEach((f,i)=>{
-      const o=audioCtx.createOscillator();o.type='sine';o.frequency.value=f;
-      const g=audioCtx.createGain();g.gain.value=i===0?0.5:0.25;
-      const lfo=audioCtx.createOscillator();lfo.frequency.value=0.05+i*0.02;
-      const lg=audioCtx.createGain();lg.gain.value=0.08;
-      lfo.connect(lg);lg.connect(g.gain);
-      o.connect(g);g.connect(master);o.start();lfo.start();
-      musicNodes.push(o,lfo);
-    });
-    musicNodes.push(master);musicOn=true;
-    $('#musicBtn').classList.add('on');$('#musicBtn').querySelector('span').textContent=t('musicOff');
-  }catch(e){toast('');}
+  actx=actx||new (window.AudioContext||window.webkitAudioContext)();
+  if(actx.state==='suspended')actx.resume();
+  musicOn=true;mbIdx=0;mbStep();mbTimer=setInterval(mbStep,480);
+  $('#musicBtn').classList.add('on');$('#musicBtn').querySelector('span').textContent=t('musicOff');
 }
 function stopMusic(){
-  if(!musicOn)return;
-  try{musicNodes.forEach(n=>{try{n.stop&&n.stop();}catch(e){}try{n.disconnect();}catch(e){}});}catch(e){}
-  musicNodes=[];musicOn=false;
+  musicOn=false;clearInterval(mbTimer);
   $('#musicBtn').classList.remove('on');$('#musicBtn').querySelector('span').textContent=t('musicOn');
 }
 $('#musicBtn').onclick=()=>{musicOn?stopMusic():startMusic();};
+
+/* ── установка ── */
+$('#installBtn').onclick=()=>{
+  const ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
+  const steps=ios?t('instIOS'):t('instAnd');
+  $('#instSteps').innerHTML=steps.map((s,i)=>'<div class="inst-step"><div class="n">'+(i+1)+'</div><div class="s">'+s+'</div></div>').join('');
+  $('#instOverlay').classList.add('show');
+};
+$('#instClose').onclick=()=>$('#instOverlay').classList.remove('show');
+$('#instOverlay').addEventListener('click',e=>{if(e.target.id==='instOverlay')$('#instOverlay').classList.remove('show');});
 
 /* ── профиль ── */
 function renderProf(){
@@ -993,7 +987,9 @@ $('#setPinBtn').onclick=()=>{
 };
 $('#removePinBtn').onclick=()=>{pin='';try{localStorage.removeItem('sixwhy_pin');}catch(e){}renderProf();toast(t('pinRemoved'));};
 document.querySelectorAll('.lang-row button').forEach(b=>{
-  b.onclick=()=>{lang=b.dataset.lang;try{localStorage.setItem('sixwhy_lang',lang);}catch(e){}applyI18N();buildOnb();showOnb(onbIdx);buildReadBody();renderHome();renderChallenge();renderYouAlone();renderProf();toast(lang==='ru'?'Русский':'English');};
+  b.onclick=()=>{lang=b.dataset.lang;try{localStorage.setItem('sixwhy_lang',lang);}catch(e){}
+    applyI18N();buildOnb();showOnb(onbIdx);buildReadBody();renderHome();renderChallenge();renderYouAlone();renderProf();
+    toast(lang==='ru'?'Русский':'English');};
 });
 $('#statsBtn').onclick=()=>window.open('https://github.com/singdarrad-oss/-SixWhy/graphs/traffic','_blank');
 $('#qrBtnProf').onclick=()=>{drawQR();go('scr-qr');};
@@ -1005,14 +1001,12 @@ $('#logoutBtn').onclick=()=>{
   name='';onboarded=false;mode='empathy';pin='';onbIdx=0;buildOnb();showOnb(0);go('scr-onb');toast(t('bye'));
 };
 
-/* ── QR (генератор без библиотек — упрощённый матричный код-заглушка визуально; используем внешний API как картинку через canvas) ── */
 function drawQR(){
   const cv=$('#qrCanvas'),cx=cv.getContext('2d');
-  const url=SITE;
   const img=new Image();img.crossOrigin='anonymous';
   img.onload=()=>{cx.fillStyle='#fff';cx.fillRect(0,0,220,220);cx.drawImage(img,10,10,200,200);};
-  img.onerror=()=>{cx.fillStyle='#fff';cx.fillRect(0,0,220,220);cx.fillStyle='#332B3A';cx.font='600 14px Manrope';cx.textAlign='center';cx.fillText('QR: '+url,110,110);};
-  img.src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+encodeURIComponent(url)+'&color=332B3A&bgcolor=FFFFFF';
+  img.onerror=()=>{cx.fillStyle='#fff';cx.fillRect(0,0,220,220);cx.fillStyle='#332B3A';cx.font='600 13px Manrope';cx.textAlign='center';cx.fillText(SITE,110,110);};
+  img.src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+encodeURIComponent(SITE)+'&color=332B3A&bgcolor=FFFFFF';
 }
 
 /* ── диалог ── */
@@ -1021,7 +1015,6 @@ function resetDialog(){
   phase='start';session={start:null,whys:[],action:null};
   $('#thread').innerHTML='';$('#thread').style.display='none';$('#hintEmpty').style.display='';
   setProgress(0,lang==='ru'?'начни писать':'start writing');
-  $('#msgInput').placeholder=lang==='ru'?'Напиши, что происходит…':'Write what\'s happening…';
   $('#capsuleBtn').textContent=t('saveCap');$('#capsuleBtn').disabled=false;
 }
 function addUser(text,first){
@@ -1033,7 +1026,7 @@ function addUser(text,first){
 function thinking(cb){const e=document.createElement('div');e.className='thinking';e.innerHTML='<i></i><i></i><i></i>';$('#thread').appendChild(e);scrollDown();setTimeout(()=>{e.remove();cb();},950);}
 function askWhy(n){const e=document.createElement('div');e.className='entry prompt';e.innerHTML='<div class="q">'+(lang==='ru'?'Почему?':'Why?')+'</div><div class="num">'+(lang==='ru'?'вопрос ':'question ')+n+' / 6</div>';$('#thread').appendChild(e);scrollDown();setProgress(n,lang==='ru'?'отвечай честно':'answer honestly');$('#msgInput').placeholder=lang==='ru'?'Потому что…':'Because…';$('#msgInput').focus();}
 function askSmart(a){const q=findSmartQuestion(a);const e=document.createElement('div');e.className='entry prompt smart';e.innerHTML='<div class="q">'+q+'</div><div class="num">'+(lang==='ru'?'вопрос 3 из 6 · подобран для тебя':'question 3 of 6 · picked for you')+'</div>';$('#thread').appendChild(e);scrollDown();setProgress(3,lang==='ru'?'честный ответ':'honest answer');$('#msgInput').placeholder=lang==='ru'?'Подумай…':'Think…';$('#msgInput').focus();}
-function askAction(){const e=document.createElement('div');e.className='entry prompt act';e.innerHTML='<div class="q">'+(lang==='ru'?'Что я сейчас могу с&nbsp;этим сделать?':'What can I do about it now?')+'</div><div class="num">'+(lang==='ru'?'седьмой вопрос · самый важный':'seventh question · the most important')+'</div>';$('#thread').appendChild(e);scrollDown();setProgress(6,lang==='ru'?'шаг ✳':'step ✳');$('#msgInput').placeholder=lang==='ru'?'Даже маленький шаг — уже шаг…':'Even a small step is a step…';$('#msgInput').focus();}
+function askAction(){const e=document.createElement('div');e.className='entry prompt act';e.innerHTML='<div class="q">'+(lang==='ru'?'Что я сейчас могу с&nbsp;этим сделать?':'What can I do about it now?')+'</div><div class="num">'+(lang==='ru'?'седьмой вопрос · самый важный':'seventh question · the most important')+'</div>';$('#thread').appendChild(e);scrollDown();setProgress(6,lang==='ru'?'шаг ✳':'step ');$('#msgInput').placeholder=lang==='ru'?'Даже маленький шаг — уже шаг…':'Even a small step is a step…';$('#msgInput').focus();}
 function setProgress(n,cap){document.querySelectorAll('.pdot').forEach((d,i)=>d.classList.toggle('on',i<n));$('#pcap').textContent=cap;}
 function useSmart(){return mode==='empathy'||mode==='draw';}
 function submit(){
@@ -1056,8 +1049,7 @@ function finish(){
   const d=new Date();
   const done={date:d.toLocaleDateString(lang==='ru'?'ru-RU':'en-US',{day:'numeric',month:'long'})+', '+d.toLocaleTimeString(lang==='ru'?'ru-RU':'en-US',{hour:'2-digit',minute:'2-digit'}),start:session.start,root:session.whys[session.whys.length-1],action:session.action,capsule:false};
   if(mode==='capsule')done.capsule=true;
-  history.push(done);saveHist();
-  markChallengeDay();
+  history.push(done);saveHist();markChallengeDay();
   $('#rootText').textContent='«'+done.root+'»';
   $('#stepText').textContent=done.action;
   if(mode==='mirror'){const all=session.start+' '+session.whys.join(' ')+' '+session.action;$('#mirrorText').textContent=findMirrorResponse(all);$('#mirrorBlock').style.display='block';}
@@ -1066,20 +1058,16 @@ function finish(){
   const dc=$('#scr-done .done-check svg'),cl=dc.cloneNode(true);dc.parentNode.replaceChild(cl,dc);
   setTimeout(()=>{go('scr-done');if(mode==='capsule')toast(t('capSaved'));},600);
 }
-function markChallengeDay(){
-  const k=todayKey();
-  if(!challenge.days.includes(k)){challenge.days.push(k);saveChallenge();}
-}
+function markChallengeDay(){const k=todayKey();if(!challenge.days.includes(k)){challenge.days.push(k);saveChallenge();}}
 function buildMoodRowDone(){
-  $('#moodRowDone').innerHTML=MOOD_COLORS.map((c,i)=>'<div class="mood-opt" data-mi="'+i+'" style="background:'+c+'" title="'+t('moods')[i]+'"><span>'+t('moods')[i]+'</span></div>').join('');
+  $('#moodRowDone').innerHTML=MOOD_COLORS.map((c,i)=>'<div class="mood-opt" data-mi="'+i+'" style="background:'+c+'"><span>'+t('moods')[i]+'</span></div>').join('');
   const today=moods[todayKey()];
-  if(today)$('#moodRowDone').children[today.mood].classList.add('sel');
+  if(today&&$('#moodRowDone').children[today.mood])$('#moodRowDone').children[today.mood].classList.add('sel');
   $('#moodRowDone').querySelectorAll('.mood-opt').forEach(o=>{
     o.onclick=()=>{
       $('#moodRowDone').querySelectorAll('.mood-opt').forEach(x=>x.classList.remove('sel'));
       o.classList.add('sel');
-      const mi=+o.dataset.mi;
-      moods[todayKey()]={mood:mi,note:(moods[todayKey()]&&moods[todayKey()].note)||''};
+      moods[todayKey()]={mood:+o.dataset.mi,note:(moods[todayKey()]&&moods[todayKey()].note)||''};
       saveMoods();toast(t('moodSaved'));
     };
   });
@@ -1090,7 +1078,7 @@ $('#capsuleBtn').onclick=()=>{
 $('#againBtn').onclick=()=>{resetDialog();go('scr-main');setTimeout(()=>$('#msgInput').focus(),450);};
 $('#toHomeBtn').onclick=()=>{renderChallenge();go('scr-home');};
 
-/* ── история ── */
+/* ── история ─ */
 $('#backBtn').onclick=()=>go('scr-home');
 function renderHist(){
   const L=$('#histList');
@@ -1105,8 +1093,8 @@ function renderHist(){
   $('#clearHist').onclick=()=>{history=[];saveHist();renderHist();toast(t('histCleared'));};
 }
 
-/* ── календарь настроения ── */
-let calYear,calMonth,editingDate=null;
+/* ── календарь ── */
+let calYear=null,calMonth=null,editingDate=null;
 const WD_RU=['пн','вт','ср','чт','пт','сб','вс'],WD_EN=['mo','tu','we','th','fr','sa','su'];
 const MON_RU=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
 const MON_EN=['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -1155,21 +1143,16 @@ $('#moodSaveBtn').onclick=()=>{
   saveMoods();$('#moodSheet').classList.remove('show');renderCalendar();toast(t('moodSaved'));
 };
 
-/* ── что нового ── */
+/* ── что нового (со стрелками) ── */
+let wnIdx=0;
 function checkWhatsNew(){
   let seen='';try{seen=localStorage.getItem('sixwhy_seen_version')||'';}catch(e){}
-  if(seen!==APP_VERSION){
-    buildWhatsNew();
-    $('#wnOverlay').classList.add('show');
-    $('#whatsnewBtn').classList.add('show');
-    try{localStorage.setItem('sixwhy_seen_at',String(Date.now()));}catch(e){}
-  }else{
+  if(seen!==APP_VERSION){buildWhatsNew();$('#wnOverlay').classList.add('show');$('#whatsnewBtn').classList.add('show');try{localStorage.setItem('sixwhy_seen_at',String(Date.now()));}catch(e){}}
+  else{
     const at=parseInt(localStorage.getItem('sixwhy_seen_at')||'0',10);
-    if(Date.now()-at<2*24*3600*1000)$('#whatsnewBtn').classList.add('show');
-    else $('#whatsnewBtn').classList.remove('show');
+    $('#whatsnewBtn').classList.toggle('show',Date.now()-at<2*24*3600*1000);
   }
 }
-let wnIdx=0;
 function buildWhatsNew(){
   const data=t('wn');
   $('#wnSlides').innerHTML=data.map((s,i)=>'<div class="wn-slide'+(i===0?' active':'')+'"><div class="wi">'+s.i+'</div><div class="wt">'+s.t+'</div><div class="wd">'+s.d+'</div></div>').join('');
@@ -1180,9 +1163,8 @@ function showWn(i){
   const sl=$('#wnSlides').querySelectorAll('.wn-slide'),dt=$('#wnDots').querySelectorAll('i');
   sl.forEach((s,k)=>s.classList.toggle('active',k===i));dt.forEach((d,k)=>d.classList.toggle('on',k===i));
 }
-$('#wnOverlay').addEventListener('click',e=>{
-  if(e.target.id==='wnOverlay'){const data=t('wn');if(wnIdx<data.length-1){wnIdx++;showWn(wnIdx);}else closeWhatsNew();}
-});
+$('#wnNext').onclick=()=>{const n=t('wn').length;if(wnIdx<n-1){wnIdx++;showWn(wnIdx);}else closeWhatsNew();};
+$('#wnPrev').onclick=()=>{if(wnIdx>0){wnIdx--;showWn(wnIdx);}};
 $('#wnClose').onclick=closeWhatsNew;
 function closeWhatsNew(){
   $('#wnOverlay').classList.remove('show');
@@ -1190,7 +1172,6 @@ function closeWhatsNew(){
 }
 $('#whatsnewBtn').onclick=()=>{buildWhatsNew();$('#wnOverlay').classList.add('show');};
 
-/* ── инициализация ── */
 applyI18N();
 buildOnb();
 buildReadBody();
@@ -1199,9 +1180,8 @@ if(name&&onboarded){
   else{initChallenge();enterApp();}
 }else{showOnb(0);go('scr-onb');}
 
-/* ── PWA service worker (оффлайн) ── */
 if('serviceWorker' in navigator){
-  const swCode=`const C='sixwhy-v2';self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(['./','./index.html','./manifest.webmanifest','./icon.png','./config.json'])).then(()=>self.skipWaiting()));});self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});self.addEventListener('fetch',e=>{e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(res=>{if(e.request.method==='GET'&&res.ok){const cl=res.clone();caches.open(C).then(c=>c.put(e.request,cl));}return res;}).catch(()=>caches.match('./index.html'))));});`;
+  const swCode=`const C='sixwhy-v3';self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(['./','./index.html','./manifest.webmanifest','./IMG_5479.jpeg','./config.json'])).then(()=>self.skipWaiting()));});self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});self.addEventListener('fetch',e=>{e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(res=>{if(e.request.method==='GET'&&res.ok){const cl=res.clone();caches.open(C).then(c=>c.put(e.request,cl));}return res;}).catch(()=>caches.match('./index.html'))));});`;
   const blob=new Blob([swCode],{type:'application/javascript'});
   navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{});
 }
