@@ -18,7 +18,7 @@
   --lilac:#B888BA;--lilac-deep:#A676A8;
   --lilac-soft:#E2D4EC;--lilac-line:#B1A9D9;
   --paper:#F6F1E8;--card:#FCFAF4;--line:#E6DECF;
-  --butter:#FFEDA8;--butter-soft:#FFF6D6;--butter-line:#EBD78F;
+  --butter:#FFEDA8;--butter-soft:#FFF6D6;--butter-mid:#FFF2C5;--butter-line:#EBD78F;
   --butter-ink:#6B5A1E;--butter-mut:#A08A2E;
   --serif:'Cormorant Garamond',serif;--sans:'Manrope',sans-serif;
 }
@@ -29,6 +29,7 @@ body{font-family:var(--sans);color:var(--ink);background:#EFE8DC;-webkit-tap-hig
 .scr{position:absolute;inset:0;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .4s,transform .4s;display:flex;flex-direction:column}
 .scr.active{opacity:1;transform:none;pointer-events:auto}
 button{font-family:var(--sans)}
+.acts{display:flex;gap:4px}
 #scr-onb{padding:max(20px,env(safe-area-inset-top)) 30px max(26px,env(safe-area-inset-bottom))}
 .onb-top{text-align:center;font-family:var(--serif);font-size:22px;font-weight:600}
 .onb-top em{font-style:italic;color:var(--lilac-deep)}
@@ -37,11 +38,11 @@ button{font-family:var(--sans)}
 .slide.active{opacity:1;transform:none}
 .slide .st{font-family:var(--serif);font-style:italic;font-weight:500;font-size:22px;line-height:1.45;color:var(--ink);max-width:300px}
 .slide .st b{color:var(--lilac-deep);font-weight:600}
-.slide .benefit{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:14px;padding:12px 16px;font-size:13px;line-height:1.5;color:var(--butter-ink);max-width:280px;margin-top:8px}
+.slide .benefit{background:var(--butter-mid);border:1px solid var(--butter-line);border-radius:14px;padding:12px 16px;font-size:13px;line-height:1.5;color:var(--butter-ink);max-width:280px;margin-top:8px}
 .onb-bottom{display:flex;flex-direction:column;align-items:center;gap:16px}
 .onb-dots{display:flex;gap:7px}
 .odot{width:7px;height:7px;border-radius:50%;background:#E0D8E8;transition:.35s}
-.odot.on{background:var(--lilac);width:20px;border-radius:100px}
+.odot.on{background:var(--butter-mut);width:20px;border-radius:100px}
 #scr-auth{padding:28px 30px max(26px,env(safe-area-inset-bottom));justify-content:center;overflow-y:auto}
 .logo-dots{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
 .logo-dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--lilac);opacity:0;animation:dotIn .5s forwards}
@@ -63,7 +64,7 @@ button{font-family:var(--sans)}
 .go-btn.butter:hover{background:#F5E193}
 .go-btn.outline{background:transparent;color:var(--lilac-deep);border:1.5px solid var(--lilac-line);box-shadow:none}
 .go-btn.outline:hover{border-color:var(--lilac)}
-.priv-note{margin-top:22px;background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:14px;padding:13px 15px;font-size:12.5px;line-height:1.55;color:var(--butter-ink);display:flex;gap:10px}
+.priv-note{margin-top:22px;background:var(--butter-mid);border:1px solid var(--butter-line);border-radius:14px;padding:13px 15px;font-size:12.5px;line-height:1.55;color:var(--butter-ink);display:flex;gap:10px}
 .disclaimer{margin-top:14px;font-size:11px;line-height:1.5;color:#b0a5b8;text-align:center}
 #scr-pin{padding:30px;justify-content:center;align-items:center;text-align:center}
 .pin-lock{font-size:44px;margin-bottom:14px}
@@ -74,23 +75,23 @@ button{font-family:var(--sans)}
 .home-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
 .home-top .wm{font-family:var(--serif);font-size:24px;font-weight:600}
 .home-top .wm em{font-style:italic;color:var(--lilac-deep)}
-.home-top .acts{display:flex;gap:4px}
 .ibtn{border:none;background:transparent;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:var(--mut);cursor:pointer;transition:.2s}
-.ibtn:hover{background:var(--lilac-soft);color:var(--lilac-deep)}
+.ibtn:hover{background:var(--butter-soft);color:var(--butter-mut)}
+.ibtn.on{background:var(--butter-mid);color:var(--butter-mut)}
 .ibtn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .greet{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;margin-bottom:18px}
 .greet b{color:var(--lilac-deep);font-weight:600}
-.ann{background:var(--lilac-soft);border:1px solid var(--lilac-line);color:#5A4A6A;border-radius:12px;padding:10px 14px;font-size:12.5px;line-height:1.5;margin-bottom:14px}
+.ann{background:var(--butter-mid);border:1px solid var(--butter-line);color:var(--butter-ink);border-radius:12px;padding:10px 14px;font-size:12.5px;line-height:1.5;margin-bottom:14px}
 .quote-card{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:18px;padding:18px 18px 16px;margin-bottom:12px;position:relative}
-.quote-card.lil{background:var(--lilac-soft);border-color:var(--lilac-line)}
+.quote-card.lil{background:var(--butter-mid);border-color:var(--butter-line)}
 .quote-card::before{content:"❝";position:absolute;top:8px;left:14px;font-family:var(--serif);font-size:28px;color:var(--butter-mut);line-height:1}
-.quote-card.lil::before{color:var(--lilac)}
+.quote-card.lil::before{color:var(--butter-mut)}
 .qc-lbl{font-size:9.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:6px;padding-left:20px}
-.quote-card.lil .qc-lbl{color:var(--lilac-deep)}
+.quote-card.lil .qc-lbl{color:var(--butter-mut)}
 .qc-q{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.45;color:var(--butter-ink);padding-left:20px}
-.quote-card.lil .qc-q{color:#4A3A5A}
+.quote-card.lil .qc-q{color:var(--butter-ink)}
 .qc-a{font-size:11px;font-weight:700;color:var(--butter-mut);margin-top:6px;text-align:right}
-.quote-card.lil .qc-a{color:var(--lilac-deep)}
+.quote-card.lil .qc-a{color:var(--butter-mut)}
 .about-card{background:var(--card);border:1px solid var(--butter-line);border-radius:18px;padding:14px 16px;margin:6px 0 18px;cursor:pointer;transition:.25s}
 .about-card:hover{border-color:var(--butter-mut)}
 .about-head{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--butter-mut)}
@@ -135,12 +136,12 @@ button{font-family:var(--sans)}
 .hint-empty .hd{font-family:var(--serif);font-style:italic;font-size:22px;color:#a89bb5;margin-bottom:10px}
 .hint-empty p{font-size:13.5px;line-height:1.65;color:#b8aec2}
 @keyframes pulseSoft{0%,100%{opacity:.7}50%{opacity:1}}
-.thread{border-left:1.5px solid var(--lilac-line);margin-left:6px;padding:6px 0 10px 26px}
+.thread{border-left:1.5px solid var(--butter-line);margin-left:6px;padding:6px 0 10px 26px}
 .entry{position:relative;margin-bottom:26px;animation:rise .55s cubic-bezier(.22,1,.36,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.entry::before{content:"";position:absolute;left:-31px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--card);border:2px solid var(--lilac)}
-.entry.first::before{background:var(--lilac);border-color:var(--lilac)}
-.entry .who{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--lilac-deep);margin-bottom:5px}
+.entry::before{content:"";position:absolute;left:-31px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--card);border:2px solid var(--butter)}
+.entry.first::before{background:var(--butter);border-color:var(--butter-line)}
+.entry .who{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:5px}
 .entry .txt{font-size:15px;line-height:1.5;color:#3A3045;font-weight:500}
 .entry.first .txt{font-size:17px;font-weight:600}
 .entry.prompt .q{font-family:var(--serif);font-style:italic;font-weight:600;font-size:33px;line-height:1.15;color:var(--ink)}
@@ -148,27 +149,36 @@ button{font-family:var(--sans)}
 .entry.prompt.act .q{color:var(--butter-mut);font-size:27px}
 .entry .num{font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--lilac-line);margin-top:6px;text-transform:uppercase}
 .thinking{display:flex;gap:6px;padding:10px 0;margin-bottom:20px;animation:rise .4s both}
-.thinking i{width:7px;height:7px;border-radius:50%;background:var(--lilac);animation:bl 1s ease-in-out infinite}
+.thinking i{width:7px;height:7px;border-radius:50%;background:var(--butter);animation:bl 1s ease-in-out infinite}
 .thinking i:nth-child(2){animation-delay:.15s}.thinking i:nth-child(3){animation-delay:.3s}
 @keyframes bl{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-5px);opacity:1}}
 #scr-draw{padding:max(16px,env(safe-area-inset-top)) 20px max(24px,env(safe-area-inset-bottom));overflow-y:auto}
-.draw-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.draw-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .draw-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:26px}
 .draw-sub{font-size:12.5px;color:var(--mut);margin-bottom:14px;line-height:1.5}
+.tech-row{display:flex;gap:10px;margin-bottom:12px}
+.tech{flex:1;border:1.5px solid var(--line);border-radius:14px;padding:12px 13px;background:var(--card);cursor:pointer;transition:.2s;text-align:left}
+.tech .tt2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:16px;color:var(--ink)}
+.tech .td2{font-size:10.5px;color:var(--mut);margin-top:3px;line-height:1.4}
+.tech.sel{border-color:var(--lilac);background:var(--lilac-soft)}
 .draw-wrap{border:1.5px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden;margin-bottom:12px}
-#drawCanvas{display:block;width:100%;height:320px;touch-action:none;cursor:crosshair}
+#drawCanvas{display:block;width:100%;height:300px;touch-action:none;cursor:crosshair}
 .tools{display:flex;gap:8px;justify-content:center;margin-bottom:12px}
 .tool{width:42px;height:42px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);display:grid;place-items:center;cursor:pointer;transition:.2s;color:var(--lilac-deep)}
 .tool svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tool.sel{border-color:var(--lilac);background:var(--lilac-soft)}
-.colors{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-bottom:14px}
+.crow{display:flex;gap:9px;justify-content:center;margin-bottom:9px}
 .cdot{width:26px;height:26px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:.2s}
 .cdot.sel{border-color:var(--ink);transform:scale(1.18)}
-.draw-actions{display:flex;gap:10px}
+.draw-actions{display:flex;gap:10px;margin-top:4px}
 .draw-actions .go-btn{margin-top:0}
 .reflect{display:none;margin-top:18px}
 .reflect.show{display:block}
-.reflect-card{background:var(--lilac-soft);border:1px solid var(--lilac-line);border-radius:18px;padding:18px;margin-bottom:14px}
+.read-card{display:none;background:var(--butter-mid);border:1px solid var(--butter-line);border-radius:18px;padding:16px 18px;margin-top:12px}
+.read-card.show{display:block}
+.read-card h4{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:10px}
+.read-card .ri{font-size:13px;line-height:1.55;color:var(--butter-ink);margin-bottom:6px}
+.reflect-card{background:var(--lilac-soft);border:1px solid var(--lilac-line);border-radius:18px;padding:18px;margin-top:12px;margin-bottom:14px}
 .reflect-card .rq{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.5;color:#4A3A5A;margin-bottom:10px}
 .reflect-card .rq:last-child{margin-bottom:0}
 #reflectInput{width:100%;border:1.5px solid var(--line);border-radius:15px;padding:14px 16px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--card);outline:none}
@@ -182,13 +192,13 @@ button{font-family:var(--sans)}
 .root-block,.step-block,.mirror-block{width:100%;text-align:left;border-radius:18px;padding:18px 20px;margin-bottom:14px;animation:rise .6s .8s both}
 .root-block{background:var(--card);border:1px solid var(--butter-line)}
 .step-block{background:var(--butter-soft);border:1px solid var(--butter-line);animation-delay:1.1s}
-.mirror-block{background:var(--lilac-soft);border:1px solid var(--lilac-line);animation-delay:1.4s}
+.mirror-block{background:var(--butter-mid);border:1px solid var(--butter-line);animation-delay:1.4s}
 .blk-lbl{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
 .step-block .blk-lbl{color:var(--butter-mut)}
-.mirror-block .blk-lbl{color:var(--lilac-deep)}
+.mirror-block .blk-lbl{color:var(--butter-mut)}
 .root-block .rt{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.35}
 .step-block .rt{font-size:15px;font-weight:700;line-height:1.5;color:var(--butter-ink)}
-.mirror-block .rt{font-size:14px;line-height:1.6;color:#4A3A5A}
+.mirror-block .rt{font-size:14px;line-height:1.6;color:var(--butter-ink)}
 .breath{display:flex;flex-direction:column;align-items:center;gap:8px;margin:12px 0 20px;animation:rise .6s 1.4s both}
 .breath i{width:14px;height:14px;border-radius:50%;background:var(--butter);border:1px solid var(--butter-line);animation:breathe 4s ease-in-out infinite}
 @keyframes breathe{0%,100%{transform:scale(.8);opacity:.5}50%{transform:scale(1.5);opacity:1}}
@@ -200,7 +210,7 @@ button{font-family:var(--sans)}
 .hist-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .hist-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
 .hcard{background:var(--card);border:1px solid var(--butter-line);border-radius:16px;padding:16px 18px;margin-bottom:12px;animation:rise .5s both}
-.hcard.capsule{border-color:var(--butter-mut);background:var(--butter-soft)}
+.hcard.capsule{border-color:var(--butter-mut);background:var(--butter-mid)}
 .hdate{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
 .hdate .cap-tag{color:var(--butter-ink);font-size:9px}
 .hrow{margin-bottom:8px}
@@ -225,7 +235,7 @@ button{font-family:var(--sans)}
 #setPinBtn{background:var(--lilac);color:#fff}
 #setPinBtn:hover{background:var(--lilac-deep)}
 #removePinBtn{background:transparent;border:1.5px solid #e0c9c9 !important;color:#b06a6a}
-.creator-card{background:linear-gradient(135deg,var(--lilac-soft),var(--butter-soft));border:1.5px solid var(--lilac-line);border-radius:18px;padding:18px 20px;margin-bottom:14px;display:none}
+.creator-card{background:linear-gradient(135deg,var(--lilac-soft),var(--butter-mid));border:1.5px solid var(--lilac-line);border-radius:18px;padding:18px 20px;margin-bottom:14px;display:none}
 .creator-card.show{display:block}
 .creator-card h3{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--lilac-deep);margin-bottom:10px}
 .creator-card p{font-size:12.5px;line-height:1.55;color:var(--mut);margin-bottom:12px}
@@ -252,7 +262,7 @@ button{font-family:var(--sans)}
         <div class="benefit">💡 <b>SixWhy помогает</b> распутать мысли за 2 минуты и найти корень того, что тревожит.</div>
       </div>
       <div class="slide">
-        <svg width="130" height="130" viewBox="0 0 120 120" fill="none"><rect x="12" y="18" width="58" height="40" rx="14" stroke="#B888BA" stroke-width="2.5"/><path d="M26 58v12l12-12" stroke="#B888BA" stroke-width="2.5" stroke-linejoin="round"/><rect x="50" y="56" width="58" height="40" rx="14" fill="#FFF6D6" stroke="#EBD78F" stroke-width="2.5"/><path d="M94 96v12l-12-12" stroke="#EBD78F" stroke-width="2.5" stroke-linejoin="round"/><circle cx="31" cy="38" r="3" fill="#B888BA"/><circle cx="41" cy="38" r="3" fill="#B888BA"/><circle cx="51" cy="38" r="3" fill="#B888BA"/><circle cx="69" cy="76" r="3" fill="#B888BA"/><circle cx="79" cy="76" r="3" fill="#B888BA"/><circle cx="89" cy="76" r="3" fill="#B888BA"/></svg>
+        <svg width="130" height="130" viewBox="0 0 120 120" fill="none"><rect x="12" y="18" width="58" height="40" rx="14" stroke="#B888BA" stroke-width="2.5"/><path d="M26 58v12l12-12" stroke="#B888BA" stroke-width="2.5" stroke-linejoin="round"/><rect x="50" y="56" width="58" height="40" rx="14" fill="#FFF2C5" stroke="#EBD78F" stroke-width="2.5"/><path d="M94 96v12l-12-12" stroke="#EBD78F" stroke-width="2.5" stroke-linejoin="round"/><circle cx="31" cy="38" r="3" fill="#B888BA"/><circle cx="41" cy="38" r="3" fill="#B888BA"/><circle cx="51" cy="38" r="3" fill="#B888BA"/><circle cx="69" cy="76" r="3" fill="#B888BA"/><circle cx="79" cy="76" r="3" fill="#B888BA"/><circle cx="89" cy="76" r="3" fill="#B888BA"/></svg>
         <div class="st">На самом деле нужно только одно — честно <b>поговорить с самим собой</b>.</div>
         <div class="benefit">✨ <b>Ты получишь</b> ясность, спокойствие и конкретный шаг — вместо бесконечного круга мыслей.</div>
       </div>
@@ -364,9 +374,16 @@ button{font-family:var(--sans)}
   <section class="scr" id="scr-draw">
     <div class="draw-head">
       <h2>Когда нет слов</h2>
-      <button class="ibtn" id="drawBackBtn"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5"/></svg></button>
+      <div class="acts">
+        <button class="ibtn" id="musicBtn" title="Музыка"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></button>
+        <button class="ibtn" id="drawBackBtn" title="На главную"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5"/></svg></button>
+      </div>
     </div>
-    <div class="draw-sub">Рисуй пальцем или мышкой. Не думай о красоте — думай о том, что внутри. Линии и цвета подскажут больше, чем слова.</div>
+    <div class="draw-sub">Здесь нет правильно и неправильно — рисуй так, как ведёт рука.</div>
+    <div class="tech-row">
+      <div class="tech sel" data-tech="lines"><div class="tt2">Линии эмоции</div><div class="td2">нарисуй состояние линиями, без предметов</div></div>
+      <div class="tech" data-tech="weather"><div class="tt2">Внутренняя погода</div><div class="td2">какая погода сейчас у тебя внутри?</div></div>
+    </div>
     <div class="draw-wrap"><canvas id="drawCanvas"></canvas></div>
     <div class="tools">
       <button class="tool" data-tool="pencil" title="Карандаш"><svg viewBox="0 0 24 24"><path d="M16 3l5 5-13 13H3v-5z"/></svg></button>
@@ -375,15 +392,18 @@ button{font-family:var(--sans)}
       <button class="tool" data-tool="paint" title="Краска"><svg viewBox="0 0 24 24"><path d="M18 3c1 3-1 5-3 6l-8 8c-1.5 1.5-4 1-4.5-1S3 12.5 4.5 12l8-8c1-1 4-2 5.5-1z"/></svg></button>
       <button class="tool" data-tool="highlight" title="Текстовыделитель"><svg viewBox="0 0 24 24"><path d="M9 15l-4 1 1-4L17 1l4 4z" opacity=".5"/><path d="M3 21h18"/></svg></button>
     </div>
-    <div class="colors" id="colorRow"></div>
+    <div class="crow" id="row1"></div>
+    <div class="crow" id="row2"></div>
     <div class="draw-actions">
       <button class="go-btn outline" id="clearBtn">Очистить</button>
       <button class="go-btn butter" id="doneDrawBtn">Готово ✓</button>
     </div>
     <div class="reflect" id="reflect">
+      <button class="go-btn outline" id="readBtn" style="margin-top:0">📖 Как читать рисунок</button>
+      <div class="read-card" id="readCard"></div>
       <div class="reflect-card">
         <div class="rq">Посмотри на свой рисунок. Каких цветов в нём больше?</div>
-        <div class="rq">На что он похож? Что ты чувствовал, пока рисовал — лёгкость, напряжение, покой?</div>
+        <div class="rq">Что ты чувствовал, пока рисовал — лёгкость, напряжение, покой?</div>
         <div class="rq">Если бы рисунок мог говорить — что бы он сказал?</div>
       </div>
       <input type="text" id="reflectInput" placeholder="Одной фразой: что у тебя на душе…" maxlength="160" autocomplete="off">
@@ -477,7 +497,6 @@ fetch('config.json?'+Date.now(),{cache:'no-store'})
   .then(j=>{if(j){CFG=Object.assign(CFG,j);renderQuote();}})
   .catch(()=>{});
 
-/* ── живой разбор: пулы фраз, без повторов подряд ── */
 const AI={
   sadness:{keys:['плохо','грустно','тяжело','больно','тоскливо','паршиво','хреново','ужасно','кошмар','плачу','слёзы','рев','умер','потеря'],
     replies:['Я слышу, как тебе тяжело. Грусть — это не слабость, это сигнал, что что-то важно для тебя.','Мне жаль, что тебе больно прямо сейчас. Ты не обязан быть сильным каждую секунду.','Грустить — нормально. Иногда сердцу нужно время, чтобы прожить то, что случилось.','Похоже, внутри сейчас много тяжести. Ты имеешь право чувствовать это так долго, сколько нужно.'],
@@ -525,6 +544,48 @@ function findMirrorResponse(t){
   if(e)return pickFresh(e.replies,'r')+' '+pickFresh(e.questions,'q');
   return pickFresh(FB_REPLIES,'r')+' '+pickFresh(FB_QUESTIONS,'q');
 }
+
+/* ── музыка: спокойная встроенная мелодия; сюда можно вставить ссылку на mp3 (Вивальди/Моцарт) ── */
+const MUSIC_URL='';
+let mAudio=null, actx=null, mOn=false, mTimer=null, barIdx=0;
+const CHORDS=[
+  [220,261.63,329.63],
+  [174.61,220,261.63],
+  [261.63,329.63,392],
+  [196,246.94,293.66]
+];
+function note(f,t,dur,vol,type){
+  const o=actx.createOscillator(),g=actx.createGain();
+  o.type=type;o.frequency.value=f;
+  g.gain.setValueAtTime(0,t);
+  g.gain.linearRampToValueAtTime(vol,t+0.08);
+  g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+  o.connect(g);g.connect(actx.destination);
+  o.start(t);o.stop(t+dur+0.1);
+}
+function playBar(){
+  const ch=CHORDS[barIdx%CHORDS.length];barIdx++;
+  const t=actx.currentTime;
+  ch.forEach(f=>{
+    const o=actx.createOscillator(),g=actx.createGain();
+    o.type='triangle';o.frequency.value=f/2;
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(0.05,t+1.2);g.gain.linearRampToValueAtTime(0,t+4);
+    o.connect(g);g.connect(actx.destination);o.start(t);o.stop(t+4.1);
+  });
+  for(let i=0;i<8;i++){note(ch[i%3]*2,t+i*0.5,1.2,0.035,'sine');}
+}
+function musicToggle(){
+  if(MUSIC_URL){
+    if(!mAudio){mAudio=new Audio(MUSIC_URL);mAudio.loop=true;}
+    if(mOn){mAudio.pause();mOn=false;}else{mAudio.play().catch(()=>toast('Музыка недоступна '));mOn=true;}
+    $('#musicBtn').classList.toggle('on',mOn);return;
+  }
+  if(mOn){mOn=false;clearInterval(mTimer);if(actx)actx.suspend();$('#musicBtn').classList.remove('on');return;}
+  if(!actx){actx=new (window.AudioContext||window.webkitAudioContext)();}
+  actx.resume();mOn=true;barIdx=0;playBar();mTimer=setInterval(playBar,4000);
+  $('#musicBtn').classList.add('on');
+}
+$('#musicBtn').onclick=musicToggle;
 
 function go(id){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');}
 let toastT;
@@ -574,24 +635,29 @@ $('#startBtn').onclick=()=>{
 $('#histBtn').onclick=()=>{renderHist();go('scr-hist');};
 $('#profBtn').onclick=()=>{renderProf();go('scr-prof');};
 
-/* ── доска для рисования ── */
+/* ── доска ── */
 const dCan=$('#drawCanvas'),dCtx=dCan.getContext('2d');
 const TOOLS={pencil:{w:2,a:.8},pen:{w:2.5,a:1},marker:{w:6,a:1},paint:{w:13,a:1},highlight:{w:16,a:.35}};
 const COLORS=['#E5484D','#F97B22','#FFD530','#46A758','#12A594','#3E63DD','#59B7F5','#8E4EC6','#E93D82','#8D6A4A','#2A2435'];
-let curTool='marker',curColor='#B888BA',drawing=false,lx=0,ly=0;
-COLORS.forEach((c,i)=>{
-  const d=document.createElement('div');d.className='cdot'+(i===10?'':'');d.style.background=c;
-  d.onclick=()=>{curColor=c;document.querySelectorAll('.cdot').forEach(x=>x.classList.remove('sel'));d.classList.add('sel');};
-  $('#colorRow').appendChild(d);
-});
-document.querySelectorAll('.cdot')[7].classList.add('sel');curColor='#8E4EC6';
+const PASTELS=['#F4B8BB','#FBD3AE','#FFF3B0','#B7DFBB','#A9DDD4','#B9C6F2','#C0E4FB','#D7BCEC','#F8BCD3','#DCC6AE','#C6C1CC'];
+let curTool='marker',curColor='#8E4EC6',drawing=false,lx=0,ly=0,curTech='lines';
+function buildRow(id,arr){
+  arr.forEach(c=>{
+    const d=document.createElement('div');d.className='cdot';d.style.background=c;
+    d.onclick=()=>{curColor=c;document.querySelectorAll('.cdot').forEach(x=>x.classList.remove('sel'));d.classList.add('sel');};
+    $(id).appendChild(d);
+  });
+}
+buildRow('#row1',COLORS);buildRow('#row2',PASTELS);
+document.querySelectorAll('#row1 .cdot')[7].classList.add('sel');
 document.querySelectorAll('.tool').forEach(t=>{t.onclick=()=>{curTool=t.dataset.tool;document.querySelectorAll('.tool').forEach(x=>x.classList.remove('sel'));t.classList.add('sel');};});
+document.querySelectorAll('.tech').forEach(t=>{t.onclick=()=>{curTech=t.dataset.tech;document.querySelectorAll('.tech').forEach(x=>x.classList.remove('sel'));t.classList.add('sel');};});
 function sizeCanvas(){
-  const w=dCan.parentElement.clientWidth,h=320,dpr=window.devicePixelRatio||1;
+  const w=dCan.parentElement.clientWidth,h=300,dpr=window.devicePixelRatio||1;
   dCan.width=w*dpr;dCan.height=h*dpr;dCtx.setTransform(dpr,0,0,dpr,0,0);
   dCtx.fillStyle='#FCFAF4';dCtx.fillRect(0,0,w,h);
 }
-function openDraw(){$('#reflect').classList.remove('show');go('scr-draw');setTimeout(sizeCanvas,60);}
+function openDraw(){$('#reflect').classList.remove('show');$('#readCard').classList.remove('show');go('scr-draw');setTimeout(sizeCanvas,60);}
 function dPos(e){const r=dCan.getBoundingClientRect();return[(e.clientX-r.left),(e.clientY-r.top)];}
 dCan.addEventListener('pointerdown',e=>{drawing=true;[lx,ly]=dPos(e);dCan.setPointerCapture(e.pointerId);seg(lx,ly);});
 dCan.addEventListener('pointermove',e=>{if(!drawing)return;const[x,y]=dPos(e);seg(x,y);[lx,ly]=[x,y];});
@@ -602,9 +668,31 @@ function seg(x,y){
   dCtx.globalAlpha=t.a;dCtx.strokeStyle=curColor;dCtx.lineWidth=t.w;dCtx.lineCap='round';dCtx.lineJoin='round';
   dCtx.beginPath();dCtx.moveTo(lx,ly);dCtx.lineTo(x,y);dCtx.stroke();dCtx.globalAlpha=1;
 }
-$('#clearBtn').onclick=()=>{const w=dCan.parentElement.clientWidth;dCtx.fillStyle='#FCFAF4';dCtx.fillRect(0,0,w,320);};
+$('#clearBtn').onclick=()=>{const w=dCan.parentElement.clientWidth;dCtx.fillStyle='#FCFAF4';dCtx.fillRect(0,0,w,300);};
 $('#doneDrawBtn').onclick=()=>{$('#reflect').classList.add('show');$('#reflect').scrollIntoView({behavior:'smooth'});};
 $('#drawBackBtn').onclick=()=>go('scr-home');
+
+const TECHS={
+  lines:{name:'Линии эмоции',read:[
+    'Резкие, ломаные линии — напряжение, злость.',
+    'Плавные, текучие — покой или грусть.',
+    'Хаотичная штриховка — тревога, круг мыслей.',
+    'Сильный нажим — чувство очень сильное.',
+    'Крупные формы — чувство заполняет всё; мелкие — ощущение своей маленькости.']},
+  weather:{name:'Внутренняя погода',read:[
+    'Гроза — конфликт, злость.',
+    'Дождь — грусть, хочется выплакаться.',
+    'Туман — запутался, «не знаю».',
+    'Солнце — покой и тепло.',
+    'Ветер — тревога, перемены.',
+    'Какого цвета в рисунке больше — то чувство и сильнее.']}
+};
+$('#readBtn').onclick=()=>{
+  const t=TECHS[curTech];
+  $('#readCard').innerHTML='<h4>'+t.name+' · как читать</h4>'+t.read.map(r=>'<div class="ri">• '+r+'</div>').join('');
+  $('#readCard').classList.toggle('show');
+  if($('#readCard').classList.contains('show')){$('#readCard').scrollIntoView({behavior:'smooth'});}
+};
 $('#reflectGo').onclick=()=>{
   const v=$('#reflectInput').value.trim();
   if(!v){toast('Напиши пару слов — что на душе');$('#reflectInput').focus();return;}
