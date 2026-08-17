@@ -607,6 +607,7 @@ button{font-family:var(--sans)}
     <div class="wn-panel">
       <div class="ms-t" style="font-family:var(--serif);font-style:italic;font-size:22px;font-weight:600;text-align:center;margin-bottom:16px" data-i18n="instTitle"></div>
       <div id="instSteps"></div>
+      <a href="https://www.google.com/search?q=SixWhy" target="_blank" style="display:block;text-decoration:none;text-align:center;margin:0 0 8px;border-radius:15px;padding:15px;background:var(--butter);color:var(--butter-ink);font-size:15px;font-weight:800">🔎 Найти SixWhy в Google</a>
       <button class="wn-close" id="instClose" data-i18n="gotit"></button>
     </div>
   </div>
@@ -634,7 +635,7 @@ const I18N={
     homeFoot:'Записи остаются только у тебя · без рекламы и сбора данных',
     hintH:'Здесь появится твой диалог…',hintP:'Напиши сверху то, что сейчас чувствуешь.<br>Например: <b>«мне плохо»</b> — и отвечай честно.',
     drawSub:'Здесь нет правильно и неправильно — рисуй так, как ведёт рука.',
-    musicOn:'Включить музыку · Моцарт (шкатулка)',musicOff:'Выключить музыку',
+    musicOn:'Включить музыку · Шопен',musicOff:'Выключить музыку',
     mLines:'Линии эмоции',mLinesD:'рисуй состояние линиями',mWeather:'Внутренняя погода',mWeatherD:'какая погода внутри?',
     clear:'Очистить',done:'Готово ✓',howRead:'Как читать рисунок',toChain:'Перейти к 6 вопросам →',
     doneH:'Ты дошёл до корня.',doneSub:'Шесть вопросов позади. Вот что получилось:',root:'Корень',step:'✳ Твой шаг',mirrorView:'✦ Взгляд со стороны',
@@ -688,7 +689,7 @@ const I18N={
     homeFoot:'Notes stay only with you · no ads, no data collection',
     hintH:'Your dialogue will appear here…',hintP:'Write above what you feel right now.<br>For example: <b>"I feel bad"</b> — and answer honestly.',
     drawSub:'There\'s no right or wrong here — draw as your hand leads.',
-    musicOn:'Turn on music · Mozart (music box)',musicOff:'Turn off music',
+    musicOn:'Turn on music · Chopin',musicOff:'Turn off music',
     mLines:'Lines of emotion',mLinesD:'draw your state with lines',mWeather:'Inner weather',mWeatherD:'what\'s the weather inside?',
     clear:'Clear',done:'Done ✓',howRead:'How to read the drawing',toChain:'Go to the 6 questions →',
     doneH:'You reached the root.',doneSub:'Six questions are behind. Here\'s what came out:',root:'Root',step:'✳ Your step',mirrorView:'✦ A view from the side',
@@ -932,27 +933,36 @@ $('#reflectGo').onclick=()=>{
   session={start:v,whys:[],action:null};addUser(v,true);phase='whys';thinking(()=>askWhy(1));
 };
 
-/* ── музыка: Моцарт «Ah! vous dirai-je, maman» (музыкальная шкатулка) ── */
-let actx=null,mbTimer=null,mbIdx=0,musicOn=false;
-const MEL=[262,262,392,392,440,440,392,0,349,349,330,330,294,294,262,0,392,392,349,349,330,330,294,0,392,392,349,349,330,330,294,0,262,262,392,392,440,440,392,0,349,349,330,330,294,294,262];
-function mbStep(){
-  const f=MEL[mbIdx%MEL.length];mbIdx++;
-  if(!f||!actx)return;
-  const tt=actx.currentTime,o=actx.createOscillator(),g=actx.createGain();
-  o.type='sine';o.frequency.value=f*2;
-  g.gain.setValueAtTime(0,tt);g.gain.linearRampToValueAtTime(.08,tt+.02);g.gain.exponentialRampToValueAtTime(.0001,tt+1.3);
-  o.connect(g);g.connect(actx.destination);o.start(tt);o.stop(tt+1.4);
-}
+/* ── музыка: Шопен Ноктюрн №2 (самая спокойная классика) ── */
+const TRACKS=['https://www.mfiles.co.uk/mp3-downloads/chopin-nocturne-op9-no2.mp3'];
+let mAudio=null,musicOn=false,padCtx=null,padNodes=[];
+function uiOn(){$('#musicBtn').classList.add('on');$('#musicBtn').querySelector('span').textContent=t('musicOff');}
+function uiOff(){$('#musicBtn').classList.remove('on');$('#musicBtn').querySelector('span').textContent=t('musicOn');}
 function startMusic(){
-  actx=actx||new (window.AudioContext||window.webkitAudioContext)();
-  if(actx.state==='suspended')actx.resume();
-  musicOn=true;mbIdx=0;mbStep();mbTimer=setInterval(mbStep,480);
-  $('#musicBtn').classList.add('on');$('#musicBtn').querySelector('span').textContent=t('musicOff');
+  let i=0;
+  const tryPlay=()=>{
+    if(i>=TRACKS.length){startPad();return;}
+    mAudio=new Audio(TRACKS[i]);mAudio.loop=true;i++;
+    mAudio.play().then(()=>{musicOn=true;uiOn();}).catch(tryPlay);
+  };
+  tryPlay();
 }
-function stopMusic(){
-  musicOn=false;clearInterval(mbTimer);
-  $('#musicBtn').classList.remove('on');$('#musicBtn').querySelector('span').textContent=t('musicOn');
+function stopMusic(){if(mAudio){mAudio.pause();mAudio=null;}stopPad();musicOn=false;uiOff();}
+function startPad(){
+  padCtx=padCtx||new (window.AudioContext||window.webkitAudioContext)();
+  if(padCtx.state==='suspended')padCtx.resume();
+  const master=padCtx.createGain();master.gain.value=0.05;master.connect(padCtx.destination);
+  [196.0,246.94,293.66].forEach((f,k)=>{
+    const o=padCtx.createOscillator();o.type='sine';o.frequency.value=f;
+    const g=padCtx.createGain();g.gain.value=.4;
+    const l=padCtx.createOscillator();l.frequency.value=.06+k*.017;
+    const lg=padCtx.createGain();lg.gain.value=.25;
+    l.connect(lg);lg.connect(g.gain);o.connect(g);g.connect(master);
+    o.start();l.start();padNodes.push(o,l);
+  });
+  padNodes.push(master);musicOn=true;uiOn();
 }
+function stopPad(){padNodes.forEach(n=>{try{n.stop&&n.stop();}catch(e){}try{n.disconnect();}catch(e){}});padNodes=[];}
 $('#musicBtn').onclick=()=>{musicOn?stopMusic():startMusic();};
 
 /* ── установка ── */
@@ -1026,7 +1036,7 @@ function addUser(text,first){
 function thinking(cb){const e=document.createElement('div');e.className='thinking';e.innerHTML='<i></i><i></i><i></i>';$('#thread').appendChild(e);scrollDown();setTimeout(()=>{e.remove();cb();},950);}
 function askWhy(n){const e=document.createElement('div');e.className='entry prompt';e.innerHTML='<div class="q">'+(lang==='ru'?'Почему?':'Why?')+'</div><div class="num">'+(lang==='ru'?'вопрос ':'question ')+n+' / 6</div>';$('#thread').appendChild(e);scrollDown();setProgress(n,lang==='ru'?'отвечай честно':'answer honestly');$('#msgInput').placeholder=lang==='ru'?'Потому что…':'Because…';$('#msgInput').focus();}
 function askSmart(a){const q=findSmartQuestion(a);const e=document.createElement('div');e.className='entry prompt smart';e.innerHTML='<div class="q">'+q+'</div><div class="num">'+(lang==='ru'?'вопрос 3 из 6 · подобран для тебя':'question 3 of 6 · picked for you')+'</div>';$('#thread').appendChild(e);scrollDown();setProgress(3,lang==='ru'?'честный ответ':'honest answer');$('#msgInput').placeholder=lang==='ru'?'Подумай…':'Think…';$('#msgInput').focus();}
-function askAction(){const e=document.createElement('div');e.className='entry prompt act';e.innerHTML='<div class="q">'+(lang==='ru'?'Что я сейчас могу с&nbsp;этим сделать?':'What can I do about it now?')+'</div><div class="num">'+(lang==='ru'?'седьмой вопрос · самый важный':'seventh question · the most important')+'</div>';$('#thread').appendChild(e);scrollDown();setProgress(6,lang==='ru'?'шаг ✳':'step ');$('#msgInput').placeholder=lang==='ru'?'Даже маленький шаг — уже шаг…':'Even a small step is a step…';$('#msgInput').focus();}
+function askAction(){const e=document.createElement('div');e.className='entry prompt act';e.innerHTML='<div class="q">'+(lang==='ru'?'Что я сейчас могу с&nbsp;этим сделать?':'What can I do about it now?')+'</div><div class="num">'+(lang==='ru'?'седьмой вопрос · самый важный':'seventh question · the most important')+'</div>';$('#thread').appendChild(e);scrollDown();setProgress(6,lang==='ru'?'шаг ✳':'step ✳');$('#msgInput').placeholder=lang==='ru'?'Даже маленький шаг — уже шаг…':'Even a small step is a step…';$('#msgInput').focus();}
 function setProgress(n,cap){document.querySelectorAll('.pdot').forEach((d,i)=>d.classList.toggle('on',i<n));$('#pcap').textContent=cap;}
 function useSmart(){return mode==='empathy'||mode==='draw';}
 function submit(){
@@ -1078,7 +1088,7 @@ $('#capsuleBtn').onclick=()=>{
 $('#againBtn').onclick=()=>{resetDialog();go('scr-main');setTimeout(()=>$('#msgInput').focus(),450);};
 $('#toHomeBtn').onclick=()=>{renderChallenge();go('scr-home');};
 
-/* ── история ─ */
+/* ── история ── */
 $('#backBtn').onclick=()=>go('scr-home');
 function renderHist(){
   const L=$('#histList');
@@ -1143,7 +1153,7 @@ $('#moodSaveBtn').onclick=()=>{
   saveMoods();$('#moodSheet').classList.remove('show');renderCalendar();toast(t('moodSaved'));
 };
 
-/* ── что нового (со стрелками) ── */
+/* ── что нового ── */
 let wnIdx=0;
 function checkWhatsNew(){
   let seen='';try{seen=localStorage.getItem('sixwhy_seen_version')||'';}catch(e){}
@@ -1181,7 +1191,7 @@ if(name&&onboarded){
 }else{showOnb(0);go('scr-onb');}
 
 if('serviceWorker' in navigator){
-  const swCode=`const C='sixwhy-v3';self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(['./','./index.html','./manifest.webmanifest','./IMG_5479.jpeg','./config.json'])).then(()=>self.skipWaiting()));});self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});self.addEventListener('fetch',e=>{e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(res=>{if(e.request.method==='GET'&&res.ok){const cl=res.clone();caches.open(C).then(c=>c.put(e.request,cl));}return res;}).catch(()=>caches.match('./index.html'))));});`;
+  const swCode=`const C='sixwhy-v4';self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(['./','./index.html','./manifest.webmanifest','./IMG_5479.jpeg','./config.json'])).then(()=>self.skipWaiting()));});self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});self.addEventListener('fetch',e=>{e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(res=>{if(e.request.method==='GET'&&res.ok){const cl=res.clone();caches.open(C).then(c=>c.put(e.request,cl));}return res;}).catch(()=>caches.match('./index.html'))));});`;
   const blob=new Blob([swCode],{type:'application/javascript'});
   navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{});
 }
