@@ -5,61 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SixWhy — шесть «почему» и один шаг</title>
 <meta name="description" content="Минутная техника самопомощи: шесть вопросов доводят до корня эмоции, седьмой — подсказывает шаг. Записи остаются только у тебя.">
-<meta name="theme-color" content="#FAF4E7">
+<meta name="theme-color" content="#F6F1E8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="SixWhy">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='116' fill='%239B7EBD'/%3E%3Ccircle cx='256' cy='110' r='18' fill='%23FAF4E7' opacity='.5'/%3E%3Ccircle cx='256' cy='172' r='20' fill='%23FAF4E7' opacity='.6'/%3E%3Ccircle cx='256' cy='234' r='22' fill='%23FAF4E7' opacity='.7'/%3E%3Ccircle cx='256' cy='296' r='24' fill='%23FAF4E7' opacity='.8'/%3E%3Ccircle cx='256' cy='358' r='26' fill='%23FAF4E7' opacity='.9'/%3E%3Ccircle cx='256' cy='426' r='30' fill='%23EFC368'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='116' fill='%23B888BA'/%3E%3Ccircle cx='256' cy='110' r='18' fill='%23F6F1E8' opacity='.5'/%3E%3Ccircle cx='256' cy='172' r='20' fill='%23F6F1E8' opacity='.6'/%3E%3Ccircle cx='256' cy='234' r='22' fill='%23F6F1E8' opacity='.7'/%3E%3Ccircle cx='256' cy='296' r='24' fill='%23F6F1E8' opacity='.8'/%3E%3Ccircle cx='256' cy='358' r='26' fill='%23F6F1E8' opacity='.9'/%3E%3Ccircle cx='256' cy='426' r='30' fill='%23FFEDA8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#2A2435;--mut:#7A6B8A;--lilac:#9B7EBD;--lilac-soft:#F3EDF7;
-  --lilac-line:#D4C5E2;--paper:#FAF4E7;--card:#FFFDF6;--line:#E9DFCB;
-  --butter:#EFC368;--butter-soft:#FBF0D7;--butter-line:#EFD9A7;
-  --butter-ink:#5C4A1E;--butter-mut:#A9852F;
+  --ink:#332B3A;--mut:#8A7F92;
+  --lilac:#B888BA;--lilac-deep:#A676A8;
+  --lilac-soft:#E2D4EC;--lilac-line:#B1A9D9;
+  --paper:#F6F1E8;--card:#FCFAF4;--line:#E6DECF;
+  --butter:#FFEDA8;--butter-soft:#FFF6D6;--butter-line:#EBD78F;
+  --butter-ink:#6B5A1E;--butter-mut:#A08A2E;
   --serif:'Cormorant Garamond',serif;--sans:'Manrope',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%}
-body{font-family:var(--sans);color:var(--ink);background:#F2EADB;-webkit-tap-highlight-color:transparent}
+body{font-family:var(--sans);color:var(--ink);background:#EFE8DC;-webkit-tap-highlight-color:transparent}
 .app{position:relative;max-width:480px;margin:0 auto;height:100vh;height:100dvh;background:var(--paper);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 0 60px #2a243522}
 .scr{position:absolute;inset:0;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .4s,transform .4s;display:flex;flex-direction:column}
 .scr.active{opacity:1;transform:none;pointer-events:auto}
 button{font-family:var(--sans)}
 #scr-onb{padding:max(20px,env(safe-area-inset-top)) 30px max(26px,env(safe-area-inset-bottom))}
 .onb-top{text-align:center;font-family:var(--serif);font-size:22px;font-weight:600}
-.onb-top em{font-style:italic;color:var(--lilac)}
+.onb-top em{font-style:italic;color:var(--lilac-deep)}
 .onb-slides{flex:1;position:relative}
 .slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:24px;opacity:0;transform:translateX(36px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
 .slide.active{opacity:1;transform:none}
 .slide .st{font-family:var(--serif);font-style:italic;font-weight:500;font-size:22px;line-height:1.45;color:var(--ink);max-width:300px}
-.slide .st b{color:var(--lilac);font-weight:600}
+.slide .st b{color:var(--lilac-deep);font-weight:600}
 .slide .benefit{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:14px;padding:12px 16px;font-size:13px;line-height:1.5;color:var(--butter-ink);max-width:280px;margin-top:8px}
 .onb-bottom{display:flex;flex-direction:column;align-items:center;gap:16px}
 .onb-dots{display:flex;gap:7px}
 .odot{width:7px;height:7px;border-radius:50%;background:#E0D8E8;transition:.35s}
-.odot.on{background:var(--butter);width:20px;border-radius:100px}
+.odot.on{background:var(--lilac);width:20px;border-radius:100px}
 #scr-auth{padding:28px 30px max(26px,env(safe-area-inset-bottom));justify-content:center;overflow-y:auto}
 .logo-dots{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
 .logo-dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--lilac);opacity:0;animation:dotIn .5s forwards}
-.logo-dots i:nth-child(5){background:var(--butter);border-color:var(--butter)}
-.logo-dots i:nth-child(6){background:var(--butter);border-color:var(--butter)}
+.logo-dots i:nth-child(5){background:var(--butter);border-color:var(--butter-line)}
+.logo-dots i:nth-child(6){background:var(--butter);border-color:var(--butter-line)}
 .logo-dots i:nth-child(1){animation-delay:.1s}.logo-dots i:nth-child(2){animation-delay:.2s}.logo-dots i:nth-child(3){animation-delay:.3s}
 .logo-dots i:nth-child(4){animation-delay:.4s}.logo-dots i:nth-child(5){animation-delay:.5s}.logo-dots i:nth-child(6){animation-delay:.6s}
 @keyframes dotIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 .wordmark{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1}
-.wordmark em{font-style:italic;color:var(--lilac)}
+.wordmark em{font-style:italic;color:var(--lilac-deep)}
 .auth-sub{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--mut);margin:10px 0 28px}
 .field-lbl{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:9px}
 #nameInput,#pinInput{width:100%;border:1.5px solid var(--line);border-radius:15px;padding:15px 16px;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--card);outline:none;transition:.25s}
-#nameInput:focus,#pinInput:focus{border-color:var(--lilac);box-shadow:0 0 0 4px #9b7ebd1c}
-.go-btn{width:100%;margin-top:14px;border:none;border-radius:15px;padding:16px;font-size:15px;font-weight:800;background:var(--lilac);color:#fff;cursor:pointer;transition:.25s;box-shadow:0 12px 26px #9b7ebd3d}
-.go-btn:hover{background:#8A6DAA}
+#nameInput:focus,#pinInput:focus{border-color:var(--lilac);box-shadow:0 0 0 4px #b888ba1c}
+.go-btn{width:100%;margin-top:14px;border:none;border-radius:15px;padding:16px;font-size:15px;font-weight:800;background:var(--lilac);color:#fff;cursor:pointer;transition:.25s;box-shadow:0 12px 26px #b888ba3d}
+.go-btn:hover{background:var(--lilac-deep)}
 .go-btn:active{transform:scale(.98)}
-.go-btn.butter{background:var(--butter);color:var(--butter-ink);box-shadow:0 12px 26px #efc36840}
-.go-btn.butter:hover{background:#D4A84A}
-.go-btn.outline{background:transparent;color:var(--lilac);border:1.5px solid var(--lilac-line);box-shadow:none}
+.go-btn.butter{background:var(--butter);color:var(--butter-ink);box-shadow:0 12px 26px #ffeda866}
+.go-btn.butter:hover{background:#F5E193}
+.go-btn.outline{background:transparent;color:var(--lilac-deep);border:1.5px solid var(--lilac-line);box-shadow:none}
 .go-btn.outline:hover{border-color:var(--lilac)}
 .priv-note{margin-top:22px;background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:14px;padding:13px 15px;font-size:12.5px;line-height:1.55;color:var(--butter-ink);display:flex;gap:10px}
 .disclaimer{margin-top:14px;font-size:11px;line-height:1.5;color:#b0a5b8;text-align:center}
@@ -71,62 +73,61 @@ button{font-family:var(--sans)}
 #scr-home{padding:max(18px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom));overflow-y:auto}
 .home-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
 .home-top .wm{font-family:var(--serif);font-size:24px;font-weight:600}
-.home-top .wm em{font-style:italic;color:var(--lilac)}
+.home-top .wm em{font-style:italic;color:var(--lilac-deep)}
 .home-top .acts{display:flex;gap:4px}
 .ibtn{border:none;background:transparent;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:var(--mut);cursor:pointer;transition:.2s}
-.ibtn:hover{background:var(--butter-soft);color:var(--butter-mut)}
+.ibtn:hover{background:var(--lilac-soft);color:var(--lilac-deep)}
 .ibtn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .greet{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;margin-bottom:18px}
-.greet b{color:var(--lilac);font-weight:600}
+.greet b{color:var(--lilac-deep);font-weight:600}
 .ann{background:var(--lilac-soft);border:1px solid var(--lilac-line);color:#5A4A6A;border-radius:12px;padding:10px 14px;font-size:12.5px;line-height:1.5;margin-bottom:14px}
 .quote-card{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:18px;padding:18px 18px 16px;margin-bottom:12px;position:relative}
 .quote-card.lil{background:var(--lilac-soft);border-color:var(--lilac-line)}
-.quote-card::before{content:"❝";position:absolute;top:8px;left:14px;font-family:var(--serif);font-size:28px;color:var(--butter);line-height:1}
+.quote-card::before{content:"❝";position:absolute;top:8px;left:14px;font-family:var(--serif);font-size:28px;color:var(--butter-mut);line-height:1}
 .quote-card.lil::before{color:var(--lilac)}
 .qc-lbl{font-size:9.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:6px;padding-left:20px}
-.quote-card.lil .qc-lbl{color:var(--lilac)}
+.quote-card.lil .qc-lbl{color:var(--lilac-deep)}
 .qc-q{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.45;color:var(--butter-ink);padding-left:20px}
 .quote-card.lil .qc-q{color:#4A3A5A}
 .qc-a{font-size:11px;font-weight:700;color:var(--butter-mut);margin-top:6px;text-align:right}
-.quote-card.lil .qc-a{color:var(--lilac)}
+.quote-card.lil .qc-a{color:var(--lilac-deep)}
 .about-card{background:var(--card);border:1px solid var(--butter-line);border-radius:18px;padding:14px 16px;margin:6px 0 18px;cursor:pointer;transition:.25s}
-.about-card:hover{border-color:var(--butter)}
+.about-card:hover{border-color:var(--butter-mut)}
 .about-head{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--butter-mut)}
-.about-head .chev{margin-left:auto;transition:.3s;color:var(--butter)}
+.about-head .chev{margin-left:auto;transition:.3s;color:var(--butter-mut)}
 .about-card.open .about-head .chev{transform:rotate(180deg)}
 .about-body{font-size:13.5px;line-height:1.6;color:var(--mut);max-height:0;overflow:hidden;transition:max-height .4s ease}
 .about-card.open .about-body{max-height:220px;padding-top:10px}
 .tiles-lbl{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.tile{border-radius:18px;padding:16px 14px;border:1.5px solid var(--butter-line);background:var(--card);cursor:pointer;transition:.25s;text-align:left}
-.tile .ti{font-size:22px}
-.tile .tt{font-size:13.5px;font-weight:800;margin-top:8px}
+.tile{border-radius:18px;padding:18px 16px;border:1.5px solid var(--line);background:var(--card);cursor:pointer;transition:.25s;text-align:left}
+.tile .ti{color:var(--lilac-deep)}
+.tile .ti svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tile .tt{font-family:var(--serif);font-style:italic;font-weight:600;font-size:20px;margin-top:10px;color:var(--ink)}
 .tile .td{font-size:11px;color:var(--mut);margin-top:3px;line-height:1.4}
-.tile.sel{border-color:var(--lilac);background:var(--lilac-soft);box-shadow:0 8px 20px #9b7ebd22}
-.subrow{display:none;gap:8px;margin-top:12px}
-.subrow.show{display:flex}
-.pill{flex:1;border:1.5px solid var(--butter-line);border-radius:100px;padding:11px 8px;font-size:12.5px;font-weight:700;background:var(--card);cursor:pointer;transition:.2s;color:var(--mut)}
-.pill.sel{border-color:var(--butter);background:var(--butter-soft);color:var(--butter-ink)}
-.start-btn{width:100%;margin-top:18px;border:none;border-radius:18px;padding:18px;font-size:16px;font-weight:800;background:var(--lilac);color:#fff;cursor:pointer;transition:.25s;box-shadow:0 14px 30px #9b7ebd3d}
-.start-btn:hover{background:#8A6DAA;transform:translateY(-2px)}
+.tile.sel{border-color:var(--lilac);background:var(--lilac-soft);box-shadow:0 8px 20px #b888ba22}
+.tile.wide{grid-column:1/-1;display:flex;align-items:center;gap:16px}
+.tile.wide .ti svg{width:30px;height:30px}
+.start-btn{width:100%;margin-top:18px;border:none;border-radius:18px;padding:18px;font-size:16px;font-weight:800;background:var(--lilac);color:#fff;cursor:pointer;transition:.25s;box-shadow:0 14px 30px #b888ba3d}
+.start-btn:hover{background:var(--lilac-deep);transform:translateY(-2px)}
 .start-btn:active{transform:scale(.98)}
 .home-foot{text-align:center;font-size:11px;color:#b8aec2;margin-top:20px;line-height:1.5}
 #scr-main{display:flex;flex-direction:column}
 .topbar{display:flex;justify-content:space-between;align-items:center;padding:max(10px,env(safe-area-inset-top)) 16px 6px}
 .topbar .wm{font-family:var(--serif);font-size:21px;font-weight:600}
-.topbar .wm em{font-style:italic;color:var(--lilac)}
+.topbar .wm em{font-style:italic;color:var(--lilac-deep)}
 .inputbar{display:flex;gap:9px;padding:6px 16px 10px}
 #msgInput{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:100px;padding:13px 19px;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--card);outline:none;transition:.25s}
-#msgInput:focus{border-color:var(--butter);box-shadow:0 0 0 4px #efc36822}
+#msgInput:focus{border-color:var(--lilac);box-shadow:0 0 0 4px #b888ba17}
 #msgInput::placeholder{color:#b8aec2}
-.send{width:46px;height:46px;flex-shrink:0;border:none;border-radius:50%;background:var(--butter);display:grid;place-items:center;cursor:pointer;transition:.25s;box-shadow:0 8px 18px #efc36850}
-.send:hover{background:#D4A84A}
+.send{width:46px;height:46px;flex-shrink:0;border:none;border-radius:50%;background:var(--butter);display:grid;place-items:center;cursor:pointer;transition:.25s;box-shadow:0 8px 18px #ffeda880}
+.send:hover{background:#F5E193}
 .send:active{transform:scale(.92)}
 .send svg{width:19px;height:19px;fill:none;stroke:var(--butter-ink);stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
 .progress{display:flex;align-items:center;justify-content:center;gap:9px;padding:2px 0 6px}
 .pdot{width:7px;height:7px;border-radius:50%;background:#E0D8E8;transition:.4s}
 .pdot.on{background:var(--lilac);transform:scale(1.2)}
-.pdot.on:nth-child(5),.pdot.on:nth-child(6){background:var(--butter)}
+.pdot.on:nth-child(5),.pdot.on:nth-child(6){background:var(--butter-mut)}
 .pcap{font-size:10px;font-weight:800;letter-spacing:.1em;color:#B8AEC2;margin-left:8px;text-transform:uppercase}
 .canvas{flex:1;overflow-y:auto;padding:10px 24px max(40px,env(safe-area-inset-bottom));scrollbar-width:none}
 .canvas::-webkit-scrollbar{display:none}
@@ -134,22 +135,44 @@ button{font-family:var(--sans)}
 .hint-empty .hd{font-family:var(--serif);font-style:italic;font-size:22px;color:#a89bb5;margin-bottom:10px}
 .hint-empty p{font-size:13.5px;line-height:1.65;color:#b8aec2}
 @keyframes pulseSoft{0%,100%{opacity:.7}50%{opacity:1}}
-.thread{border-left:1.5px solid var(--butter-line);margin-left:6px;padding:6px 0 10px 26px}
+.thread{border-left:1.5px solid var(--lilac-line);margin-left:6px;padding:6px 0 10px 26px}
 .entry{position:relative;margin-bottom:26px;animation:rise .55s cubic-bezier(.22,1,.36,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.entry::before{content:"";position:absolute;left:-31px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--card);border:2px solid var(--butter)}
-.entry.first::before{background:var(--butter);border-color:var(--butter)}
-.entry .who{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:5px}
+.entry::before{content:"";position:absolute;left:-31px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--card);border:2px solid var(--lilac)}
+.entry.first::before{background:var(--lilac);border-color:var(--lilac)}
+.entry .who{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--lilac-deep);margin-bottom:5px}
 .entry .txt{font-size:15px;line-height:1.5;color:#3A3045;font-weight:500}
 .entry.first .txt{font-size:17px;font-weight:600}
 .entry.prompt .q{font-family:var(--serif);font-style:italic;font-weight:600;font-size:33px;line-height:1.15;color:var(--ink)}
-.entry.prompt.smart .q{font-size:26px;color:var(--lilac)}
+.entry.prompt.smart .q{font-size:26px;color:var(--lilac-deep)}
 .entry.prompt.act .q{color:var(--butter-mut);font-size:27px}
-.entry .num{font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--butter-mut);margin-top:6px;text-transform:uppercase}
+.entry .num{font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--lilac-line);margin-top:6px;text-transform:uppercase}
 .thinking{display:flex;gap:6px;padding:10px 0;margin-bottom:20px;animation:rise .4s both}
-.thinking i{width:7px;height:7px;border-radius:50%;background:var(--butter);animation:bl 1s ease-in-out infinite}
+.thinking i{width:7px;height:7px;border-radius:50%;background:var(--lilac);animation:bl 1s ease-in-out infinite}
 .thinking i:nth-child(2){animation-delay:.15s}.thinking i:nth-child(3){animation-delay:.3s}
 @keyframes bl{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-5px);opacity:1}}
+#scr-draw{padding:max(16px,env(safe-area-inset-top)) 20px max(24px,env(safe-area-inset-bottom));overflow-y:auto}
+.draw-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.draw-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:26px}
+.draw-sub{font-size:12.5px;color:var(--mut);margin-bottom:14px;line-height:1.5}
+.draw-wrap{border:1.5px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden;margin-bottom:12px}
+#drawCanvas{display:block;width:100%;height:320px;touch-action:none;cursor:crosshair}
+.tools{display:flex;gap:8px;justify-content:center;margin-bottom:12px}
+.tool{width:42px;height:42px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);display:grid;place-items:center;cursor:pointer;transition:.2s;color:var(--lilac-deep)}
+.tool svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tool.sel{border-color:var(--lilac);background:var(--lilac-soft)}
+.colors{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-bottom:14px}
+.cdot{width:26px;height:26px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:.2s}
+.cdot.sel{border-color:var(--ink);transform:scale(1.18)}
+.draw-actions{display:flex;gap:10px}
+.draw-actions .go-btn{margin-top:0}
+.reflect{display:none;margin-top:18px}
+.reflect.show{display:block}
+.reflect-card{background:var(--lilac-soft);border:1px solid var(--lilac-line);border-radius:18px;padding:18px;margin-bottom:14px}
+.reflect-card .rq{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.5;color:#4A3A5A;margin-bottom:10px}
+.reflect-card .rq:last-child{margin-bottom:0}
+#reflectInput{width:100%;border:1.5px solid var(--line);border-radius:15px;padding:14px 16px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--card);outline:none}
+#reflectInput:focus{border-color:var(--lilac)}
 #scr-done{padding:34px 28px max(28px,env(safe-area-inset-bottom));overflow-y:auto;align-items:center;text-align:center}
 .done-check svg circle{stroke-dasharray:183;stroke-dashoffset:183;animation:draw .9s .2s ease forwards}
 .done-check svg path{stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s 1s ease forwards}
@@ -162,12 +185,12 @@ button{font-family:var(--sans)}
 .mirror-block{background:var(--lilac-soft);border:1px solid var(--lilac-line);animation-delay:1.4s}
 .blk-lbl{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
 .step-block .blk-lbl{color:var(--butter-mut)}
-.mirror-block .blk-lbl{color:var(--lilac)}
+.mirror-block .blk-lbl{color:var(--lilac-deep)}
 .root-block .rt{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.35}
 .step-block .rt{font-size:15px;font-weight:700;line-height:1.5;color:var(--butter-ink)}
 .mirror-block .rt{font-size:14px;line-height:1.6;color:#4A3A5A}
 .breath{display:flex;flex-direction:column;align-items:center;gap:8px;margin:12px 0 20px;animation:rise .6s 1.4s both}
-.breath i{width:14px;height:14px;border-radius:50%;background:var(--butter);animation:breathe 4s ease-in-out infinite}
+.breath i{width:14px;height:14px;border-radius:50%;background:var(--butter);border:1px solid var(--butter-line);animation:breathe 4s ease-in-out infinite}
 @keyframes breathe{0%,100%{transform:scale(.8);opacity:.5}50%{transform:scale(1.5);opacity:1}}
 .breath span{font-size:12px;color:var(--mut)}
 .done-btns{width:100%;display:flex;flex-direction:column;gap:10px;animation:rise .6s 1.5s both}
@@ -177,11 +200,11 @@ button{font-family:var(--sans)}
 .hist-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .hist-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
 .hcard{background:var(--card);border:1px solid var(--butter-line);border-radius:16px;padding:16px 18px;margin-bottom:12px;animation:rise .5s both}
-.hcard.capsule{border-color:var(--butter);background:var(--butter-soft)}
+.hcard.capsule{border-color:var(--butter-mut);background:var(--butter-soft)}
 .hdate{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--butter-mut);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
 .hdate .cap-tag{color:var(--butter-ink);font-size:9px}
 .hrow{margin-bottom:8px}
-.hrow span{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac)}
+.hrow span{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac-deep)}
 .hrow p{font-size:13.5px;line-height:1.5;margin-top:2px;color:#3A3045}
 .hempty{text-align:center;color:#b8aec2;padding:70px 20px;font-size:14px;line-height:1.6}
 .clear-link{display:block;margin:8px auto 0;border:none;background:none;color:#9B5A7A;font-size:12.5px;font-weight:700;cursor:pointer}
@@ -200,33 +223,19 @@ button{font-family:var(--sans)}
 .pin-row input:focus{border-color:var(--lilac)}
 .pin-row button{border:none;border-radius:12px;padding:12px 16px;font-size:13px;font-weight:800;cursor:pointer;transition:.2s}
 #setPinBtn{background:var(--lilac);color:#fff}
-#setPinBtn:hover{background:#8A6DAA}
+#setPinBtn:hover{background:var(--lilac-deep)}
 #removePinBtn{background:transparent;border:1.5px solid #e0c9c9 !important;color:#b06a6a}
 .creator-card{background:linear-gradient(135deg,var(--lilac-soft),var(--butter-soft));border:1.5px solid var(--lilac-line);border-radius:18px;padding:18px 20px;margin-bottom:14px;display:none}
 .creator-card.show{display:block}
-.creator-card h3{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--lilac);margin-bottom:10px}
+.creator-card h3{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--lilac-deep);margin-bottom:10px}
 .creator-card p{font-size:12.5px;line-height:1.55;color:var(--mut);margin-bottom:12px}
 .stats-btn{width:100%;border:none;border-radius:12px;padding:13px;background:var(--lilac);color:#fff;font-size:13.5px;font-weight:800;cursor:pointer;transition:.2s}
-.stats-btn:hover{background:#8A6DAA}
-.intro-btn{width:100%;margin-top:4px;border:none;border-radius:15px;padding:14px;background:var(--butter);font-size:14px;font-weight:800;color:var(--butter-ink);cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 10px 22px #efc36840}
-.intro-btn:hover{background:#D4A84A}
+.stats-btn:hover{background:var(--lilac-deep)}
+.intro-btn{width:100%;margin-top:4px;border:none;border-radius:15px;padding:14px;background:var(--butter);font-size:14px;font-weight:800;color:var(--butter-ink);cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 10px 22px #ffeda866}
+.intro-btn:hover{background:#F5E193}
 .logout-btn{width:100%;margin-top:10px;border:1.5px solid #e0c9c9;border-radius:15px;padding:14px;background:transparent;font-size:14px;font-weight:700;color:#b06a6a;cursor:pointer;transition:.25s}
 .logout-btn:hover{background:#f7eaea}
 .prof-ver{text-align:center;color:var(--butter-mut);font-size:11px;margin-top:20px;letter-spacing:.1em}
-#scr-chat{padding:max(16px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));overflow-y:auto;display:flex;flex-direction:column}
-.chat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.chat-head h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:27px}
-.chat-area{flex:1;overflow-y:auto;padding:10px 0}
-.chat-msg{margin-bottom:16px;animation:rise .5s both}
-.chat-msg.user{text-align:right}
-.chat-msg.user .bubble{background:var(--lilac);color:#fff;border-radius:18px 18px 4px 18px;padding:12px 16px;display:inline-block;max-width:85%;font-size:14.5px;line-height:1.5}
-.chat-msg.ai .bubble{background:var(--butter-soft);border:1px solid var(--butter-line);border-radius:18px 18px 18px 4px;padding:14px 16px;display:inline-block;max-width:90%;font-size:14px;line-height:1.6;color:var(--butter-ink)}
-.chat-input{display:flex;gap:9px;padding:10px 0}
-#chatInput{flex:1;border:1.5px solid var(--line);border-radius:100px;padding:13px 19px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--card);outline:none;transition:.25s}
-#chatInput:focus{border-color:var(--butter);box-shadow:0 0 0 4px #efc36822}
-.chat-send{width:46px;height:46px;flex-shrink:0;border:none;border-radius:50%;background:var(--lilac);display:grid;place-items:center;cursor:pointer;transition:.25s}
-.chat-send:hover{background:#8A6DAA}
-.chat-send svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
 .toast{position:absolute;bottom:26px;left:50%;transform:translate(-50%,16px);background:#3A2A4A;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;opacity:0;transition:.35s;z-index:70;white-space:nowrap;box-shadow:0 14px 34px #2a243544}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 </style>
@@ -238,17 +247,17 @@ button{font-family:var(--sans)}
     <div class="onb-top">Six<em>Why</em></div>
     <div class="onb-slides">
       <div class="slide active">
-        <svg width="130" height="130" viewBox="0 0 120 120" fill="none"><path d="M14 84C30 40 52 40 56 62C60 84 40 92 38 74C36 56 66 44 82 52C98 60 92 84 106 78" stroke="#9B7EBD" stroke-width="2.5" stroke-linecap="round"/><circle cx="14" cy="84" r="4" fill="#EFC368" opacity=".7"/></svg>
+        <svg width="130" height="130" viewBox="0 0 120 120" fill="none"><path d="M14 84C30 40 52 40 56 62C60 84 40 92 38 74C36 56 66 44 82 52C98 60 92 84 106 78" stroke="#B888BA" stroke-width="2.5" stroke-linecap="round"/><circle cx="14" cy="84" r="4" fill="#FFEDA8" stroke="#EBD78F"/></svg>
         <div class="st">Часто мы не можем решить проблему — даже когда выход очень прост.</div>
         <div class="benefit">💡 <b>SixWhy помогает</b> распутать мысли за 2 минуты и найти корень того, что тревожит.</div>
       </div>
       <div class="slide">
-        <svg width="130" height="130" viewBox="0 0 120 120" fill="none"><rect x="12" y="18" width="58" height="40" rx="14" stroke="#9B7EBD" stroke-width="2.5"/><path d="M26 58v12l12-12" stroke="#9B7EBD" stroke-width="2.5" stroke-linejoin="round"/><rect x="50" y="56" width="58" height="40" rx="14" fill="#FBF0D7" stroke="#EFC368" stroke-width="2.5"/><path d="M94 96v12l-12-12" stroke="#EFC368" stroke-width="2.5" stroke-linejoin="round"/><circle cx="31" cy="38" r="3" fill="#9B7EBD"/><circle cx="41" cy="38" r="3" fill="#9B7EBD"/><circle cx="51" cy="38" r="3" fill="#9B7EBD"/><circle cx="69" cy="76" r="3" fill="#EFC368"/><circle cx="79" cy="76" r="3" fill="#EFC368"/><circle cx="89" cy="76" r="3" fill="#EFC368"/></svg>
+        <svg width="130" height="130" viewBox="0 0 120 120" fill="none"><rect x="12" y="18" width="58" height="40" rx="14" stroke="#B888BA" stroke-width="2.5"/><path d="M26 58v12l12-12" stroke="#B888BA" stroke-width="2.5" stroke-linejoin="round"/><rect x="50" y="56" width="58" height="40" rx="14" fill="#FFF6D6" stroke="#EBD78F" stroke-width="2.5"/><path d="M94 96v12l-12-12" stroke="#EBD78F" stroke-width="2.5" stroke-linejoin="round"/><circle cx="31" cy="38" r="3" fill="#B888BA"/><circle cx="41" cy="38" r="3" fill="#B888BA"/><circle cx="51" cy="38" r="3" fill="#B888BA"/><circle cx="69" cy="76" r="3" fill="#B888BA"/><circle cx="79" cy="76" r="3" fill="#B888BA"/><circle cx="89" cy="76" r="3" fill="#B888BA"/></svg>
         <div class="st">На самом деле нужно только одно — честно <b>поговорить с самим собой</b>.</div>
         <div class="benefit">✨ <b>Ты получишь</b> ясность, спокойствие и конкретный шаг — вместо бесконечного круга мыслей.</div>
       </div>
       <div class="slide">
-        <svg width="130" height="130" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="16" r="5" stroke="#9B7EBD" stroke-width="2.5" opacity=".4"/><circle cx="60" cy="34" r="5.5" stroke="#9B7EBD" stroke-width="2.5" opacity=".55"/><circle cx="60" cy="52" r="6" stroke="#9B7EBD" stroke-width="2.5" opacity=".7"/><circle cx="60" cy="70" r="6.5" stroke="#EFC368" stroke-width="2.5" opacity=".85"/><circle cx="60" cy="89" r="7" fill="#EFC368"/><path d="M60 102v14M53 105.5l14 7M67 105.5l-14 7" stroke="#EFC368" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <svg width="130" height="130" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="16" r="5" stroke="#B1A9D9" stroke-width="2.5" opacity=".5"/><circle cx="60" cy="34" r="5.5" stroke="#B1A9D9" stroke-width="2.5" opacity=".65"/><circle cx="60" cy="52" r="6" stroke="#B888BA" stroke-width="2.5" opacity=".8"/><circle cx="60" cy="70" r="6.5" stroke="#B888BA" stroke-width="2.5"/><circle cx="60" cy="89" r="7" fill="#FFEDA8" stroke="#EBD78F"/><path d="M60 102v14M53 105.5l14 7M67 105.5l-14 7" stroke="#EBD78F" stroke-width="2.5" stroke-linecap="round"/></svg>
         <div class="st">Именно для этого создано приложение <b>SixWhy</b>: шесть вопросов доведут до корня, а седьмой подскажет шаг.</div>
         <div class="benefit">🌱 <b>Результат:</b> ты поймёшь, что чувствуешь, почему, и что можешь сделать прямо сейчас.</div>
       </div>
@@ -304,14 +313,26 @@ button{font-family:var(--sans)}
     </div>
     <div class="tiles-lbl">Что выбираешь сегодня?</div>
     <div class="tiles">
-      <div class="tile sel" data-mode="empathy"><div class="ti">💜</div><div class="tt">Эмпатия</div><div class="td">умный третий вопрос</div></div>
-      <div class="tile" data-mode="classic"><div class="ti">💛</div><div class="tt">Классика</div><div class="td">шесть «почему» подряд</div></div>
-      <div class="tile" data-mode="mirror"><div class="ti">🧠</div><div class="tt">ИИ-зеркало</div><div class="td">бережный разбор или диалог</div></div>
-      <div class="tile" data-mode="capsule"><div class="ti">🌱</div><div class="tt">Капсула</div><div class="td">цепочка + заметка на память</div></div>
-    </div>
-    <div class="subrow" id="subRow">
-      <button class="pill sel" data-sub="analyze">📊 Анализ цепочки</button>
-      <button class="pill" data-sub="chat">💬 Прямой диалог</button>
+      <div class="tile sel" data-mode="empathy">
+        <div class="ti"><svg viewBox="0 0 24 24"><path d="M12 20s-7.2-4.6-9.2-9.1C1.5 8 3.4 5 6.6 5c2 0 3.4 1.1 4.4 2.7L12 9l1-1.3C14 6.1 15.4 5 17.4 5c3.2 0 5.1 3 3.8 5.9-2 4.5-9.2 9.1-9.2 9.1z"/></svg></div>
+        <div class="tt">Эмпатия</div><div class="td">умный третий вопрос</div>
+      </div>
+      <div class="tile" data-mode="classic">
+        <div class="ti"><svg viewBox="0 0 24 24"><circle cx="12" cy="3.5" r="1.6"/><circle cx="12" cy="7.7" r="1.7"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="16.3" r="1.9"/><circle cx="12" cy="20.7" r="2"/></svg></div>
+        <div class="tt">Классика</div><div class="td">шесть «почему» подряд</div>
+      </div>
+      <div class="tile" data-mode="mirror">
+        <div class="ti"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 6.3L21 12l-6.8 2.7L12 21l-2.2-6.3L3 12l6.8-2.7z"/></svg></div>
+        <div class="tt">Зеркало</div><div class="td">бережный разбор цепочки</div>
+      </div>
+      <div class="tile" data-mode="capsule">
+        <div class="ti"><svg viewBox="0 0 24 24"><path d="M12 21v-8"/><path d="M12 13c0-4.2 3.2-6.5 7.5-6.5 0 4.2-3.2 6.5-7.5 6.5z"/><path d="M12 13c0-3.2-2.6-5-6.5-5 0 3.2 2.6 5 6.5 5z"/></svg></div>
+        <div class="tt">Капсула</div><div class="td">цепочка + заметка на память</div>
+      </div>
+      <div class="tile wide" data-mode="draw">
+        <div class="ti"><svg viewBox="0 0 24 24"><path d="M15.5 4.5l4 4L8 20H4v-4z"/><path d="M13 7l4 4"/></svg></div>
+        <div><div class="tt">Когда нет слов</div><div class="td">нарисуй своё чувство — и пойми его</div></div>
+      </div>
     </div>
     <button class="start-btn" id="startBtn">Начать разговор с собой →</button>
     <div class="home-foot">Записи остаются только у тебя · без рекламы и сбора данных</div>
@@ -340,15 +361,45 @@ button{font-family:var(--sans)}
     </div>
   </section>
 
+  <section class="scr" id="scr-draw">
+    <div class="draw-head">
+      <h2>Когда нет слов</h2>
+      <button class="ibtn" id="drawBackBtn"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5"/></svg></button>
+    </div>
+    <div class="draw-sub">Рисуй пальцем или мышкой. Не думай о красоте — думай о том, что внутри. Линии и цвета подскажут больше, чем слова.</div>
+    <div class="draw-wrap"><canvas id="drawCanvas"></canvas></div>
+    <div class="tools">
+      <button class="tool" data-tool="pencil" title="Карандаш"><svg viewBox="0 0 24 24"><path d="M16 3l5 5-13 13H3v-5z"/></svg></button>
+      <button class="tool" data-tool="pen" title="Ручка"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-10 10H4v-6z"/><path d="M4 20l3-1"/></svg></button>
+      <button class="tool sel" data-tool="marker" title="Фломастер"><svg viewBox="0 0 24 24"><path d="M9 3h6v10l3 4H6l3-4z"/><path d="M9 17v4h6v-4"/></svg></button>
+      <button class="tool" data-tool="paint" title="Краска"><svg viewBox="0 0 24 24"><path d="M18 3c1 3-1 5-3 6l-8 8c-1.5 1.5-4 1-4.5-1S3 12.5 4.5 12l8-8c1-1 4-2 5.5-1z"/></svg></button>
+      <button class="tool" data-tool="highlight" title="Текстовыделитель"><svg viewBox="0 0 24 24"><path d="M9 15l-4 1 1-4L17 1l4 4z" opacity=".5"/><path d="M3 21h18"/></svg></button>
+    </div>
+    <div class="colors" id="colorRow"></div>
+    <div class="draw-actions">
+      <button class="go-btn outline" id="clearBtn">Очистить</button>
+      <button class="go-btn butter" id="doneDrawBtn">Готово ✓</button>
+    </div>
+    <div class="reflect" id="reflect">
+      <div class="reflect-card">
+        <div class="rq">Посмотри на свой рисунок. Каких цветов в нём больше?</div>
+        <div class="rq">На что он похож? Что ты чувствовал, пока рисовал — лёгкость, напряжение, покой?</div>
+        <div class="rq">Если бы рисунок мог говорить — что бы он сказал?</div>
+      </div>
+      <input type="text" id="reflectInput" placeholder="Одной фразой: что у тебя на душе…" maxlength="160" autocomplete="off">
+      <button class="go-btn" id="reflectGo">Перейти к 6 вопросам →</button>
+    </div>
+  </section>
+
   <section class="scr" id="scr-done">
     <div class="done-check">
-      <svg viewBox="0 0 64 64" width="66" height="66"><circle cx="32" cy="32" r="29" fill="none" stroke="#9B7EBD" stroke-width="2.5"/><path d="M20 33l8.5 8.5L44 25" fill="none" stroke="#EFC368" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 64 64" width="66" height="66"><circle cx="32" cy="32" r="29" fill="none" stroke="#B888BA" stroke-width="2.5"/><path d="M20 33l8.5 8.5L44 25" fill="none" stroke="#B888BA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
     <h2>Ты дошёл до корня.</h2>
     <div class="sub">Шесть вопросов позади. Вот что получилось:</div>
     <div class="root-block"><div class="blk-lbl">Корень</div><div class="rt" id="rootText"></div></div>
     <div class="step-block"><div class="blk-lbl">✳ Твой шаг</div><div class="rt" id="stepText"></div></div>
-    <div class="mirror-block" id="mirrorBlock" style="display:none"><div class="blk-lbl">🧠 Взгляд со стороны</div><div class="rt" id="mirrorText"></div></div>
+    <div class="mirror-block" id="mirrorBlock" style="display:none"><div class="blk-lbl">✦ Взгляд со стороны</div><div class="rt" id="mirrorText"></div></div>
     <div class="breath"><i></i><span>Один спокойный вдох — и можно действовать.</span></div>
     <div class="done-btns">
       <button class="go-btn butter" id="capsuleBtn">🌱 Сохранить как капсулу</button>
@@ -394,33 +445,18 @@ button{font-family:var(--sans)}
     <div class="prof-ver">SIXWHY · СОЗДАНО С ЛЮБОВЬЮ</div>
   </section>
 
-  <section class="scr" id="scr-chat">
-    <div class="chat-head">
-      <h2>🧠 Прямой диалог</h2>
-      <button class="ibtn" id="chatBackBtn"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5"/></svg></button>
-    </div>
-    <div class="chat-area" id="chatArea">
-      <div class="chat-msg ai"><div class="bubble">Привет. Я здесь, чтобы выслушать. Напиши, что тебя тревожит — я отвечу бережно и по существу. 💜</div></div>
-    </div>
-    <div class="chat-input">
-      <input type="text" id="chatInput" placeholder="Что у тебя на душе?" maxlength="300" autocomplete="off">
-      <button class="chat-send" id="chatSendBtn"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-    </div>
-  </section>
-
   <div class="toast" id="toast"></div>
 </main>
 
 <script>
 const $=s=>document.querySelector(s);
 let phase='start', session={start:null,whys:[],action:null};
-let name='', history=[], onboarded=false, mode='empathy', subMode='analyze', pin='';
+let name='', history=[], onboarded=false, mode='empathy', pin='';
 try{
   name=localStorage.getItem('sixwhy_name')||'';
   history=JSON.parse(localStorage.getItem('sixwhy_hist')||'[]');
   onboarded=localStorage.getItem('sixwhy_onb')==='1';
   mode=localStorage.getItem('sixwhy_mode')||'empathy';
-  subMode=localStorage.getItem('sixwhy_submode')||'analyze';
   pin=localStorage.getItem('sixwhy_pin')||'';
 }catch(e){history=[];}
 
@@ -441,141 +477,53 @@ fetch('config.json?'+Date.now(),{cache:'no-store'})
   .then(j=>{if(j){CFG=Object.assign(CFG,j);renderQuote();}})
   .catch(()=>{});
 
-/* ── ЖИВОЙ ИИ: по 4-5 вариантов на каждую эмоцию + случайные вопросы ── */
+/* ── живой разбор: пулы фраз, без повторов подряд ── */
 const AI={
-  sadness:{
-    keys:['плохо','грустно','тяжело','больно','тоскливо','паршиво','хреново','ужасно','кошмар','плачу','слёзы','рев'],
-    replies:[
-      'Я слышу, как тебе тяжело. Грусть — это не слабость, это сигнал, что что-то важно для тебя.',
-      'Мне жаль, что тебе так больно прямо сейчас. Ты не обязан быть сильным каждую секунду.',
-      'Грустить — нормально. Иногда сердцу нужно время, чтобы прожить то, что случилось.',
-      'Я рядом. Расскажи чуть больше — что именно давит сильнее всего?'
-    ],
-    questions:['Что случилось совсем недавно?','Когда ты в последний раз позволял себе просто погрустить?','Есть ли кто-то, кому ты мог бы сейчас позвонить?']
-  },
-  fear:{
-    keys:['боюсь','страх','тревога','паника','нервничаю','волнуюсь','опасаюсь','жутко','страшно','переживаю'],
-    replies:[
-      'Страх пытается тебя защитить. Давай посмотрим, чего именно он боится — и станет ли от этого легче.',
-      'Тревога — это как шум в голове, который мешает услышать себя. Давай попробуем его приглушить.',
-      'Я понимаю, как это — когда сердце колотится от неизвестности. Ты не один в этом.',
-      'Страх часто больше самой ситуации. Давай разберём его по кусочкам.'
-    ],
-    questions:['Что самое страшное может случиться, если твои опасения оправдаются?','Было ли раньше что-то похожее — и как ты с этим справился?','Что бы ты сказал другу, который боится того же?']
-  },
-  fatigue:{
-    keys:['устал','устала','измотан','выгорел','нет сил','обессилел','замучен','усталость','вымотал','сил нет'],
-    replies:[
-      'Ты несёшь так много. Усталость — это не лень, это просьба тела о бережности.',
-      'Выгорание подкрадывается тихо. То, что ты это замечаешь — уже первый шаг к себе.',
-      'Мне жаль, что ты так вымотан. Иногда «ничего не делать» — это самое продуктивное, что можно сделать.',
-      'Ты имеешь право отдыхать. Даже если кажется, что «ещё не время».'
-    ],
-    questions:['Когда ты в последний раз делал что-то просто для себя?','Что отнимает у тебя больше всего сил прямо сейчас?','Если бы у тебя был свободный день — как бы ты его провёл?']
-  },
-  anger:{
-    keys:['злюсь','бешусь','раздражён','ненавижу','бесит','достало','взбесило','злость','ярость','раздражает'],
-    replies:[
-      'Злость — это энергия. Она показывает, где нарушены твои границы. Давай найдём, где именно.',
-      'Я слышу твою злость. Она имеет право быть. Давай посмотрим, что она хочет тебе сказать.',
-      'Раздражение — это часто непрожитая обида или усталость. Что стоит за этой злостью?',
-      'Злиться — нормально. Главное — не дать ей решить за тебя. Давай разберёмся вместе.'
-    ],
-    questions:['Кто или что вызвало эту злость?','Если бы эта злость могла говорить — что бы она сказала?','Что бы ты хотел изменить в этой ситуации?']
-  },
-  loneliness:{
-    keys:['одинок','одиноко','никто','пусто','брошен','забыт','ненужный','одиночество','один','одна'],
-    replies:[
-      'Одиночество болит, потому что ты создан для связи. Это не навсегда — даже если сейчас так кажется.',
-      'Мне жаль, что тебе так одиноко. Это одно из самых тяжёлых чувств. Я здесь.',
-      'Пустота внутри — это не пустота вокруг. Иногда мы чувствуем себя одинокими даже среди людей.',
-      'Ты важен. Даже если сейчас кажется, что никто этого не видит.'
-    ],
-    questions:['Кого тебе сейчас не хватает рядом?','Было ли время, когда ты чувствовал себя по-настоящему понятым?','Что бы ты хотел, чтобы кто-то сказал тебе прямо сейчас?']
-  },
-  guilt:{
-    keys:['стыдно','вина','виноват','совесть','упрёк','раскаиваюсь','стыд','чувствую вину'],
-    replies:[
-      'Вина говорит, что ты человек с сердцем. Но иногда мы берём на себя чужую ответственность. Давай разберёмся.',
-      'Стыд — тяжёлое чувство. Но он не определяет тебя. Ты больше своей ошибки.',
-      'Чувство вины часто бывает непропорциональным. Давай посмотрим, насколько оно реально.',
-      'Ты имеешь право на прощение — в том числе от самого себя.'
-    ],
-    questions:['Перед кем или чем ты чувствуешь вину?','Если бы друг оказался в такой ситуации — ты бы его винил так же сильно?','Что бы ты хотел исправить, если бы мог?']
-  },
-  confusion:{
-    keys:['не знаю','растерян','потерян','запутался','тупик','не понимаю','растерянность','непонятно'],
-    replies:[
-      'Не знать — это нормально. Иногда туман нужен, чтобы увидеть, куда действительно хочется идти.',
-      'Растерянность — это не тупик, это перекрёсток. Ты просто ещё не выбрал дорогу.',
-      'Я понимаю, как это — когда всё кажется запутанным. Давай распутаем по ниточке.',
-      'Иногда «не знаю» — это самый честный ответ. И с него можно начать.'
-    ],
-    questions:['Что бы ты хотел понять в первую очередь?','Если бы страх ошибиться исчез — что бы ты выбрал?','Что раньше помогало тебе находить ясность?']
-  },
-  boredom:{
-    keys:['скучно','рутина','однообразно','серость','надоело','пресно','скука','бессмысленно'],
-    replies:[
-      'Скука — это тихий голос, который просит смысла. Что раньше зажигало в тебе искру?',
-      'Рутина может выматывать не меньше, чем стресс. То, что ты это чувствуешь — важно.',
-      'Серость — это сигнал, что тебе хочется чего-то живого. Давай вспомним, что это было.',
-      'Надоело — значит, ты вырос из этого. Это хорошая новость, хоть и неприятная.'
-    ],
-    questions:['Что раньше приносило тебе радость?','Если бы рутина исчезла — чем бы ты занялся?','Чего тебе не хватает для ощущения жизни?']
-  },
-  pressure:{
-    keys:['давление','требуют','должен','обязан','нагрузка','перегруз','давлят','должна','обязана'],
-    replies:[
-      'Так много «должен». А где в этом списке есть «я хочу»? Давай найдём хотя бы одно.',
-      'Перегруз — это когда «надо» становится больше, чем «могу». Ты имеешь право сказать «стоп».',
-      'Давление извне часто превращается в давление изнутри. Давай разделим их.',
-      'Ты не машина для выполнения обязательств. Ты живой человек.'
-    ],
-    questions:['Кто или что давит на тебя сильнее всего?','Что из этого «должен» ты можешь отложить или делегировать?','Что бы ты выбрал, если бы никто не ждал от тебя результатов?']
-  },
-  future:{
-    keys:['будущее','завтра','что будет','неизвестность','переживаю за','впереди','что дальше'],
-    replies:[
-      'Будущее ещё не наступило. Прямо сейчас ты здесь, дышишь, и этого достаточно для одного шага.',
-      'Тревога о будущем — это попытка контролировать неконтролируемое. Давай вернёмся в «сейчас».',
-      'Неизвестность пугает, потому что мозг любит предсказуемость. Но в ней есть и свобода.',
-      'Завтра ещё не написано. И это, на самом деле, хорошая новость.'
-    ],
-    questions:['Что именно в будущем пугает тебя больше всего?','Что ты можешь сделать сегодня, чтобы завтра было чуть спокойнее?','Если бы будущее было добрым к тебе — каким бы оно было?']
-  }
+  sadness:{keys:['плохо','грустно','тяжело','больно','тоскливо','паршиво','хреново','ужасно','кошмар','плачу','слёзы','рев','умер','потеря'],
+    replies:['Я слышу, как тебе тяжело. Грусть — это не слабость, это сигнал, что что-то важно для тебя.','Мне жаль, что тебе больно прямо сейчас. Ты не обязан быть сильным каждую секунду.','Грустить — нормально. Иногда сердцу нужно время, чтобы прожить то, что случилось.','Похоже, внутри сейчас много тяжести. Ты имеешь право чувствовать это так долго, сколько нужно.'],
+    questions:['Что случилось совсем недавно?','Когда ты в последний раз позволял себе просто погрустить?','Есть ли кто-то, кому ты мог бы сейчас позвонить?']},
+  fear:{keys:['боюсь','страх','тревога','паника','нервничаю','волнуюсь','опасаюсь','жутко','страшно','переживаю'],
+    replies:['Страх пытается тебя защитить. Давай посмотрим, чего именно он боится.','Тревога — как шум в голове, который мешает услышать себя. Попробуем приглушить его.','Я понимаю, как это — когда сердце колотится от неизвестности. Ты не один в этом.','Страх часто больше самой ситуации. Давай разберём его по кусочкам.'],
+    questions:['Что самое страшное может случиться, если опасения оправдаются?','Было ли раньше что-то похожее — и как ты справился?','Что бы ты сказал другу, который боится того же?']},
+  fatigue:{keys:['устал','устала','измотан','выгорел','нет сил','обессилел','замучен','усталость','вымотал','сил нет'],
+    replies:['Ты несёшь так много. Усталость — это не лень, это просьба тела о бережности.','Выгорание подкрадывается тихо. То, что ты его замечаешь — уже шаг к себе.','Иногда «ничего не делать» — самое продуктивное, что можно сделать. Ты имеешь право на паузу.','Похоже, силы на исходе. А что их забирает больше всего?'],
+    questions:['Когда ты в последний раз делал что-то просто для себя?','Что отнимает больше всего сил прямо сейчас?','Как бы ты провёл полностью свободный день?']},
+  anger:{keys:['злюсь','бешусь','раздражён','ненавижу','бесит','достало','взбесило','злость','ярость','раздражает'],
+    replies:['Злость — это энергия. Она показывает, где нарушены твои границы.','Я слышу твою злость, и она имеет право быть. Давай посмотрим, что она хочет сказать.','Раздражение — часто непрожитая обида или усталость. Что стоит за ним?','Злиться — нормально. Главное — не дать злости решить за тебя.'],
+    questions:['Кто или что вызвало эту злость?','Если бы злость могла говорить — что бы она сказала?','Где в этой ситуации нарушена твоя граница?']},
+  loneliness:{keys:['одинок','одиноко','никто','пусто','брошен','забыт','ненужный','одиночество','некому'],
+    replies:['Одиночество болит, потому что ты создан для связи. Это не навсегда — даже если сейчас так кажется.','Мне жаль, что тебе одиноко. Это одно из самых тяжёлых чувств, и я рядом.','Пустота внутри — не всегда пустота вокруг. Иногда одиноко даже среди людей.','Ты важен. Даже если сейчас кажется, что никто этого не видит.'],
+    questions:['Кого тебе сейчас не хватает рядом?','Было ли время, когда ты чувствовал себя по-настоящему понятым?','Что бы ты хотел услышать прямо сейчас от близкого человека?']},
+  guilt:{keys:['стыдно','вина','виноват','совесть','упрёк','раскаиваюсь','стыд'],
+    replies:['Вина говорит, что ты человек с сердцем. Но иногда мы берём на себя чужую ответственность.','Стыд тяжёл, но он не определяет тебя. Ты больше своей ошибки.','Чувство вины часто непропорционально. Давай проверим, насколько оно реально.','Ты имеешь право на прощение — в том числе от самого себя.'],
+    questions:['Перед кем или чем ты чувствуешь вину?','Винил бы ты друга так же сильно в такой ситуации?','Что бы ты хотел исправить, если бы мог?']},
+  confusion:{keys:['не знаю','растерян','потерян','запутался','тупик','не понимаю','растерянность','непонятно'],
+    replies:['Не знать — нормально. Иногда туман нужен, чтобы увидеть, куда действительно хочется идти.','Растерянность — не тупик, а перекрёсток. Ты просто ещё не выбрал дорогу.','Давай распутаем по ниточке. С чего начинается этот клубок?','«Не знаю» — самый честный ответ. И с него можно начать.'],
+    questions:['Что бы ты хотел понять в первую очередь?','Если бы страх ошибиться исчез — что бы ты выбрал?','Что раньше помогало тебе находить ясность?']},
+  boredom:{keys:['скучно','рутина','однообразно','серость','надоело','пресно','скука','бессмысленно','нечего делать'],
+    replies:['Скука — тихий голос, который просит смысла. Что раньше зажигало в тебе искру?','Рутина выматывает не меньше стресса. То, что ты это чувствуешь — важно.','«Надоело» значит «я вырос из этого». Это хорошая новость, хоть и неприятная.','Похоже, тебе хочется чего-то живого. Давай вспомним, что это было.'],
+    questions:['Что раньше приносило тебе радость?','Если бы рутина исчезла — чем бы ты занялся?','Чего не хватает для ощущения жизни?']},
+  pressure:{keys:['давление','требуют','должен','обязан','нагрузка','перегруз','должна','обязана'],
+    replies:['Так много «должен». А где в этом списке есть «я хочу»?','Перегруз — это когда «надо» стало больше, чем «могу». Ты имеешь право сказать «стоп».','Давление извне часто превращается в давление изнутри. Давай разделим их.','Ты не машина для выполнения обязательств. Ты живой человек.'],
+    questions:['Кто или что давит сильнее всего?','Что из «должен» можно отложить или отдать?','Что бы ты выбрал, если бы никто не ждал результатов?']},
+  future:{keys:['будущее','завтра','что будет','неизвестность','переживаю за','впереди','что дальше'],
+    replies:['Будущее ещё не наступило. Прямо сейчас ты здесь, дышишь — и этого достаточно для одного шага.','Тревога о будущем — попытка контролировать неконтролируемое. Вернёмся в «сейчас».','Неизвестность пугает, потому что мозг любит предсказуемость. Но в ней есть и свобода.','Завтра ещё не написано. И это, на самом деле, хорошая новость.'],
+    questions:['Что именно в будущем пугает больше всего?','Что можно сделать сегодня, чтобы завтра было спокойнее?','Каким было бы доброе к тебе будущее?']}
 };
-const AI_FALLBACK_REPLIES=[
-  'Я слышу тебя. То, что ты поделился — уже шаг.',
-  'Спасибо, что доверяешь мне это. Давай разберёмся вместе.',
-  'Я рядом. Расскажи чуть больше — что стоит за этими словами?',
-  'То, что ты чувствуешь — важно. Давай посмотрим на это поближе.'
-];
-const AI_FALLBACK_QUESTIONS=[
-  'Попробуй спросить себя: почему это важно именно сейчас?',
-  'Что самое главное в этой ситуации для тебя прямо сейчас?',
-  'Если бы эта проблема могла говорить — что бы она сказала?',
-  'Что бы ты хотел почувствовать вместо этого?'
-];
-function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
-function detectEmotion(text){
-  const l=text.toLowerCase();
-  for(const k in AI){if(AI[k].keys.some(w=>l.includes(w)))return AI[k];}
-  return null;
+const FB_REPLIES=['Я слышу тебя. То, что ты делишься этим — уже шаг.','Спасибо за доверие. Давай посмотрим на это поближе.','То, что ты чувствуешь — важно, даже если пока без имени.','Я рядом. Давай разберём это вместе, по ниточке.'];
+const FB_QUESTIONS=['Попробуй спросить себя: почему это важно именно сейчас?','Что самое главное для тебя в этой ситуации?','Если бы это чувство могло говорить — что бы оно сказало?','Что бы ты хотел почувствовать вместо этого?'];
+const lastPick={};
+function pickFresh(arr,key){
+  let i=Math.floor(Math.random()*arr.length);
+  if(arr.length>1&&lastPick[key]===i){i=(i+1)%arr.length;}
+  lastPick[key]=i;return arr[i];
 }
-function generateChatResponse(text){
-  const emo=detectEmotion(text);
-  if(emo){return pick(emo.replies)+' '+pick(emo.questions);}
-  return pick(AI_FALLBACK_REPLIES)+' '+pick(AI_FALLBACK_QUESTIONS);
-}
-function findSmartQuestion(text){
-  const emo=detectEmotion(text);
-  if(emo){return pick(emo.questions);}
-  return pick(AI_FALLBACK_QUESTIONS);
-}
-function findMirrorResponse(allText){
-  const emo=detectEmotion(allText);
-  if(emo){return pick(emo.replies)+' '+pick(emo.questions);}
-  return 'Ты прошёл длинный путь, отвечая честно. Это уже много. '+pick(AI_FALLBACK_QUESTIONS);
+function detectEmotion(t){const l=t.toLowerCase();for(const k in AI){if(AI[k].keys.some(w=>l.includes(w)))return AI[k];}return null;}
+function findSmartQuestion(t){const e=detectEmotion(t);if(e)return pickFresh(e.questions,'q');return pickFresh(FB_QUESTIONS,'q');}
+function findMirrorResponse(t){
+  const e=detectEmotion(t);
+  if(e)return pickFresh(e.replies,'r')+' '+pickFresh(e.questions,'q');
+  return pickFresh(FB_REPLIES,'r')+' '+pickFresh(FB_QUESTIONS,'q');
 }
 
 function go(id){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');}
@@ -583,32 +531,19 @@ let toastT;
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2200);}
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 function scrollDown(){const c=$('#canvas');c.scrollTo({top:c.scrollHeight,behavior:'smooth'});}
-
-function enterApp(){
-  $('#greet').innerHTML='Привет, <b>'+esc(name||'друг')+'</b> 👋';
-  renderHome();
-  go('scr-home');
-}
+function enterApp(){$('#greet').innerHTML='Привет, <b>'+esc(name||'друг')+'</b> 👋';renderHome();go('scr-home');}
 
 const slides=document.querySelectorAll('.slide');
 const odots=document.querySelectorAll('.odot');
 let onbIdx=0;
-function showSlide(i){
-  slides.forEach((s,k)=>s.classList.toggle('active',k===i));
-  odots.forEach((d,k)=>d.classList.toggle('on',k===i));
-}
-$('#onbBtn').onclick=()=>{
-  if(onbIdx<slides.length-1){onbIdx++;showSlide(onbIdx);}
-  else{go('scr-auth');setTimeout(()=>$('#nameInput').focus(),450);}
-};
+function showSlide(i){slides.forEach((s,k)=>s.classList.toggle('active',k===i));odots.forEach((d,k)=>d.classList.toggle('on',k===i));}
+$('#onbBtn').onclick=()=>{if(onbIdx<slides.length-1){onbIdx++;showSlide(onbIdx);}else{go('scr-auth');setTimeout(()=>$('#nameInput').focus(),450);}};
 
 function register(){
   const v=$('#nameInput').value.trim();
   name=v||'друг';
   try{localStorage.setItem('sixwhy_name',name);localStorage.setItem('sixwhy_onb','1');}catch(e){}
-  onboarded=true;
-  enterApp();
-  toast('Добро пожаловать, '+name+' 💜');
+  onboarded=true;enterApp();toast('Добро пожаловать, '+name+' 💜');
 }
 $('#enterBtn').onclick=register;
 $('#nameInput').addEventListener('keydown',e=>{if(e.key==='Enter')register();});
@@ -621,40 +556,64 @@ function tryPin(){
   else{toast('Неверный пароль 🙈');$('#pinInput').value='';$('#pinInput').focus();}
 }
 
-if(name && onboarded){
-  if(pin){go('scr-pin');}
-  else{enterApp();}
-}else{go('scr-onb');showSlide(0);}
+if(name&&onboarded){if(pin){go('scr-pin');}else{enterApp();}}else{go('scr-onb');showSlide(0);}
 
 function renderHome(){
   document.querySelectorAll('.tile').forEach(t=>t.classList.toggle('sel',t.dataset.mode===mode));
-  $('#subRow').classList.toggle('show',mode==='mirror');
-  document.querySelectorAll('.pill').forEach(p=>p.classList.toggle('sel',p.dataset.sub===subMode));
+  $('#startBtn').textContent=(mode==='draw')?'Нарисовать своё чувство →':'Начать разговор с собой →';
 }
 document.querySelectorAll('.tile').forEach(t=>{
-  t.onclick=()=>{
-    mode=t.dataset.mode;
-    try{localStorage.setItem('sixwhy_mode',mode);}catch(e){}
-    renderHome();
-    toast(mode==='empathy'?'Эмпатия 💜':mode==='classic'?'Классика 💛':mode==='mirror'?'ИИ-зеркало 🧠':'Капсула 🌱');
-  };
-});
-document.querySelectorAll('.pill').forEach(p=>{
-  p.onclick=()=>{
-    subMode=p.dataset.sub;
-    try{localStorage.setItem('sixwhy_submode',subMode);}catch(e){}
-    renderHome();
-    toast(subMode==='analyze'?'Анализ цепочки':'Прямой диалог');
-  };
+  t.onclick=()=>{mode=t.dataset.mode;try{localStorage.setItem('sixwhy_mode',mode);}catch(e){}renderHome();
+  toast(mode==='empathy'?'Эмпатия':mode==='classic'?'Классика':mode==='mirror'?'Зеркало':mode==='capsule'?'Капсула':'Доска для рисования');};
 });
 $('#aboutCard').onclick=()=>$('#aboutCard').classList.toggle('open');
 $('#startBtn').onclick=()=>{
-  if(mode==='mirror' && subMode==='chat'){go('scr-chat');setTimeout(()=>$('#chatInput').focus(),450);}
+  if(mode==='draw'){openDraw();}
   else{resetDialog();go('scr-main');setTimeout(()=>$('#msgInput').focus(),450);}
 };
 $('#histBtn').onclick=()=>{renderHist();go('scr-hist');};
 $('#profBtn').onclick=()=>{renderProf();go('scr-prof');};
 
+/* ── доска для рисования ── */
+const dCan=$('#drawCanvas'),dCtx=dCan.getContext('2d');
+const TOOLS={pencil:{w:2,a:.8},pen:{w:2.5,a:1},marker:{w:6,a:1},paint:{w:13,a:1},highlight:{w:16,a:.35}};
+const COLORS=['#E5484D','#F97B22','#FFD530','#46A758','#12A594','#3E63DD','#59B7F5','#8E4EC6','#E93D82','#8D6A4A','#2A2435'];
+let curTool='marker',curColor='#B888BA',drawing=false,lx=0,ly=0;
+COLORS.forEach((c,i)=>{
+  const d=document.createElement('div');d.className='cdot'+(i===10?'':'');d.style.background=c;
+  d.onclick=()=>{curColor=c;document.querySelectorAll('.cdot').forEach(x=>x.classList.remove('sel'));d.classList.add('sel');};
+  $('#colorRow').appendChild(d);
+});
+document.querySelectorAll('.cdot')[7].classList.add('sel');curColor='#8E4EC6';
+document.querySelectorAll('.tool').forEach(t=>{t.onclick=()=>{curTool=t.dataset.tool;document.querySelectorAll('.tool').forEach(x=>x.classList.remove('sel'));t.classList.add('sel');};});
+function sizeCanvas(){
+  const w=dCan.parentElement.clientWidth,h=320,dpr=window.devicePixelRatio||1;
+  dCan.width=w*dpr;dCan.height=h*dpr;dCtx.setTransform(dpr,0,0,dpr,0,0);
+  dCtx.fillStyle='#FCFAF4';dCtx.fillRect(0,0,w,h);
+}
+function openDraw(){$('#reflect').classList.remove('show');go('scr-draw');setTimeout(sizeCanvas,60);}
+function dPos(e){const r=dCan.getBoundingClientRect();return[(e.clientX-r.left),(e.clientY-r.top)];}
+dCan.addEventListener('pointerdown',e=>{drawing=true;[lx,ly]=dPos(e);dCan.setPointerCapture(e.pointerId);seg(lx,ly);});
+dCan.addEventListener('pointermove',e=>{if(!drawing)return;const[x,y]=dPos(e);seg(x,y);[lx,ly]=[x,y];});
+dCan.addEventListener('pointerup',()=>drawing=false);
+dCan.addEventListener('pointercancel',()=>drawing=false);
+function seg(x,y){
+  const t=TOOLS[curTool];
+  dCtx.globalAlpha=t.a;dCtx.strokeStyle=curColor;dCtx.lineWidth=t.w;dCtx.lineCap='round';dCtx.lineJoin='round';
+  dCtx.beginPath();dCtx.moveTo(lx,ly);dCtx.lineTo(x,y);dCtx.stroke();dCtx.globalAlpha=1;
+}
+$('#clearBtn').onclick=()=>{const w=dCan.parentElement.clientWidth;dCtx.fillStyle='#FCFAF4';dCtx.fillRect(0,0,w,320);};
+$('#doneDrawBtn').onclick=()=>{$('#reflect').classList.add('show');$('#reflect').scrollIntoView({behavior:'smooth'});};
+$('#drawBackBtn').onclick=()=>go('scr-home');
+$('#reflectGo').onclick=()=>{
+  const v=$('#reflectInput').value.trim();
+  if(!v){toast('Напиши пару слов — что на душе');$('#reflectInput').focus();return;}
+  resetDialog();go('scr-main');
+  session={start:v,whys:[],action:null};addUser(v,true);phase='whys';
+  thinking(()=>askWhy(1));
+};
+
+/* ── профиль ── */
 function renderProf(){
   $('#profName').textContent=name||'друг';
   $('#profAva').textContent=(name||'?').trim().charAt(0).toUpperCase();
@@ -662,36 +621,25 @@ function renderProf(){
   $('#pinStatus').textContent=hasPin?'Пароль установлен — приложение открывается только по нему. 🔐':'Пароль не установлен — приложение открывается свободно.';
   $('#removePinBtn').style.display=hasPin?'block':'none';
   $('#setPinBtn').textContent=hasPin?'Сменить':'Создать';
-  if(CFG.creator && name && name.toLowerCase()===String(CFG.creator).toLowerCase()){$('#creatorCard').classList.add('show');}
+  if(CFG.creator&&name&&name.toLowerCase()===String(CFG.creator).toLowerCase()){$('#creatorCard').classList.add('show');}
   else{$('#creatorCard').classList.remove('show');}
 }
 $('#profBackBtn').onclick=()=>go('scr-home');
 $('#setPinBtn').onclick=()=>{
   const v=$('#pinInputProf').value.trim();
   if(!/^\d{4}$/.test(v)){toast('Пароль — ровно 4 цифры');return;}
-  pin=v;
-  try{localStorage.setItem('sixwhy_pin',pin);}catch(e){}
-  $('#pinInputProf').value='';
-  renderProf();toast('Пароль установлен 🔐');
+  pin=v;try{localStorage.setItem('sixwhy_pin',pin);}catch(e){}
+  $('#pinInputProf').value='';renderProf();toast('Пароль установлен 🔐');
 };
-$('#removePinBtn').onclick=()=>{
-  pin='';
-  try{localStorage.removeItem('sixwhy_pin');}catch(e){}
-  renderProf();toast('Пароль убран');
-};
+$('#removePinBtn').onclick=()=>{pin='';try{localStorage.removeItem('sixwhy_pin');}catch(e){}renderProf();toast('Пароль убран');};
 $('#statsBtn').onclick=()=>{window.open('https://github.com/singdarrad-oss/-SixWhy/graphs/traffic','_blank');};
 $('#introBtn').onclick=()=>{onbIdx=0;showSlide(0);go('scr-onb');};
 $('#logoutBtn').onclick=()=>{
-  try{
-    localStorage.removeItem('sixwhy_name');localStorage.removeItem('sixwhy_onb');
-    localStorage.removeItem('sixwhy_mode');localStorage.removeItem('sixwhy_submode');
-    localStorage.removeItem('sixwhy_pin');
-  }catch(e){}
-  name='';onboarded=false;mode='empathy';subMode='analyze';pin='';
-  onbIdx=0;showSlide(0);go('scr-onb');
-  toast('До встречи 💜');
+  try{localStorage.removeItem('sixwhy_name');localStorage.removeItem('sixwhy_onb');localStorage.removeItem('sixwhy_mode');localStorage.removeItem('sixwhy_pin');}catch(e){}
+  name='';onboarded=false;mode='empathy';pin='';onbIdx=0;showSlide(0);go('scr-onb');toast('До встречи 💜');
 };
 
+/* ── диалог ── */
 $('#homeBtn').onclick=()=>go('scr-home');
 function resetDialog(){
   phase='start';session={start:null,whys:[],action:null};
@@ -740,6 +688,7 @@ function setProgress(n,cap){
   document.querySelectorAll('.pdot').forEach((d,i)=>d.classList.toggle('on',i<n));
   $('#pcap').textContent=cap;
 }
+function useSmart(){return mode==='empathy'||mode==='draw';}
 function submit(){
   const inp=$('#msgInput');const v=inp.value.trim();
   if(!v){inp.style.borderColor='#9B5A7A';setTimeout(()=>inp.style.borderColor='',600);return;}
@@ -747,7 +696,7 @@ function submit(){
   if(phase==='start'){session={start:v,whys:[],action:null};addUser(v,true);phase='whys';thinking(()=>askWhy(1));}
   else if(phase==='whys'){
     session.whys.push(v);addUser(v,false);
-    if(session.whys.length===2 && mode==='empathy'){thinking(()=>askSmart(v));}
+    if(session.whys.length===2&&useSmart()){thinking(()=>askSmart(v));}
     else if(session.whys.length<6){thinking(()=>askWhy(session.whys.length+1));}
     else{phase='action';thinking(()=>askAction());}
   }
@@ -764,7 +713,7 @@ function finish(){
   try{localStorage.setItem('sixwhy_hist',JSON.stringify(history));}catch(e){}
   $('#rootText').textContent='«'+done.root+'»';
   $('#stepText').textContent=done.action;
-  if(mode==='mirror' && subMode==='analyze'){
+  if(mode==='mirror'){
     const all=session.start+' '+session.whys.join(' ')+' '+session.action;
     $('#mirrorText').textContent=findMirrorResponse(all);
     $('#mirrorBlock').style.display='block';
@@ -792,26 +741,11 @@ function renderHist(){
     '<div class="hcard'+(s.capsule?' capsule':'')+'"><div class="hdate">'+esc(s.date)+(s.capsule?'<span class="cap-tag">🌱 КАПСУЛА</span>':'')+'</div>'+
     '<div class="hrow"><span>Началось с</span><p>'+esc(s.start)+'</p></div>'+
     '<div class="hrow"><span>Корень</span><p>'+esc(s.root)+'</p></div>'+
-    '<div class="hrow"><span>Шаг</span><p style="color:#7A5A9A;font-weight:700">'+esc(s.action)+'</p></div></div>').join('');
+    '<div class="hrow"><span>Шаг</span><p style="color:#A676A8;font-weight:700">'+esc(s.action)+'</p></div></div>').join('');
   html+='<button class="clear-link" id="clearHist">Очистить историю</button>';
   L.innerHTML=html;
   $('#clearHist').onclick=()=>{history=[];try{localStorage.removeItem('sixwhy_hist');}catch(e){}renderHist();toast('История очищена');};
 }
-
-$('#chatBackBtn').onclick=()=>go('scr-home');
-function addChatMsg(t,u){
-  const a=$('#chatArea');const m=document.createElement('div');
-  m.className='chat-msg '+(u?'user':'ai');
-  m.innerHTML='<div class="bubble">'+esc(t)+'</div>';
-  a.appendChild(m);a.scrollTo({top:a.scrollHeight,behavior:'smooth'});
-}
-function sendChat(){
-  const inp=$('#chatInput');const v=inp.value.trim();if(!v)return;
-  addChatMsg(v,true);inp.value='';
-  setTimeout(()=>addChatMsg(generateChatResponse(v),false),800);
-}
-$('#chatSendBtn').onclick=sendChat;
-$('#chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat();});
 </script>
 </body>
 </html>
