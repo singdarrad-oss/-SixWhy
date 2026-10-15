@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SixWhy — шесть «почему» и один шаг</title>
-<meta name="description" content="Минутная техника самопомощи: шесть вопросов доводят до корня эмоции, седьмой — подсказывает шаг. Записи остаются только у тебя.">
+<meta name="description" content="Минутная техника самопомощи: шесть вопросов доводят до корня эмоции, седьмой — подсказывает шаг.">
 <meta name="theme-color" content="#F2EFE8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -442,7 +442,6 @@ button{font-family:var(--sans)}
       <button class="go-btn butter" id="onbBtn" style="margin-top:0">Далее →</button>
     </div>
   </section>
-
   <section class="scr" id="scr-auth">
     <div class="logo-dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="wordmark" id="wordmark">Six<em>Why</em></div>
@@ -460,7 +459,6 @@ button{font-family:var(--sans)}
     <div class="priv-note"><span data-i18n="privNote"></span></div>
     <div class="disclaimer" data-i18n="disclaimer"></div>
   </section>
-
   <section class="scr" id="scr-pin">
     <div class="pin-lock">🔐</div>
     <h2 data-i18n="enterPin"></h2>
@@ -469,7 +467,6 @@ button{font-family:var(--sans)}
     <button class="go-btn" id="pinBtn" style="max-width:200px" data-i18n="open"></button>
     <button class="go-btn outline" id="forgotBtn" style="max-width:200px;margin-top:8px" data-i18n="forgot"></button>
   </section>
-
   <section class="scr" id="scr-home">
     <div class="home-top">
       <div class="wm" id="homeWm">Six<em>Why</em></div>
@@ -498,183 +495,93 @@ button{font-family:var(--sans)}
     </div>
     <div class="tiles-lbl" data-i18n="chooseToday"></div>
     <div class="tiles">
-      <div class="tile sel" data-mode="empathy">
-        <div class="ti"><svg viewBox="0 0 24 24"><path d="M12 20s-7.2-4.6-9.2-9.1C1.5 8 3.4 5 6.6 5c2 0 3.4 1.1 4.4 2.7L12 9l1-1.3C14 6.1 15.4 5 17.4 5c3.2 0 5.1 3 3.8 5.9-2 4.5-9.2 9.1-9.2 9.1z"/></svg></div>
-        <div class="tt" data-i18n="empathy"></div><div class="td" data-i18n="empathyD"></div>
-      </div>
-      <div class="tile" data-mode="classic">
-        <div class="ti"><svg viewBox="0 0 24 24"><circle cx="12" cy="3.5" r="1.6"/><circle cx="12" cy="7.7" r="1.7"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="16.3" r="1.9"/><circle cx="12" cy="20.7" r="2"/></svg></div>
-        <div class="tt" data-i18n="classic"></div><div class="td" data-i18n="classicD"></div>
-      </div>
-      <div class="tile" data-mode="mirror">
-        <div class="ti"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 6.3L21 12l-6.8 2.7L12 21l-2.2-6.3L3 12l6.8-2.7z"/></svg></div>
-        <div class="tt" data-i18n="mirror"></div><div class="td" data-i18n="mirrorD"></div>
-      </div>
-      <div class="tile" data-mode="capsule">
-        <div class="ti"><svg viewBox="0 0 24 24"><path d="M12 21v-8"/><path d="M12 13c0-4.2 3.2-6.5 7.5-6.5 0 4.2-3.2 6.5-7.5 6.5z"/><path d="M12 13c0-3.2-2.6-5-6.5-5 0 3.2 2.6 5 6.5 5z"/></svg></div>
-        <div class="tt" data-i18n="capsule"></div><div class="td" data-i18n="capsuleD"></div>
-      </div>
-      <div class="tile wide" data-mode="draw">
-        <div class="ti"><svg viewBox="0 0 24 24"><path d="M15.5 4.5l4 4L8 20H4v-4z"/><path d="M13 7l4 4"/></svg></div>
-        <div><div class="tt" data-i18n="draw"></div><div class="td" data-i18n="drawD"></div></div>
-      </div>
-      <div class="tile wide" data-mode="day">
-        <div class="ti"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/><path d="M12 2v2M22 12h-2M4 12H2"/></svg></div>
-        <div><div class="tt" data-i18n="dayTitle"></div><div class="td" data-i18n="dayTileD"></div></div>
-      </div>
+      <div class="tile sel" data-mode="empathy"><div class="ti"><svg viewBox="0 0 24 24"><path d="M12 20s-7.2-4.6-9.2-9.1C1.5 8 3.4 5 6.6 5c2 0 3.4 1.1 4.4 2.7L12 9l1-1.3C14 6.1 15.4 5 17.4 5c3.2 0 5.1 3 3.8 5.9-2 4.5-9.2 9.1-9.2 9.1z"/></svg></div><div class="tt" data-i18n="empathy"></div><div class="td" data-i18n="empathyD"></div></div>
+      <div class="tile" data-mode="classic"><div class="ti"><svg viewBox="0 0 24 24"><circle cx="12" cy="3.5" r="1.6"/><circle cx="12" cy="7.7" r="1.7"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="16.3" r="1.9"/><circle cx="12" cy="20.7" r="2"/></svg></div><div class="tt" data-i18n="classic"></div><div class="td" data-i18n="classicD"></div></div>
+      <div class="tile" data-mode="mirror"><div class="ti"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 6.3L21 12l-6.8 2.7L12 21l-2.2-6.3L3 12l6.8-2.7z"/></svg></div><div class="tt" data-i18n="mirror"></div><div class="td" data-i18n="mirrorD"></div></div>
+      <div class="tile" data-mode="capsule"><div class="ti"><svg viewBox="0 0 24 24"><path d="M12 21v-8"/><path d="M12 13c0-4.2 3.2-6.5 7.5-6.5 0 4.2-3.2 6.5-7.5 6.5z"/><path d="M12 13c0-3.2-2.6-5-6.5-5 0 3.2 2.6 5 6.5 5z"/></svg></div><div class="tt" data-i18n="capsule"></div><div class="td" data-i18n="capsuleD"></div></div>
+      <div class="tile wide" data-mode="draw"><div class="ti"><svg viewBox="0 0 24 24"><path d="M15.5 4.5l4 4L8 20H4v-4z"/><path d="M13 7l4 4"/></svg></div><div><div class="tt" data-i18n="draw"></div><div class="td" data-i18n="drawD"></div></div></div>
+      <div class="tile wide" data-mode="day"><div class="ti"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/><path d="M12 2v2M22 12h-2M4 12H2"/></svg></div><div><div class="tt" data-i18n="dayTitle"></div><div class="td" data-i18n="dayTileD"></div></div></div>
     </div>
     <button class="start-btn" id="startBtn" data-i18n="startTalk"></button>
     <div class="home-foot" data-i18n="homeFoot"></div>
   </section>
-
   <section class="scr" id="scr-main">
-    <div class="topbar">
-      <div class="wm">Six<em>Why</em></div>
-      <button class="ibtn" id="homeBtn" title="На главную"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5"/></svg></button>
-    </div>
-    <div class="inputbar">
-      <input type="text" id="msgInput" placeholder="Напиши, что происходит…" maxlength="160" autocomplete="off">
-      <button class="send" id="sendBtn" title="Отправить"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-    </div>
-    <div class="progress">
-      <span class="pdot"></span><span class="pdot"></span><span class="pdot"></span>
-      <span class="pdot"></span><span class="pdot"></span><span class="pdot"></span>
-      <span class="pcap" id="pcap">начни писать</span>
-    </div>
-    <div class="canvas" id="canvas">
-      <div class="hint-empty" id="hintEmpty">
-        <div class="hd" data-i18n="hintH"></div>
-        <p data-i18n="hintP"></p>
-      </div>
-      <div class="thread" id="thread" style="display:none"></div>
-    </div>
+    <div class="topbar"><div class="wm">Six<em>Why</em></div><button class="ibtn" id="homeBtn" title="На главную"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5"/></svg></button></div>
+    <div class="inputbar"><input type="text" id="msgInput" placeholder="Напиши, что происходит…" maxlength="160" autocomplete="off"><button class="send" id="sendBtn" title="Отправить"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button></div>
+    <div class="progress"><span class="pdot"></span><span class="pdot"></span><span class="pdot"></span><span class="pdot"></span><span class="pdot"></span><span class="pdot"></span><span class="pcap" id="pcap">начни писать</span></div>
+    <div class="canvas" id="canvas"><div class="hint-empty" id="hintEmpty"><div class="hd" data-i18n="hintH"></div><p data-i18n="hintP"></p></div><div class="thread" id="thread" style="display:none"></div></div>
   </section>
-
   <section class="scr" id="scr-draw">
-    <div class="draw-head">
-      <h2 data-i18n="draw"></h2>
-      <button class="ibtn" id="drawBackBtn"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5"/></svg></button>
-    </div>
+    <div class="draw-head"><h2 data-i18n="draw"></h2><button class="ibtn" id="drawBackBtn"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5M5 9.5V21h5v-6h4v6h5V9.5"/></svg></button></div>
     <div class="draw-sub" data-i18n="drawSub"></div>
     <div class="noise-row" id="noiseRow"></div>
     <button class="music-btn" id="musicBtn"><svg viewBox="0 0 24 24"><path d="M4 8c2 0 2 1.5 4 1.5S10 8 12 8s2 1.5 4 1.5S18 8 20 8M4 12c2 0 2 1.5 4 1.5s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M4 16c2 0 2 1.5 4 1.5s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/></svg><span data-i18n="musicOn"></span></button>
     <div class="tiles-lbl" style="margin:0 0 8px" data-i18n="methodsLbl"></div>
-    <div class="method-row">
-      <div class="method sel" data-method="lines"><div class="mt" data-i18n="mLines"></div><div class="md" data-i18n="mLinesD"></div></div>
-      <div class="method" data-method="weather"><div class="mt" data-i18n="mWeather"></div><div class="md" data-i18n="mWeatherD"></div></div>
-    </div>
+    <div class="method-row"><div class="method sel" data-method="lines"><div class="mt" data-i18n="mLines"></div><div class="md" data-i18n="mLinesD"></div></div><div class="method" data-method="weather"><div class="mt" data-i18n="mWeather"></div><div class="md" data-i18n="mWeatherD"></div></div></div>
     <div class="draw-wrap"><canvas id="drawCanvas"></canvas></div>
     <div class="tools">
-      <button class="tool" data-tool="pencil" title="Карандаш"><svg viewBox="0 0 24 24"><path d="M16 3l5 5-13 13H3v-5z"/></svg></button>
-      <button class="tool" data-tool="pen" title="Ручка"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-10 10H4v-6z"/><path d="M4 20l3-1"/></svg></button>
-      <button class="tool sel" data-tool="marker" title="Фломастер"><svg viewBox="0 0 24 24"><path d="M9 3h6v10l3 4H6l3-4z"/><path d="M9 17v4h6v-4"/></svg></button>
-      <button class="tool" data-tool="paint" title="Краска"><svg viewBox="0 0 24 24"><path d="M18 3c1 3-1 5-3 6l-8 8c-1.5 1.5-4 1-4.5-1S3 12.5 4.5 12l8-8c1-1 4-2 5.5-1z"/></svg></button>
-      <button class="tool" data-tool="highlight" title="Текстовыделитель"><svg viewBox="0 0 24 24"><path d="M9 15l-4 1 1-4L17 1l4 4z" opacity=".5"/><path d="M3 21h18"/></svg></button>
+      <button class="tool" data-tool="pencil"><svg viewBox="0 0 24 24"><path d="M16 3l5 5-13 13H3v-5z"/></svg></button>
+      <button class="tool" data-tool="pen"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-10 10H4v-6z"/><path d="M4 20l3-1"/></svg></button>
+      <button class="tool sel" data-tool="marker"><svg viewBox="0 0 24 24"><path d="M9 3h6v10l3 4H6l3-4z"/><path d="M9 17v4h6v-4"/></svg></button>
+      <button class="tool" data-tool="paint"><svg viewBox="0 0 24 24"><path d="M18 3c1 3-1 5-3 6l-8 8c-1.5 1.5-4 1-4.5-1S3 12.5 4.5 12l8-8c1-1 4-2 5.5-1z"/></svg></button>
+      <button class="tool" data-tool="highlight"><svg viewBox="0 0 24 24"><path d="M9 15l-4 1 1-4L17 1l4 4z" opacity=".5"/><path d="M3 21h18"/></svg></button>
     </div>
-    <div class="colors" id="colorRow"></div>
-    <div class="color-sep"></div>
-    <div class="colors" id="colorRow2"></div>
-    <div class="draw-actions">
-      <button class="go-btn outline" id="clearBtn" data-i18n="clear"></button>
-      <button class="go-btn butter" id="doneDrawBtn" data-i18n="done"></button>
-    </div>
-    <div class="reflect" id="reflect">
-      <button class="read-btn" id="readBtn"><span data-i18n="howRead"></span></button>
-      <div class="read-body" id="readBody"></div>
-      <input type="text" id="reflectInput" placeholder="Одной фразой: что у тебя на душе…" maxlength="160" autocomplete="off">
-      <button class="go-btn" id="reflectGo" data-i18n="toChain"></button>
-    </div>
+    <div class="colors" id="colorRow"></div><div class="color-sep"></div><div class="colors" id="colorRow2"></div>
+    <div class="draw-actions"><button class="go-btn outline" id="clearBtn" data-i18n="clear"></button><button class="go-btn butter" id="doneDrawBtn" data-i18n="done"></button></div>
+    <div class="reflect" id="reflect"><button class="read-btn" id="readBtn"><span data-i18n="howRead"></span></button><div class="read-body" id="readBody"></div><input type="text" id="reflectInput" placeholder="Одной фразой: что у тебя на душе…" maxlength="160" autocomplete="off"><button class="go-btn" id="reflectGo" data-i18n="toChain"></button></div>
   </section>
-
   <section class="scr" id="scr-day">
     <div class="sec-head"><h2 data-i18n="dayTitle"></h2><button class="ibtn" id="dayBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
-    <div class="day-mode-row">
-      <button class="day-mode-btn sel" id="modeList" data-i18n="modeList"></button>
-      <button class="day-mode-btn" id="modeGrid" data-i18n="modeGrid"></button>
-    </div>
+    <div class="day-mode-row"><button class="day-mode-btn sel" id="modeList" data-i18n="modeList"></button><button class="day-mode-btn" id="modeGrid" data-i18n="modeGrid"></button></div>
     <div class="day-prog" id="dayProg"></div>
     <div class="day-list" id="dayList"></div>
     <div class="day-add" id="dayAddBox">
-      <div class="da-row">
-        <input type="time" id="dayTime" value="08:00">
-        <input type="text" id="dayWhat" maxlength="60" data-ph="dayWhatPh">
-      </div>
-      <div class="da-row">
-        <input type="text" id="dayWhy" maxlength="60" data-ph="dayWhyPh">
-      </div>
+      <div class="da-row"><input type="time" id="dayTime" value="08:00"><input type="text" id="dayWhat" maxlength="60" data-ph="dayWhatPh"></div>
+      <div class="da-row"><input type="text" id="dayWhy" maxlength="60" data-ph="dayWhyPh"></div>
       <div class="cat-row" id="catRow"></div>
       <button class="go-btn butter" id="dayAddBtn" data-i18n="dayAdd"></button>
     </div>
     <div class="tpl-lbl" data-i18n="dayTpl"></div>
-    <div class="tpl-row">
-      <button class="tpl-btn" data-tpl="m" data-i18n="tplM"></button>
-      <button class="tpl-btn" data-tpl="s" data-i18n="tplS"></button>
-      <button class="tpl-btn" data-tpl="r" data-i18n="tplR"></button>
-    </div>
+    <div class="tpl-row"><button class="tpl-btn" data-tpl="m" data-i18n="tplM"></button><button class="tpl-btn" data-tpl="s" data-i18n="tplS"></button><button class="tpl-btn" data-tpl="r" data-i18n="tplR"></button></div>
     <div class="day-tip" data-i18n="dayTip"></div>
     <div class="mood-sheet" id="daySheet">
       <div class="ms-t" id="dsTime"></div>
       <div class="ms-d" data-i18n="gridSheetSub"></div>
-      <div class="ds-inputs">
-        <input type="text" id="dsWhat" maxlength="60" data-ph="dayWhatPh">
-        <input type="text" id="dsWhy" maxlength="60" data-ph="dayWhyPh">
-      </div>
+      <div class="ds-inputs"><input type="text" id="dsWhat" maxlength="60" data-ph="dayWhatPh"><input type="text" id="dsWhy" maxlength="60" data-ph="dayWhyPh"></div>
       <div class="cat-row" id="dsCats"></div>
       <button class="go-btn butter" id="dsSave" data-i18n="dsSave"></button>
     </div>
   </section>
-
   <section class="scr" id="scr-sos">
     <div class="sec-head"><h2 data-i18n="sosTitle"></h2><button class="ibtn" id="sosBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
     <div class="breath-big"><i></i><span data-i18n="breathBig"></span></div>
     <div class="sos-list" id="sosList"></div>
     <button class="go-btn" id="sosDone" data-i18n="sosDone"></button>
   </section>
-
   <section class="scr" id="scr-faq">
     <div class="sec-head"><h2 data-i18n="faqTitle"></h2><button class="ibtn" id="faqBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
     <div class="faq-chips" id="faqChips"></div>
     <div class="faq-log" id="faqLog"></div>
-    <div class="inputbar" style="padding:0 0 0">
-      <input type="text" id="faqInput" maxlength="200" autocomplete="off">
-      <button class="send" id="faqSendBtn"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-    </div>
+    <div class="inputbar" style="padding:0 0 0"><input type="text" id="faqInput" maxlength="200" autocomplete="off"><button class="send" id="faqSendBtn"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button></div>
   </section>
-
   <section class="scr" id="scr-done">
-    <div class="done-check">
-      <svg viewBox="0 0 64 64" width="66" height="66"><circle cx="32" cy="32" r="29" fill="none" stroke="#7C9479" stroke-width="2.5"/><path d="M20 33l8.5 8.5L44 25" fill="none" stroke="#7C9479" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-    <h2 data-i18n="doneH"></h2>
-    <div class="sub" data-i18n="doneSub"></div>
+    <div class="done-check"><svg viewBox="0 0 64 64" width="66" height="66"><circle cx="32" cy="32" r="29" fill="none" stroke="#7C9479" stroke-width="2.5"/><path d="M20 33l8.5 8.5L44 25" fill="none" stroke="#7C9479" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <h2 data-i18n="doneH"></h2><div class="sub" data-i18n="doneSub"></div>
     <div class="root-block"><div class="blk-lbl" data-i18n="root"></div><div class="rt" id="rootText"></div></div>
     <div class="step-block"><div class="blk-lbl" data-i18n="step"></div><div class="rt" id="stepText"></div></div>
     <div class="mirror-block" id="mirrorBlock" style="display:none"><div class="blk-lbl" data-i18n="mirrorView"></div><div class="rt" id="mirrorText"></div></div>
-    <div class="mood-pick">
-      <div class="mp-t" data-i18n="markMood"></div>
-      <div class="mood-row" id="moodRowDone"></div>
-    </div>
+    <div class="mood-pick"><div class="mp-t" data-i18n="markMood"></div><div class="mood-row" id="moodRowDone"></div></div>
     <div class="breath"><i></i><span data-i18n="breath"></span></div>
-    <div class="done-btns">
-      <button class="go-btn butter" id="capsuleBtn" data-i18n="saveCap"></button>
-      <button class="go-btn" id="againBtn" data-i18n="again"></button>
-      <button class="go-btn outline" id="toHomeBtn" data-i18n="toHome"></button>
-    </div>
+    <div class="done-btns"><button class="go-btn butter" id="capsuleBtn" data-i18n="saveCap"></button><button class="go-btn" id="againBtn" data-i18n="again"></button><button class="go-btn outline" id="toHomeBtn" data-i18n="toHome"></button></div>
     <div class="done-disc" data-i18n="doneDisc"></div>
   </section>
-
   <section class="scr" id="scr-hist">
     <div class="sec-head"><h2 data-i18n="history"></h2><button class="ibtn" id="backBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
     <div id="histList"></div>
   </section>
-
   <section class="scr" id="scr-mood">
     <div class="sec-head"><h2 data-i18n="moodCal"></h2><button class="ibtn" id="moodBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
-    <div class="cal-nav">
-      <button id="prevMonth">‹</button>
-      <div class="cm" id="calMonth"></div>
-      <button id="nextMonth">›</button>
-    </div>
+    <div class="cal-nav"><button id="prevMonth">‹</button><div class="cm" id="calMonth"></div><button id="nextMonth">›</button></div>
     <div class="cal-weekdays" id="calWeekdays"></div>
     <div class="cal-grid" id="calGrid"></div>
     <div class="cal-summary" id="calSummary"></div>
@@ -687,75 +594,34 @@ button{font-family:var(--sans)}
       <button class="go-btn butter" id="moodSaveBtn" data-i18n="save"></button>
     </div>
   </section>
-
   <section class="scr" id="scr-prof">
     <div class="sec-head"><h2 data-i18n="profile"></h2><button class="ibtn" id="profBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
-    <div class="prof-user">
-      <div class="prof-ava" id="profAva">?</div>
-      <div><div class="pn" id="profName">—</div><div class="ps" id="profPhone"></div></div>
-    </div>
-    <div class="p-card">
-      <h3 data-i18n="backupHead"></h3>
-      <div class="st-line" data-i18n="backupSub"></div>
-      <button class="stats-btn" id="exportBtn" data-i18n="backupExport"></button>
-      <button class="qr-btn" id="importBtn" data-i18n="backupImport"></button>
-      <input type="file" id="importFile" accept=".json,application/json" style="display:none">
-    </div>
-    <div class="p-card">
-      <h3 data-i18n="helpHead"></h3>
-      <div class="st-line" data-i18n="helpSub"></div>
-      <div class="help-list" id="helpList"></div>
-    </div>
-    <div class="p-card">
-      <h3 data-i18n="privacy"></h3>
-      <div class="st-line" id="pinStatus"></div>
-      <div class="pin-row">
-        <input type="password" id="pinInputProf" inputmode="numeric" maxlength="4" placeholder="4 цифры">
-        <button id="setPinBtn" data-i18n="create"></button>
-        <button id="removePinBtn" style="display:none" data-i18n="remove"></button>
-      </div>
-    </div>
-    <div class="p-card">
-      <h3 data-i18n="language"></h3>
-      <div class="lang-row">
-        <button data-lang="ru" class="sel">Русский</button>
-        <button data-lang="en">English</button>
-      </div>
-    </div>
-    <div class="creator-card" id="creatorCard">
-      <h3 data-i18n="creatorCorner"></h3>
-      <div class="big-num" id="creatorCount">0</div>
-      <div class="big-lbl" data-i18n="creatorLbl"></div>
-      <p data-i18n="creatorP"></p>
-      <button class="stats-btn" id="statsBtn" data-i18n="statsBtn"></button>
-      <button class="qr-btn" id="qrBtnProf" data-i18n="qrBtn"></button>
-    </div>
+    <div class="prof-user"><div class="prof-ava" id="profAva">?</div><div><div class="pn" id="profName">—</div><div class="ps" id="profPhone"></div></div></div>
+    <div class="p-card"><h3 data-i18n="backupHead"></h3><div class="st-line" data-i18n="backupSub"></div><button class="stats-btn" id="exportBtn" data-i18n="backupExport"></button><button class="qr-btn" id="importBtn" data-i18n="backupImport"></button><input type="file" id="importFile" accept=".json,application/json" style="display:none"></div>
+    <div class="p-card"><h3 data-i18n="helpHead"></h3><div class="st-line" data-i18n="helpSub"></div><div class="help-list" id="helpList"></div></div>
+    <div class="p-card"><h3 data-i18n="privacy"></h3><div class="st-line" id="pinStatus"></div><div class="pin-row"><input type="password" id="pinInputProf" inputmode="numeric" maxlength="4" placeholder="4 цифры"><button id="setPinBtn" data-i18n="create"></button><button id="removePinBtn" style="display:none" data-i18n="remove"></button></div></div>
+    <div class="p-card"><h3 data-i18n="language"></h3><div class="lang-row"><button data-lang="ru" class="sel">Русский</button><button data-lang="en">English</button></div></div>
+    <div class="creator-card" id="creatorCard"><h3 data-i18n="creatorCorner"></h3><div class="big-num" id="creatorCount">0</div><div class="big-lbl" data-i18n="creatorLbl"></div><p data-i18n="creatorP"></p><button class="stats-btn" id="statsBtn" data-i18n="statsBtn"></button><button class="qr-btn" id="qrBtnProf" data-i18n="qrBtn"></button></div>
     <button class="capsule-btn" id="capsuleTimeBtn"><span data-i18n="capsuleTime"></span></button>
     <button class="capsule-btn" id="donateBtn" style="display:none"><span data-i18n="donate"></span></button>
     <button class="intro-btn" id="introBtn" data-i18n="introBtn"></button>
     <button class="logout-btn" id="logoutBtn" data-i18n="logout"></button>
     <div class="prof-ver">SIXWHY · СОЗДАНО С ЛЮБОВЬЮ</div>
   </section>
-
   <section class="scr" id="scr-qr">
-    <h2 data-i18n="qrTitle"></h2>
-    <div class="qs" data-i18n="qrSub"></div>
+    <h2 data-i18n="qrTitle"></h2><div class="qs" data-i18n="qrSub"></div>
     <div class="qr-box"><canvas id="qrCanvas" width="220" height="220"></canvas></div>
     <div class="qh" data-i18n="qrHint"></div>
     <button class="go-btn outline" id="qrBackBtn" style="margin-top:22px;max-width:240px" data-i18n="back2"></button>
   </section>
-
   <section class="scr" id="scr-capsule">
     <div class="sec-head"><h2 data-i18n="capsuleTime"></h2><button class="ibtn" id="capBackBtn"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button></div>
     <div class="cs" data-i18n="capsuleSub"></div>
     <div class="capsule-list" id="capList"></div>
     <textarea id="capText" maxlength="600"></textarea>
-    <div class="cap-date-row">
-      <input type="date" id="capDate">
-    </div>
+    <div class="cap-date-row"><input type="date" id="capDate"></div>
     <button class="go-btn butter" id="capSave" data-i18n="capsuleSave"></button>
   </section>
-
   <div class="overlay" id="menuOverlay">
     <div class="wn-panel">
       <div class="ms-t" style="font-family:var(--serif);font-style:italic;font-size:22px;font-weight:600;text-align:center;margin-bottom:16px" data-i18n="menuTitle"></div>
@@ -770,19 +636,13 @@ button{font-family:var(--sans)}
       <button class="wn-close" id="menuClose" data-i18n="close"></button>
     </div>
   </div>
-
   <div class="overlay" id="wnOverlay">
     <div class="wn-panel">
       <div class="wn-slides" id="wnSlides"></div>
-      <div class="wn-nav">
-        <button class="wn-arrow" id="wnPrev">‹</button>
-        <div class="wn-dots" id="wnDots"></div>
-        <button class="wn-arrow" id="wnNext">›</button>
-      </div>
+      <div class="wn-nav"><button class="wn-arrow" id="wnPrev">‹</button><div class="wn-dots" id="wnDots"></div><button class="wn-arrow" id="wnNext">›</button></div>
       <button class="wn-close" id="wnClose" data-i18n="gotit"></button>
     </div>
   </div>
-
   <div class="overlay" id="instOverlay">
     <div class="wn-panel">
       <div class="ms-t" style="font-family:var(--serif);font-style:italic;font-size:22px;font-weight:600;text-align:center;margin-bottom:16px" data-i18n="instTitle"></div>
@@ -790,7 +650,6 @@ button{font-family:var(--sans)}
       <button class="wn-close" id="instClose" data-i18n="gotit"></button>
     </div>
   </div>
-
   <div class="overlay" id="alarmOverlay">
     <div class="wn-panel" style="text-align:center">
       <div style="font-size:44px">⏰</div>
@@ -801,7 +660,6 @@ button{font-family:var(--sans)}
       <button class="go-btn outline" id="alarmLater" style="margin-top:8px"></button>
     </div>
   </div>
-
   <div class="overlay" id="eggOverlay">
     <div class="wn-panel egg-panel">
       <div class="ei" id="eggI"></div>
@@ -810,79 +668,17 @@ button{font-family:var(--sans)}
       <button class="wn-close" id="eggClose" data-i18n="gotit"></button>
     </div>
   </div>
-
   <div class="overlay" id="creatorOverlay">
     <div class="wn-panel">
       <div class="ms-t" style="font-family:var(--serif);font-style:italic;font-size:22px;font-weight:600;text-align:center;margin-bottom:4px" data-i18n="creatorActivate"></div>
       <div class="ms-d" style="text-align:center;font-size:12px;color:var(--mut);margin-bottom:16px" data-i18n="creatorHint"></div>
-      <input type="text" id="creatorCode" maxlength="20" placeholder="" style="width:100%;border:1.5px solid var(--line);border-radius:13px;padding:12px 14px;font-family:var(--sans);font-size:14px;background:var(--card);outline:none;margin-bottom:12px;text-align:center">
+      <input type="text" id="creatorCode" maxlength="20" placeholder="секретный код" style="width:100%;border:1.5px solid var(--line);border-radius:13px;padding:12px 14px;font-family:var(--sans);font-size:14px;background:var(--card);outline:none;margin-bottom:12px;text-align:center">
       <button class="go-btn butter" id="creatorActivateBtn" data-i18n="activate"></button>
       <button class="go-btn outline" id="creatorSkip" style="margin-top:8px" data-i18n="close"></button>
     </div>
   </div>
-
   <div class="toast" id="toast"></div>
 </main>
-<div class="overlay" id="menuOverlay">
-  <div class="wn-panel">
-    <div class="ms-t" style="font-family:var(--serif);font-style:italic;font-size:22px;font-weight:600;text-align:center;margin-bottom:16px" data-i18n="menuTitle"></div>
-    <button class="menu-btn" id="menuMood" data-i18n="moodCal"></button>
-    <button class="menu-btn" id="menuHist" data-i18n="history"></button>
-    <button class="menu-btn" id="menuSOS" data-i18n="menuSOS"></button>
-    <button class="menu-btn" id="menuProf" data-i18n="profile"></button>
-    <button class="menu-btn" id="menuInstall" data-i18n="install"></button>
-    <button class="menu-btn" id="menuAbout" data-i18n="aboutHead"></button>
-    <div class="menu-about" id="menuAboutBody"></div>
-    <button class="menu-btn" id="menuNew" data-i18n="whatsnew"></button>
-    <button class="wn-close" id="menuClose" data-i18n="close"></button>
-  </div>
-</div>
-<div class="overlay" id="wnOverlay">
-  <div class="wn-panel">
-    <div class="wn-slides" id="wnSlides"></div>
-    <div class="wn-nav">
-      <button class="wn-arrow" id="wnPrev">‹</button>
-      <div class="wn-dots" id="wnDots"></div>
-      <button class="wn-arrow" id="wnNext">›</button>
-    </div>
-    <button class="wn-close" id="wnClose" data-i18n="gotit"></button>
-  </div>
-</div>
-<div class="overlay" id="instOverlay">
-  <div class="wn-panel">
-    <div class="ms-t" style="font-family:var(--serif);font-style:italic;font-size:22px;font-weight:600;text-align:center;margin-bottom:16px" data-i18n="instTitle"></div>
-    <div id="instSteps"></div>
-    <button class="wn-close" id="instClose" data-i18n="gotit"></button>
-  </div>
-</div>
-<div class="overlay" id="alarmOverlay">
-  <div class="wn-panel" style="text-align:center">
-    <div style="font-size:44px">⏰</div>
-    <div class="ms-t" id="alarmTime" style="font-family:var(--serif);font-style:italic;font-size:24px;font-weight:600;margin-top:8px"></div>
-    <div id="alarmTitle" style="font-size:17px;font-weight:700;margin:6px 0"></div>
-    <div id="alarmWhy" style="font-size:13px;color:var(--mut);margin-bottom:16px;font-style:italic"></div>
-    <button class="go-btn butter" id="alarmDone" style="margin-top:0"></button>
-    <button class="go-btn outline" id="alarmLater" style="margin-top:8px"></button>
-  </div>
-</div>
-<div class="overlay" id="eggOverlay">
-  <div class="wn-panel egg-panel">
-    <div class="ei" id="eggI"></div>
-    <div class="et" id="eggT"></div>
-    <div class="em" id="eggM"></div>
-    <button class="wn-close" id="eggClose" data-i18n="gotit"></button>
-  </div>
-</div>
-<div class="overlay" id="creatorOverlay">
-  <div class="wn-panel">
-    <div class="ms-t" style="font-family:var(--serif);font-style:italic;font-size:22px;font-weight:600;text-align:center;margin-bottom:4px" data-i18n="creatorActivate"></div>
-    <div class="ms-d" style="text-align:center;font-size:12px;color:var(--mut);margin-bottom:16px" data-i18n="creatorHint"></div>
-    <input type="text" id="creatorCode" maxlength="20" placeholder="секретный код" style="width:100%;border:1.5px solid var(--line);border-radius:13px;padding:12px 14px;font-family:var(--sans);font-size:14px;background:var(--card);outline:none;margin-bottom:12px;text-align:center">
-    <button class="go-btn butter" id="creatorActivateBtn" data-i18n="activate"></button>
-    <button class="go-btn outline" id="creatorSkip" style="margin-top:8px" data-i18n="close"></button>
-  </div>
-</div>
-<div class="toast" id="toast"></div>
 <script>
 const $=s=>document.querySelector(s);
 const $$=s=>document.querySelectorAll(s);
@@ -998,8 +794,8 @@ const I18N={
     egg:{t:'Ты нашла меня',m:'Маленькое послание от создательницы тому, кто заглянул сюда внимательно. Спасибо, что ты есть. Внутри тебя уже есть всё, чтобы пройти через это. Ты не одна.'},
     wn:[
       {i:'📱',t:'Страничка не теряется',d:'Телефон при регистрации + резервная копия. Даже с новым устройством — вернёшься целиком.'},
-      {i:'🫂',t:'SOS · спокойствие',d:'Новая тихая кнопка на главной: заземление 5-4-3-2-1 и дыхание по кругу.'},
-      {i:'🤖',t:'Помощник по приложению',d:'Знает ответы на 20 частых вопросов. Ищи кнопку ? в шапке.'},
+      {i:'',t:'SOS · спокойствие',d:'Новая тихая кнопка на главной: заземление 5-4-3-2-1 и дыхание по кругу.'},
+      {i:'',t:'Помощник по приложению',d:'Знает ответы на 20 частых вопросов. Ищи кнопку ? в шапке.'},
       {i:'🌧',t:'Как отвечать на «почему»',d:'Перед первой цепочкой приложение само объясняет: отвечай изнутри, про чувства, а не про факты.'},
       {i:'✨',t:'Чистый дизайн',d:'Убрали лишнее с главной. Кнопки «Что нового» и «О приложении» теперь в тихом меню.'}
     ],
@@ -1102,7 +898,7 @@ function applyI18N(){
   $('#phoneInput').placeholder=lang==='ru'?'+7 ___ ___ __ __':'+1 ___ ___ ____';
   $('#msgInput').placeholder=lang==='ru'?'Напиши, что происходит…':'Write what\'s happening…';
   $('#faqInput').placeholder=t('faqPh');
-  $('#reflectInput').placeholder=lang==='ru'?'Одной фразой: что у тебе на душе…':'In one phrase: what\'s on your mind…';
+  $('#reflectInput').placeholder=lang==='ru'?'Одной фразой: что у тебя на душе…':'In one phrase: what\'s on your mind…';
   $('#moodNote').placeholder=lang==='ru'?'Короткая заметка (необязательно)…':'Short note (optional)…';
   $('#capText').placeholder=lang==='ru'?'Напиши себе в будущее…':'Write to your future self…';
   $('#creatorCode').placeholder=lang==='ru'?'секретный код':'secret code';
@@ -1427,7 +1223,7 @@ function renderProf(){
   const hasPin=!!pin;
   $('#pinStatus').textContent=hasPin?(lang==='ru'?'Пароль установлен':'Password set'):(lang==='ru'?'Пароль не установлен':'No password set.');
   $('#removePinBtn').style.display=hasPin?'block':'none';$('#setPinBtn').textContent=hasPin?t('change'):t('create');
-  $$(' .lang-row button').forEach(b=>b.classList.toggle('sel',b.dataset.lang===lang));
+  $$('.lang-row button').forEach(b=>b.classList.toggle('sel',b.dataset.lang===lang));
   $('#creatorCard').classList.toggle('show',!!isCreator);
   if(isCreator)$('#creatorCount').textContent=getVisitCount();
   $('#helpList').innerHTML=HELP_LINES.map(h=>'<a class="help-item" href="tel:'+h.d.replace(/[^+0-9]/g,'')+'"><span class="hn">'+h.n+'</span><span class="hd">'+h.d+'</span></a>').join('');
@@ -1625,7 +1421,6 @@ $('#whatsnewBtn').onclick=()=>{buildWhatsNew();$('#wnOverlay').classList.add('sh
 applyI18N();buildOnb();buildReadBody();buildNoiseRow();
 if(name&&onboarded){if(pin)go('scr-pin');else{initChallenge();enterApp();}}else{showOnb(0);go('scr-onb');}
 
-/* первый запуск без создателя — предложить код */
 setTimeout(()=>{if(onboarded&&!isCreator&&CFG.creator){$('#creatorOverlay').classList.add('show');}},1500);
 
 if('serviceWorker' in navigator){
@@ -1636,8 +1431,3 @@ if('serviceWorker' in navigator){
 </script>
 </body>
 </html>
-<script>
-applyI18N();buildOnb();buildReadBody();buildNoiseRow();
-if(name&&onboarded){if(pin){go('scr-pin');}else{initChallenge();enterApp();}}else{showOnb(0);go('scr-onb');}
-setTimeout(()=>{if(onboarded&&!isCreator&&CFG.creator){$('#creatorOverlay').classList.add('show');}},1500);
-</script>
